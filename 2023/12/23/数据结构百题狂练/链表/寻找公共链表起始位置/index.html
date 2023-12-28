@@ -60,7 +60,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-27T08:59:24.435Z">
+<meta property="article:modified_time" content="2023-12-28T02:47:08.373Z">
 <meta property="article:author" content="北街学长">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="链表">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1663,6 +1663,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2437,7 +2442,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">请设置文章作者</p>
+    <p itemprop="name">北街学长</p>
   </a>
 </div>
 
@@ -2470,7 +2475,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：834 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4 分钟</p>
+    </a>
+  </div>
 
 
           
@@ -2491,77 +2507,77 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
            我们可以这样想，如果我们单纯的让两条链表的指针同步移动，那么只有两条链表长度相同时才可能在公共部分的起始位置相遇，<br />
            所以我们应该让他们处于同一起跑线上，故而我们应该让较长的链表先走，具体走多少，应该是走过两条链表的长度之差。</p>
 <p>代码：</p>
-<pre class="line-numbers language-none"><code class="language-none">struct Link &#123;
-	union 
-	&#123;
-		int data;
-		char letter;
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">union</span> 
+	<span class="token punctuation">&#123;</span>
+		<span class="token keyword">int</span> data<span class="token punctuation">;</span>
+		<span class="token keyword">char</span> letter<span class="token punctuation">;</span>
  
-	&#125;;
-	Link *next;
-&#125;;
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-Link *findCommonSuffix(Link *h1,Link *h2) &#123;
-	struct Link *p &#x3D; h1-&gt;next, *q &#x3D; h2-&gt;next;
-	int countP &#x3D;0, countQ &#x3D; 0,gap;
-	while (p) &#123;&#x2F;&#x2F;遍历，获取链表长度
-		countP++;
-		p &#x3D; p-&gt;next;
-	&#125;
-	while (q) &#123;
-		countQ++;
-		q &#x3D; q-&gt;next;
-	&#125;
-	if (countQ&gt;countP) &#123;&#x2F;&#x2F;让p指针始终指向较长的那条链表
-		p &#x3D; h2-&gt;next;
-		q &#x3D; h1-&gt;next;
-		gap &#x3D; countQ - countP;
-	&#125;
-	else &#123;
-		p &#x3D; h1-&gt;next;
-		q &#x3D; h2-&gt;next;
-		gap &#x3D; countP - countQ;
-	&#125;
-	while (gap--) p &#x3D; p-&gt;next;&#x2F;&#x2F;长链表指针先行移动gap位
-	while (q !&#x3D; p &amp;&amp; q !&#x3D; NULL) &#123;&#x2F;&#x2F;当两指针不同或不为NULL时继续向后移动
-		q &#x3D; q-&gt;next;
-		p &#x3D; p-&gt;next;
-	&#125;
-	return p;
+	<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+	Link <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+Link <span class="token operator">*</span><span class="token function">findCommonSuffix</span><span class="token punctuation">(</span>Link <span class="token operator">*</span>h1<span class="token punctuation">,</span>Link <span class="token operator">*</span>h2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>p <span class="token operator">=</span> h1<span class="token operator">-></span>next<span class="token punctuation">,</span> <span class="token operator">*</span>q <span class="token operator">=</span> h2<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> countP <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> countQ <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>gap<span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//遍历，获取链表长度</span>
+		countP<span class="token operator">++</span><span class="token punctuation">;</span>
+		p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>q<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		countQ<span class="token operator">++</span><span class="token punctuation">;</span>
+		q <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>countQ<span class="token operator">></span>countP<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//让p指针始终指向较长的那条链表</span>
+		p <span class="token operator">=</span> h2<span class="token operator">-></span>next<span class="token punctuation">;</span>
+		q <span class="token operator">=</span> h1<span class="token operator">-></span>next<span class="token punctuation">;</span>
+		gap <span class="token operator">=</span> countQ <span class="token operator">-</span> countP<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		p <span class="token operator">=</span> h1<span class="token operator">-></span>next<span class="token punctuation">;</span>
+		q <span class="token operator">=</span> h2<span class="token operator">-></span>next<span class="token punctuation">;</span>
+		gap <span class="token operator">=</span> countP <span class="token operator">-</span> countQ<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>gap<span class="token operator">--</span><span class="token punctuation">)</span> p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment">//长链表指针先行移动gap位</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>q <span class="token operator">!=</span> p <span class="token operator">&amp;&amp;</span> q <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//当两指针不同或不为NULL时继续向后移动</span>
+		q <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token punctuation">;</span>
+		p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> p<span class="token punctuation">;</span>
 
-&#125;
-int main() &#123;
-	struct Link *h1,*h2,*com,*p1,*p2,*start;
-	Link *createLink(char *);
-	char p[] &#x3D; &quot;letter&quot;;&#x2F;&#x2F;数据类型，char
-	h1 &#x3D; createLink(p);
-	h2 &#x3D; createLink(p);
-	com &#x3D; createLink(p);&#x2F;&#x2F;公共部分
-	p1 &#x3D; h1-&gt;next;
-	p2 &#x3D; h2-&gt;next;
-	while (p1-&gt;next)p1 &#x3D; p1-&gt;next;&#x2F;&#x2F;到达链尾
-	while (p2-&gt;next)p2 &#x3D; p2-&gt;next;
-	p1-&gt;next &#x3D; com-&gt;next;&#x2F;&#x2F;链接公共部分
-	p2-&gt;next &#x3D; com-&gt;next;
-	p1 &#x3D; h1-&gt;next;
-	p2 &#x3D; h2-&gt;next;
-	while (p1) &#123;
-		printf(&quot;%c&quot;,p1-&gt;letter);
-		p1 &#x3D; p1-&gt;next;
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>h1<span class="token punctuation">,</span><span class="token operator">*</span>h2<span class="token punctuation">,</span><span class="token operator">*</span>com<span class="token punctuation">,</span><span class="token operator">*</span>p1<span class="token punctuation">,</span><span class="token operator">*</span>p2<span class="token punctuation">,</span><span class="token operator">*</span>start<span class="token punctuation">;</span>
+	Link <span class="token operator">*</span><span class="token function">createLink</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">char</span> p<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"letter"</span><span class="token punctuation">;</span><span class="token comment">//数据类型，char</span>
+	h1 <span class="token operator">=</span> <span class="token function">createLink</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	h2 <span class="token operator">=</span> <span class="token function">createLink</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	com <span class="token operator">=</span> <span class="token function">createLink</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//公共部分</span>
+	p1 <span class="token operator">=</span> h1<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	p2 <span class="token operator">=</span> h2<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>p1<span class="token operator">-></span>next<span class="token punctuation">)</span>p1 <span class="token operator">=</span> p1<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment">//到达链尾</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>p2<span class="token operator">-></span>next<span class="token punctuation">)</span>p2 <span class="token operator">=</span> p2<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	p1<span class="token operator">-></span>next <span class="token operator">=</span> com<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment">//链接公共部分</span>
+	p2<span class="token operator">-></span>next <span class="token operator">=</span> com<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	p1 <span class="token operator">=</span> h1<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	p2 <span class="token operator">=</span> h2<span class="token operator">-></span>next<span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>p1<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span>p1<span class="token operator">-></span>letter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		p1 <span class="token operator">=</span> p1<span class="token operator">-></span>next<span class="token punctuation">;</span>
  
-	&#125;
-	printf(&quot;\n&quot;);
-	while (p2) &#123;
-		printf(&quot;%c&quot;,p2-&gt;letter);
-		p2 &#x3D; p2-&gt;next;
+	<span class="token punctuation">&#125;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>p2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span>p2<span class="token operator">-></span>letter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		p2 <span class="token operator">=</span> p2<span class="token operator">-></span>next<span class="token punctuation">;</span>
  
-	&#125;
-	printf(&quot;\n&quot;);
-	start&#x3D;findCommonSuffix(h1,h2);
-	printf(&quot;%c&quot;,start-&gt;letter);
-	return  0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token punctuation">&#125;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	start<span class="token operator">=</span><span class="token function">findCommonSuffix</span><span class="token punctuation">(</span>h1<span class="token punctuation">,</span>h2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span>start<span class="token operator">-></span>letter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span>  <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>创建链表的方法做了一些修改，代码如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">struct Link &#123;
 	union &#x2F;&#x2F;这里采用了共用体，因为有时候我们要创建的数据类型不同
@@ -2611,7 +2627,7 @@ Link* createLink(char *type) &#123;
 		else &#123;
 			printf(&quot;%c&quot;, head-&gt;next-&gt;type.letter);
 		&#125;
-	
+
 		head &#x3D; head-&gt;next;
 	&#125;
 	printf(&quot;\n&quot;);
@@ -2643,10 +2659,10 @@ Link* createLink(char *type) &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-27T16:59:24+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T10:47:08+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月27日</p>
+    <p>更新于：2023年12月28日</p>
   </a>
 </div>
 
@@ -2713,6 +2729,24 @@ Link* createLink(char *type) &#123;
 
         
       
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：834 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4 分钟</p>
+    </a>
+  </div>
+
+
+        
+      
     </div>
     <!-- Custom Files bottomMeta begin -->
     
@@ -2734,11 +2768,11 @@ Link* createLink(char *type) &#123;
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E6%8C%89%E7%85%A7%E5%A5%87%E5%81%B6%E6%8B%86%E5%88%86%E9%93%BE%E8%A1%A8/'>
-          <p class='title'>按照奇偶拆分链表<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目：将一个带头结点单链表 A 分解成两个带头结点的单链表 A 和 B，使得 A 中含有原表中序号为奇数的元素，B 中为偶数，且保持其相对位置不变
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%AF%BB%E6%89%BE%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/'>
+          <p class='title'>寻找链表倒数第k个结点<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目：有一个带头结点的单链表，设计一个函数找到指定的倒数第 k 个节点，输出节点值，并返回 1，否则返回 0，前提不能改变链表，尽可能高效
 分析：
-        首先我们需要分配一个节...</p>
+        我们可以先统计出总共的节点数 ...</p>
         </a>
       
     </div>
@@ -2874,6 +2908,22 @@ Link* createLink(char *type) &#123;
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -2929,7 +2979,10 @@ Link* createLink(char *type) &#123;
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -3064,6 +3117,79 @@ Link* createLink(char *type) &#123;
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3118,6 +3244,8 @@ Link* createLink(char *type) &#123;
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->
@@ -3379,7 +3507,7 @@ Link* createLink(char *type) &#123;
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/链表/","name":"链表"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/寻找公共链表起始位置/","name":"寻找两个链表公共起始位置"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"寻找两个链表公共起始位置","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%AF%BB%E6%89%BE%E5%85%AC%E5%85%B1%E9%93%BE%E8%A1%A8%E8%B5%B7%E5%A7%8B%E4%BD%8D%E7%BD%AE/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%AF%BB%E6%89%BE%E5%85%AC%E5%85%B1%E9%93%BE%E8%A1%A8%E8%B5%B7%E5%A7%8B%E4%BD%8D%E7%BD%AE/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-27T08:59:24.435Z","articleSection":"链表","keywords":"数据结构,链表","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/链表/","name":"链表"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/寻找公共链表起始位置/","name":"寻找两个链表公共起始位置"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"寻找两个链表公共起始位置","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%AF%BB%E6%89%BE%E5%85%AC%E5%85%B1%E9%93%BE%E8%A1%A8%E8%B5%B7%E5%A7%8B%E4%BD%8D%E7%BD%AE/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%AF%BB%E6%89%BE%E5%85%AC%E5%85%B1%E9%93%BE%E8%A1%A8%E8%B5%B7%E5%A7%8B%E4%BD%8D%E7%BD%AE/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-28T02:47:08.373Z","articleSection":"链表","keywords":"数据结构,链表","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

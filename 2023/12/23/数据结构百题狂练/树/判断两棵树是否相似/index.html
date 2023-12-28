@@ -60,7 +60,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-27T09:05:28.366Z">
+<meta property="article:modified_time" content="2023-12-28T02:47:57.814Z">
 <meta property="article:author" content="北街学长">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="二叉树">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1663,6 +1663,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2437,7 +2442,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">请设置文章作者</p>
+    <p itemprop="name">北街学长</p>
   </a>
 </div>
 
@@ -2470,7 +2475,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：268 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1 分钟</p>
+    </a>
+  </div>
 
 
           
@@ -2490,43 +2506,43 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>分析：<br />
         典型的要采取递归来处理</p>
 <p>代码：</p>
-<pre class="line-numbers language-none"><code class="language-none">struct biTree &#123;
-	char data;
-	struct biTree *lchild;
-	struct biTree *rchild;
-&#125;;
-#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
-bool isSimilar(biTree *T1, biTree *T2) &#123;
-	if (!T1 &amp;&amp; !T2) &#123;&#x2F;&#x2F;T1,T2都是空的二叉树
-		return true;
-	&#125;
-	else if (!T1 || !T2) &#123;&#x2F;&#x2F;T1,T2只有一个为空，则不相似
-		return false;
-	&#125;
-	else &#123;
-		if (isSimilar(T1-&gt;lchild, T2-&gt;lchild) &amp;&amp; isSimilar(T1-&gt;rchild, T2-&gt;rchild))&#x2F;&#x2F;左右子树均相似，才相似
-			return true;
-		else
-			return false;
-	&#125;
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">char</span> data<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>lchild<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>rchild<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+bool <span class="token function">isSimilar</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span>T1<span class="token punctuation">,</span> biTree <span class="token operator">*</span>T2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>T1 <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>T2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//T1,T2都是空的二叉树</span>
+		<span class="token keyword">return</span> true<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>T1 <span class="token operator">||</span> <span class="token operator">!</span>T2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//T1,T2只有一个为空，则不相似</span>
+		<span class="token keyword">return</span> false<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isSimilar</span><span class="token punctuation">(</span>T1<span class="token operator">-></span>lchild<span class="token punctuation">,</span> T2<span class="token operator">-></span>lchild<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isSimilar</span><span class="token punctuation">(</span>T1<span class="token operator">-></span>rchild<span class="token punctuation">,</span> T2<span class="token operator">-></span>rchild<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//左右子树均相似，才相似</span>
+			<span class="token keyword">return</span> true<span class="token punctuation">;</span>
+		<span class="token keyword">else</span>
+			<span class="token keyword">return</span> false<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
  
-&#125;
-int main() &#123;
-	struct biTree *T1 &#x3D; (struct biTree *)malloc(sizeof(struct biTree));
-	struct biTree *T2 &#x3D; (struct biTree *)malloc(sizeof(struct biTree));
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>T1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>T2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
  
-	biTree *create(biTree *);
-	printf(&quot;第一棵树数据：\n&quot;);
+	biTree <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"第一棵树数据：\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
  
-	T1 &#x3D; create(T1);
-	printf(&quot;\n&quot;);
-	printf(&quot;第二棵树数据：\n&quot;);
-	T2 &#x3D; create(T2);
+	T1 <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"第二棵树数据：\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	T2 <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T2<span class="token punctuation">)</span><span class="token punctuation">;</span>
  
-	isSimilar(T1, T2) ? printf(&quot;相似&quot;) : printf(&quot;不相似&quot;);
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token function">isSimilar</span><span class="token punctuation">(</span>T1<span class="token punctuation">,</span> T2<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"相似"</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"不相似"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>梦想也许在今天无法实现，但重要的是，它在你心里。重要的是，你一直在努力。</p>
 
   </div>
@@ -2552,10 +2568,10 @@ int main() &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-27T17:05:28+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T10:47:57+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月27日</p>
+    <p>更新于：2023年12月28日</p>
   </a>
 </div>
 
@@ -2622,6 +2638,24 @@ int main() &#123;
 
         
       
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：268 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1 分钟</p>
+    </a>
+  </div>
+
+
+        
+      
     </div>
     <!-- Custom Files bottomMeta begin -->
     
@@ -2635,14 +2669,11 @@ int main() &#123;
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E4%B8%80%E9%A2%97%E4%BA%8C%E5%8F%89%E6%A0%91%E6%98%AF%E5%90%A6%E6%98%AF%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>判断是否是二叉排序树</p>
-          <p class='content'>题目：编写一个算法判断给定的二叉树是否是二叉排序树
-
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E4%B8%80%E6%A3%B5%E6%A0%91%E6%98%AF%E5%90%A6%E6%98%AF%E4%B8%80%E9%A2%97%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E2%98%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>判断是否是一颗完全二叉树</p>
+          <p class='content'>题目：一颗二叉树以二叉链表的形式存储，编写一个算法判断其是否是一个完全二叉树
 分析：
-       二叉排序树的中序序列是升序序列，我们可以根据这一特性来进行判定
-
-typedef struct node &#123;...</p>
+        我们仍然可以借助队列来完成这件事，具体做法为：我们依次将二叉树从上到下，从左到右入栈，包括空...</p>
         </a>
       
       
@@ -2788,6 +2819,22 @@ typedef struct node &#123;...</p>
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -2843,7 +2890,10 @@ typedef struct node &#123;...</p>
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -2978,6 +3028,79 @@ typedef struct node &#123;...</p>
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3032,6 +3155,8 @@ typedef struct node &#123;...</p>
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->
@@ -3293,7 +3418,7 @@ typedef struct node &#123;...</p>
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/二叉树/","name":"二叉树"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/判断两棵树是否相似/","name":"判断两棵树是否相似"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"判断两棵树是否相似","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E4%B8%A4%E6%A3%B5%E6%A0%91%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E4%B8%A4%E6%A3%B5%E6%A0%91%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-27T09:05:28.366Z","articleSection":"二叉树","keywords":"数据结构,二叉树","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/二叉树/","name":"二叉树"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/判断两棵树是否相似/","name":"判断两棵树是否相似"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"判断两棵树是否相似","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E4%B8%A4%E6%A3%B5%E6%A0%91%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E4%B8%A4%E6%A3%B5%E6%A0%91%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-28T02:47:57.814Z","articleSection":"二叉树","keywords":"数据结构,二叉树","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

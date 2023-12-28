@@ -60,7 +60,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-27T09:17:39.557Z">
+<meta property="article:modified_time" content="2023-12-28T02:53:15.259Z">
 <meta property="article:author" content="北街学长">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="栈和队列">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1663,6 +1663,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2437,7 +2442,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">请设置文章作者</p>
+    <p itemprop="name">北街学长</p>
   </a>
 </div>
 
@@ -2470,7 +2475,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：660 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：2 分钟</p>
+    </a>
+  </div>
 
 
           
@@ -2491,55 +2507,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         这里我想分享一下自己的想法，我们上一题做过货车车厢调整的算法，利用栈将软座调整到硬座的前面，这里我们可以仿造相当于我们要将客车调整到货车的前面，只是有限制，每 4 辆客车就需要插入一辆货车，而面对特殊情况，我们也可以很好地处理，直接将剩余车辆（无论客车还是货车）直接连接到队列后面。之后我们从队列中取 10 辆车即可</strong></p>
 </blockquote>
 <p>代码如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">#include &lt;stdio.h&gt;
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
  
-struct Stack &#123;
-	int *arr;
-	int len;
-	int top;
-&#125;;
-void manageCar(int *arrCar,int *arrArrange,Stack *s) &#123;
-	int i &#x3D; 0, passengerCar &#x3D; 0,j&#x3D;0;
-	int *c;&#x2F;&#x2F;接收出栈硬座
-	bool push(Stack *, int);
-	int *top(Stack *);
-	bool pop(Stack *);
-	bool empty(Stack *);
-	for (; arrCar[i] &#x3D;&#x3D; 1 || arrCar[i] &#x3D;&#x3D; 2;i++) &#123;
-		if (arrCar[i]&#x3D;&#x3D;2&amp;&amp;passengerCar&lt;4) &#123;&#x2F;&#x2F;如果是货车且之前还没有4辆客车，入栈
-			push(s,arrCar[i]);
-		&#125;
-		else &#123;&#x2F;&#x2F;若是客车，直接入arrArrange
-			if (passengerCar&#x3D;&#x3D;4) &#123;&#x2F;&#x2F;若之前已有连续4辆客车，出栈入货车
-				c&#x3D;top(s);
-				pop(s);
-				arrArrange[j++] &#x3D; *c;
-				passengerCar &#x3D; 0;&#x2F;&#x2F;重新计数
-			&#125;
-			arrArrange[j++] &#x3D; arrCar[i];
-			passengerCar++;&#x2F;&#x2F;连续客车数加一
-		&#125;
-	&#125;
-	while(!empty(s)) &#123;&#x2F;&#x2F;栈内元素不空，加入到arrArrange
-		c &#x3D; top(s);
-		pop(s);
-		arrArrange[j++] &#x3D; *c;
-	&#125;
+<span class="token keyword">struct</span> <span class="token class-name">Stack</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">int</span> <span class="token operator">*</span>arr<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> len<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> top<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">manageCar</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>arrCar<span class="token punctuation">,</span><span class="token keyword">int</span> <span class="token operator">*</span>arrArrange<span class="token punctuation">,</span>Stack <span class="token operator">*</span>s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> passengerCar <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> <span class="token operator">*</span>c<span class="token punctuation">;</span><span class="token comment">//接收出栈硬座</span>
+	bool <span class="token function">push</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> <span class="token operator">*</span><span class="token function">top</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool <span class="token function">pop</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool <span class="token function">empty</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> arrCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> arrCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>arrCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">2</span><span class="token operator">&amp;&amp;</span>passengerCar<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//如果是货车且之前还没有4辆客车，入栈</span>
+			<span class="token function">push</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span>arrCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span><span class="token comment">//若是客车，直接入arrArrange</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>passengerCar<span class="token operator">==</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//若之前已有连续4辆客车，出栈入货车</span>
+				c<span class="token operator">=</span><span class="token function">top</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token function">pop</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				arrArrange<span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">*</span>c<span class="token punctuation">;</span>
+				passengerCar <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//重新计数</span>
+			<span class="token punctuation">&#125;</span>
+			arrArrange<span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> arrCar<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+			passengerCar<span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//连续客车数加一</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">empty</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//栈内元素不空，加入到arrArrange</span>
+		c <span class="token operator">=</span> <span class="token function">top</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">pop</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		arrArrange<span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">*</span>c<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
 
-&#125;
-int main() &#123;
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
  
-	int arrCar[] &#x3D; &#123; 2,1,2,1,1,1,1,2,2,2,1,1 &#125;;&#x2F;&#x2F;我们用1代表客车，用2发表货车,arrCar代表当前的车序列，然后我们需要重排
-	int arrArrange[20] &#x3D; &#123; 0 &#125;;&#x2F;&#x2F;初始化为0，接收重排的车队
-	Stack *createStack(int);
-	Stack *s;
-	s &#x3D; createStack(20);&#x2F;&#x2F;创建一个栈
-	manageCar(arrCar,arrArrange,s);
-	for (int i &#x3D; 0; i &lt; 10;i++) &#123;&#x2F;&#x2F;取10辆车出来
-		printf(&quot;%d &quot;,*(arrArrange+i));
-	&#125;
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token keyword">int</span> arrCar<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span class="token comment">//我们用1代表客车，用2发表货车,arrCar代表当前的车序列，然后我们需要重排</span>
+	<span class="token keyword">int</span> arrArrange<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token number">0</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span class="token comment">//初始化为0，接收重排的车队</span>
+	Stack <span class="token operator">*</span><span class="token function">createStack</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	Stack <span class="token operator">*</span>s<span class="token punctuation">;</span>
+	s <span class="token operator">=</span> <span class="token function">createStack</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一个栈</span>
+	<span class="token function">manageCar</span><span class="token punctuation">(</span>arrCar<span class="token punctuation">,</span>arrArrange<span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//取10辆车出来</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span><span class="token operator">*</span><span class="token punctuation">(</span>arrArrange<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="https://img-blog.csdnimg.cn/20210605202135512.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzkwMzgx,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20210605202135512.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzkwMzgx,size_16,color_FFFFFF,t_70" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" /></p>
 <p>人生，并非姹紫嫣红才算春天，有时，素心淡雅也是一种恒久的芬芳。若有一天，在清风明月间，推开一扇斑驳的门扉，看韶华渐远，还能轻拥经历，怀抱暖香，回看到一个简单的自己，便是时光深处最美的懂得。</p>
@@ -2567,10 +2583,10 @@ int main() &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-27T17:17:39+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T10:53:15+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月27日</p>
+    <p>更新于：2023年12月28日</p>
   </a>
 </div>
 
@@ -2637,6 +2653,24 @@ int main() &#123;
 
         
       
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：660 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：2 分钟</p>
+    </a>
+  </div>
+
+
+        
+      
     </div>
     <!-- Custom Files bottomMeta begin -->
     
@@ -2650,23 +2684,20 @@ int main() &#123;
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E5%8E%A2%E8%B0%83%E5%BA%A6/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>车厢调度</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D%EF%BC%88%E5%88%A9%E7%94%A8%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%88%EF%BC%89/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>括号匹配</p>
+          <p class='content'>题目：假设一个算法表达式包含圆括号、方括号、和花括号 3 种类型的括号，编写一个算法来判断表达式里的括号是否配对
+    分析：
+        我们利用队列来存储算术表达式，再利用一个栈来进行...</p>
+        </a>
+      
+      
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E5%8E%A2%E8%B0%83%E5%BA%A6/'>
+          <p class='title'>车厢调度<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>题目：利用栈进行车厢调度，使软座全部位于硬座前面
 
 分析：
 原文题目较长，但仔细分析后，这道题是一类较为简单的题。这里其实也并不需要用到栈的先入后出的特性，仅仅需要将硬座暂存，让软座先出去而已，...</p>
-        </a>
-      
-      
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E9%93%BE%E5%BC%8F%E9%98%9F%E5%88%97/'>
-          <p class='title'>创建链队<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>此文件用于创建一个链式队列
-    分析：
-        我们需要创建一个链表，然后设置 front、rear 指针，用来模拟入队出队的过程
-代码如下：
-struct Link &#123;
-...</p>
         </a>
       
     </div>
@@ -2802,6 +2833,22 @@ struct Link &#123;
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -2857,7 +2904,10 @@ struct Link &#123;
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -2992,6 +3042,79 @@ struct Link &#123;
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3046,6 +3169,8 @@ struct Link &#123;
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->
@@ -3307,7 +3432,7 @@ struct Link &#123;
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/栈和队列/","name":"栈和队列"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/车辆轮渡管理/","name":"车辆轮渡管理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"车辆轮渡管理","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E8%BE%86%E8%BD%AE%E6%B8%A1%E7%AE%A1%E7%90%86/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E8%BE%86%E8%BD%AE%E6%B8%A1%E7%AE%A1%E7%90%86/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-27T09:17:39.557Z","articleSection":"栈和队列","keywords":"数据结构,栈和队列","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/栈和队列/","name":"栈和队列"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/车辆轮渡管理/","name":"车辆轮渡管理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"车辆轮渡管理","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E8%BE%86%E8%BD%AE%E6%B8%A1%E7%AE%A1%E7%90%86/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E8%BE%86%E8%BD%AE%E6%B8%A1%E7%AE%A1%E7%90%86/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-28T02:53:15.259Z","articleSection":"栈和队列","keywords":"数据结构,栈和队列","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

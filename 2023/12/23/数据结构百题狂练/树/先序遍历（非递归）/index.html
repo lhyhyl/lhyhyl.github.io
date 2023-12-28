@@ -56,11 +56,11 @@
 <meta property="og:title" content="先序非递归遍历">
 <meta property="og:url" content="http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89/index.html">
 <meta property="og:site_name" content="北街学长的博客">
-<meta property="og:description" content="试写出先序遍历（非递归算法）     分析：         和中序遍历大同小异，唯一的差别在于每次先访问节点，在判断有没有左孩子，有则入栈，然后出栈，往右走。直至栈空 代码如下： struct biTree &#123;&#x2F;&#x2F;树的结构体 	char data; 	struct biTree *lchild; 	struct biTree *rchild; &#125;; str">
+<meta property="og:description" content="试写出先序遍历（非递归算法）     分析：         和中序遍历大同小异，唯一的差别在于每次先访问节点，在判断有没有左孩子，有则入栈，然后出栈，往右走。直至栈空 代码如下： struct biTree &#123;&#x2F;&#x2F;树的结构体 	char data; 	struct biTree *lchild; 	struct biTree *rchild; &#125;; struct Stack">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-27T09:11:19.057Z">
+<meta property="article:modified_time" content="2023-12-28T02:48:34.138Z">
 <meta property="article:author" content="北街学长">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="二叉树">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1663,6 +1663,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2437,7 +2442,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">请设置文章作者</p>
+    <p itemprop="name">北街学长</p>
   </a>
 </div>
 
@@ -2470,7 +2475,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：286 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1 分钟</p>
+    </a>
+  </div>
 
 
           
@@ -2489,53 +2505,53 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     分析：<br />
         和中序遍历大同小异，唯一的差别在于每次先访问节点，在判断有没有左孩子，有则入栈，然后出栈，往右走。直至栈空</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">struct biTree &#123;&#x2F;&#x2F;树的结构体
-	char data;
-	struct biTree *lchild;
-	struct biTree *rchild;
-&#125;;
-struct Stack &#123;&#x2F;&#x2F;栈的结构体
-	char* arr;	&#x2F;&#x2F;内存首地址
-	int  len;	&#x2F;&#x2F;栈的容量
-	int top; 	&#x2F;&#x2F;栈的下标
-&#125;;
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-void inOrder(biTree *T, Stack *s) &#123;&#x2F;&#x2F;中序遍历
-	biTree *p &#x3D; T;
-	bool empty(Stack *);
-	bool pushS(Stack *, biTree *);
-	biTree *top(Stack *);
-	bool pop(Stack *);
-	while (p || !empty(s)) &#123;
-		if (p) &#123;&#x2F;&#x2F;一路向左
-			printf(&quot;%c &quot;, p-&gt;data);&#x2F;&#x2F;打印当前元素
-			pushS(s, p);
-			p &#x3D; p-&gt;lchild;
-		&#125;
-		else &#123;
-			p &#x3D; top(s);
-			pop(s);&#x2F;&#x2F;栈顶元素出栈
-			p &#x3D; p-&gt;rchild;&#x2F;&#x2F;向右寻找
-		&#125;
-	&#125;
-&#125;
-int main() &#123;
-	int count &#x3D; 0;
-	struct biTree *T &#x3D; (struct biTree *)malloc(sizeof(struct biTree));
-	struct Stack *s &#x3D; (struct Stack*)malloc(sizeof(struct Stack));
-	biTree *create(biTree*);
-	void nodeNum(biTree *, int *);
-	Stack *createStack(int);
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token punctuation">&#123;</span><span class="token comment">//树的结构体</span>
+	<span class="token keyword">char</span> data<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>lchild<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>rchild<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> <span class="token class-name">Stack</span> <span class="token punctuation">&#123;</span><span class="token comment">//栈的结构体</span>
+	<span class="token keyword">char</span><span class="token operator">*</span> arr<span class="token punctuation">;</span>	<span class="token comment">//内存首地址</span>
+	<span class="token keyword">int</span>  len<span class="token punctuation">;</span>	<span class="token comment">//栈的容量</span>
+	<span class="token keyword">int</span> top<span class="token punctuation">;</span> 	<span class="token comment">//栈的下标</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">void</span> <span class="token function">inOrder</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span>T<span class="token punctuation">,</span> Stack <span class="token operator">*</span>s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//中序遍历</span>
+	biTree <span class="token operator">*</span>p <span class="token operator">=</span> T<span class="token punctuation">;</span>
+	bool <span class="token function">empty</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool <span class="token function">pushS</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">,</span> biTree <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	biTree <span class="token operator">*</span><span class="token function">top</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool <span class="token function">pop</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>p <span class="token operator">||</span> <span class="token operator">!</span><span class="token function">empty</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//一路向左</span>
+			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c "</span><span class="token punctuation">,</span> p<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//打印当前元素</span>
+			<span class="token function">pushS</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			p <span class="token operator">=</span> p<span class="token operator">-></span>lchild<span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+			p <span class="token operator">=</span> <span class="token function">top</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token function">pop</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//栈顶元素出栈</span>
+			p <span class="token operator">=</span> p<span class="token operator">-></span>rchild<span class="token punctuation">;</span><span class="token comment">//向右寻找</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>T <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">Stack</span> <span class="token operator">*</span>s <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Stack</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Stack</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	biTree <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span>biTree<span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">void</span> <span class="token function">nodeNum</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	Stack <span class="token operator">*</span><span class="token function">createStack</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
  
-	T &#x3D; create(T);
-	nodeNum(T, &amp;count);
+	T <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">nodeNum</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> <span class="token operator">&amp;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
  
-	s &#x3D; createStack(count);&#x2F;&#x2F;创建二叉树节点个数大小的栈
+	s <span class="token operator">=</span> <span class="token function">createStack</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建二叉树节点个数大小的栈</span>
  
-	inOrder(T, s);
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token function">inOrder</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们有时从错误中学到的东西，可能比从美德中学到的还要多。</p>
 
   </div>
@@ -2561,10 +2577,10 @@ int main() &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-27T17:11:19+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T10:48:34+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月27日</p>
+    <p>更新于：2023年12月28日</p>
   </a>
 </div>
 
@@ -2631,6 +2647,24 @@ int main() &#123;
 
         
       
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：286 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1 分钟</p>
+    </a>
+  </div>
+
+
+        
+      
     </div>
     <!-- Custom Files bottomMeta begin -->
     
@@ -2655,11 +2689,12 @@ type...</p>
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A0%E9%99%A4%E4%BB%A5x%E4%B8%BA%E6%A0%B9%E7%9A%84%E5%AD%90%E6%A0%91%E5%B9%B6%E9%87%8A%E6%94%BE%E7%A9%BA%E9%97%B4/'>
-          <p class='title'>删除以x为根的子树并释放空间<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目：已知二叉树以二叉链表存储，编写算法完成：对于树中每一个元素值为 x 的结点，删除以它为根的子树，并释放相应的空间
-分析：
-        因为我们要删除以寻找到的元素为根的子树，所以我们删...</p>
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%85%88%E5%BA%8F%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%8C%E4%B8%AD%E5%BA%8F%E3%80%81%E5%85%88%E5%BA%8F%E3%80%81%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/'>
+          <p class='title'>创建二叉树<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>该文件用于创建一颗链表二叉树，测试创建二叉树，先序、中序、后序三种遍历方式
+创建二叉树代码如下：
+#define _CRT_SECURE_NO_WARNINGS
+#define TYPE cha...</p>
         </a>
       
     </div>
@@ -2795,6 +2830,22 @@ type...</p>
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -2850,7 +2901,10 @@ type...</p>
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -2985,6 +3039,79 @@ type...</p>
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3039,6 +3166,8 @@ type...</p>
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->
@@ -3300,7 +3429,7 @@ type...</p>
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/二叉树/","name":"二叉树"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/先序遍历（非递归）/","name":"先序非递归遍历"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"先序非递归遍历","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-27T09:11:19.057Z","articleSection":"二叉树","keywords":"数据结构,二叉树","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/二叉树/","name":"二叉树"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/先序遍历（非递归）/","name":"先序非递归遍历"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"先序非递归遍历","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-28T02:48:34.138Z","articleSection":"二叉树","keywords":"数据结构,二叉树","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

@@ -56,11 +56,11 @@
 <meta property="og:title" content="创建循环队列">
 <meta property="og:url" content="http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="北街学长的博客">
-<meta property="og:description" content="此文件用于创建一个顺序队列，出队，入队, 判断队空，判断队满等操作 代码如下： #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #define TYPE int  struct Squeue &#123; 	TYPE *arr; 	TYPE front, rear; &#125;;   &#x2F;&#x2F;创建队列 Squeue *crea">
+<meta property="og:description" content="此文件用于创建一个顺序队列，出队，入队, 判断队空，判断队满等操作 代码如下： #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #define TYPE int  struct Squeue &#123; 	TYPE *arr; 	TYPE front, rear; &#125;;   &#x2F;&#x2F;创建队列 Squeue *create(int n) &#123;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-27T09:18:10.372Z">
+<meta property="article:modified_time" content="2023-12-28T02:53:22.874Z">
 <meta property="article:author" content="北街学长">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="栈和队列">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1663,6 +1663,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2437,7 +2442,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">请设置文章作者</p>
+    <p itemprop="name">北街学长</p>
   </a>
 </div>
 
@@ -2470,7 +2475,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：267 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1 分钟</p>
+    </a>
+  </div>
 
 
           
@@ -2487,48 +2503,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>此文件用于创建一个顺序<a target="_blank" rel="noopener external nofollow noreferrer" href="https://so.csdn.net/so/search?q=%E9%98%9F%E5%88%97&amp;spm=1001.2101.3001.7020">队列</a>，出队，入队, 判断队空，判断队满等操作</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#define TYPE int 
-struct Squeue &#123;
-	TYPE *arr;
-	TYPE front, rear;
-&#125;;
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TYPE</span> <span class="token expression"><span class="token keyword">int</span> </span></span>
+<span class="token keyword">struct</span> <span class="token class-name">Squeue</span> <span class="token punctuation">&#123;</span>
+	TYPE <span class="token operator">*</span>arr<span class="token punctuation">;</span>
+	TYPE front<span class="token punctuation">,</span> rear<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
  
-&#x2F;&#x2F;创建队列
-Squeue *create(int n) &#123;
-	struct Squeue *sq &#x3D; (struct Squeue *)malloc(sizeof(struct Squeue));
-	sq-&gt;arr &#x3D; (TYPE *)malloc(sizeof(TYPE)*n);&#x2F;&#x2F;数组大小
-	sq-&gt;front &#x3D; 0;
-	sq-&gt;rear &#x3D; 0;
-	return sq;
-&#125;
-&#x2F;&#x2F;判断队满(这里采用牺牲一个存储单元来实现,约定队头指针在队尾指针的下一个位置作为队满的标志)
-bool isFull(Squeue *sq,int maxSize) &#123;
-	return (sq-&gt;rear + 1) % maxSize &#x3D;&#x3D; sq-&gt;front;
-&#125;
-&#x2F;&#x2F;判断队空
-bool isEmpty(Squeue *sq) &#123;
-	return sq-&gt;front &#x3D;&#x3D; sq-&gt;rear;
-&#125;
-&#x2F;&#x2F;判断队列中元素个数
-int count(Squeue *sq,int maxSize) &#123;
-	return (sq-&gt;rear - sq-&gt;front + maxSize) % maxSize;
-&#125;
-&#x2F;&#x2F;入队
-bool enQueue(Squeue *sq,int data,int maxSize) &#123;
-	if (isFull(sq,maxSize)) return false;
-	sq-&gt;arr[sq-&gt;rear] &#x3D; data;
-	sq-&gt;rear &#x3D; (sq-&gt;rear + 1) % maxSize;
-	return true;
-&#125;
-&#x2F;&#x2F;出队
-bool deQueue(Squeue *sq,int &amp;data,int maxSize) &#123;
-	if (isEmpty(sq)) return false;
-	data &#x3D; sq-&gt;arr[sq-&gt;front];
-	sq-&gt;front &#x3D; (sq-&gt;front + 1) % maxSize;
-	return true;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">//创建队列</span>
+Squeue <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">Squeue</span> <span class="token operator">*</span>sq <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Squeue</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Squeue</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	sq<span class="token operator">-></span>arr <span class="token operator">=</span> <span class="token punctuation">(</span>TYPE <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>TYPE<span class="token punctuation">)</span><span class="token operator">*</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//数组大小</span>
+	sq<span class="token operator">-></span>front <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	sq<span class="token operator">-></span>rear <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> sq<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//判断队满(这里采用牺牲一个存储单元来实现,约定队头指针在队尾指针的下一个位置作为队满的标志)</span>
+bool <span class="token function">isFull</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span><span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> maxSize <span class="token operator">==</span> sq<span class="token operator">-></span>front<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//判断队空</span>
+bool <span class="token function">isEmpty</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> sq<span class="token operator">-></span>front <span class="token operator">==</span> sq<span class="token operator">-></span>rear<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//判断队列中元素个数</span>
+<span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span><span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>rear <span class="token operator">-</span> sq<span class="token operator">-></span>front <span class="token operator">+</span> maxSize<span class="token punctuation">)</span> <span class="token operator">%</span> maxSize<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//入队</span>
+bool <span class="token function">enQueue</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span><span class="token keyword">int</span> data<span class="token punctuation">,</span><span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isFull</span><span class="token punctuation">(</span>sq<span class="token punctuation">,</span>maxSize<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+	sq<span class="token operator">-></span>arr<span class="token punctuation">[</span>sq<span class="token operator">-></span>rear<span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">;</span>
+	sq<span class="token operator">-></span>rear <span class="token operator">=</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> maxSize<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> true<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//出队</span>
+bool <span class="token function">deQueue</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>data<span class="token punctuation">,</span><span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>sq<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+	data <span class="token operator">=</span> sq<span class="token operator">-></span>arr<span class="token punctuation">[</span>sq<span class="token operator">-></span>front<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	sq<span class="token operator">-></span>front <span class="token operator">=</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>front <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> maxSize<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> true<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>人生最重要的不是努力，不是奋斗，而是抉择。</p>
 
   </div>
@@ -2554,10 +2570,10 @@ bool deQueue(Squeue *sq,int &amp;data,int maxSize) &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-27T17:18:10+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T10:53:22+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月27日</p>
+    <p>更新于：2023年12月28日</p>
   </a>
 </div>
 
@@ -2624,6 +2640,24 @@ bool deQueue(Squeue *sq,int &amp;data,int maxSize) &#123;
 
         
       
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：267 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1 分钟</p>
+    </a>
+  </div>
+
+
+        
+      
     </div>
     <!-- Custom Files bottomMeta begin -->
     
@@ -2637,27 +2671,26 @@ bool deQueue(Squeue *sq,int &amp;data,int maxSize) &#123;
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%B2%E4%B9%89/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>数据结构深入理解</p>
-          <p class='content'> 数据结构
- 第一章：数据结构的基本概念
- 定义
-
-数据结构：相互之间存在一种或多种特定关系的数据元素的集合。
-数据：描述客观事物的数和字符的集合
-数据项：具有独立含义的数据最小单元
-数据对象：...</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>创建栈</p>
+          <p class='content'>该文件用于创建栈，及其相关操作
+代码如下：
+#include&lt;stdio.h>
+#include&lt;stdbool.h>
+#include&lt;stdlib.h>
+#define T...</p>
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/'>
-          <p class='title'>创建栈<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>该文件用于创建栈，及其相关操作
-代码如下：
-#include&lt;stdio.h&gt;
-#include&lt;stdbool.h&gt;
-#include&lt;stdlib.h&gt;
-...</p>
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%A9%E7%94%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E5%B0%86%E9%98%9F%E5%88%97%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E9%80%86%E7%BD%AE%E2%98%86/'>
+          <p class='title'>将队列中元素逆置<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目：有一个队列和一个栈，设计一个算法是队列中的元素逆置。
+分析：
+        我们可以一次取出队列中的元素放到栈中，然后在依次取出入队。
+代码：
+struct Stack
+&#123;
+	...</p>
         </a>
       
     </div>
@@ -2793,6 +2826,22 @@ bool deQueue(Squeue *sq,int &amp;data,int maxSize) &#123;
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -2848,7 +2897,10 @@ bool deQueue(Squeue *sq,int &amp;data,int maxSize) &#123;
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -2983,6 +3035,79 @@ bool deQueue(Squeue *sq,int &amp;data,int maxSize) &#123;
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3037,6 +3162,8 @@ bool deQueue(Squeue *sq,int &amp;data,int maxSize) &#123;
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->
@@ -3298,7 +3425,7 @@ bool deQueue(Squeue *sq,int &amp;data,int maxSize) &#123;
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/栈和队列/","name":"栈和队列"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/创建循环顺序队列/","name":"创建循环队列"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"创建循环队列","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-27T09:18:10.372Z","articleSection":"栈和队列","keywords":"数据结构,栈和队列","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/栈和队列/","name":"栈和队列"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/创建循环顺序队列/","name":"创建循环队列"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"创建循环队列","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-28T02:53:22.874Z","articleSection":"栈和队列","keywords":"数据结构,栈和队列","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

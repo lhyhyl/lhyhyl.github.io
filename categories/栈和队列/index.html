@@ -1642,7 +1642,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1660,6 +1660,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2434,6 +2439,83 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/创建栈/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/"  itemprop="url">
+        创建栈
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        该文件用于创建栈，及其相关操作
+代码如下：
+#include&lt;stdio.h>
+#include&lt;stdbool.h>
+#include&lt;stdlib.h>
+#define TYPE char 
+ 
+ struct Stack
+&#123;
+	TYPE* arr;	//内存首地址
+	int  len;	//栈的容量
+	int top; 	//栈的下标
+&#125;;
+ 
+/...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">栈和队列</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" itemprop="url"><span itemprop="name">栈和队列</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/创建循环顺序队列/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
@@ -2462,16 +2544,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         此文件用于创建一个顺序队列，出队，入队, 判断队空，判断队满等操作
 代码如下：
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
 #define TYPE int 
 struct Squeue &#123;
 	TYPE *arr;
 	TYPE front, rear;
 &#125;;
  
-&#x2F;&#x2F;创建队列
-Squeue *c...
+//创建队列
+Squeue *create(int n) &#1...
       
     
   </div>
@@ -2508,7 +2590,7 @@ Squeue *c...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/创建栈/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/利用栈和队列将队列中的元素逆置☆/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2526,26 +2608,25 @@ Squeue *c...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/"  itemprop="url">
-        创建栈
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%A9%E7%94%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E5%B0%86%E9%98%9F%E5%88%97%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E9%80%86%E7%BD%AE%E2%98%86/"  itemprop="url">
+        将队列中元素逆置
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        该文件用于创建栈，及其相关操作
-代码如下：
-#include&lt;stdio.h&gt;
-#include&lt;stdbool.h&gt;
-#include&lt;stdlib.h&gt;
-#define TYPE char 
- 
- struct Stack
+        题目：有一个队列和一个栈，设计一个算法是队列中的元素逆置。
+分析：
+        我们可以一次取出队列中的元素放到栈中，然后在依次取出入队。
+代码：
+struct Stack
 &#123;
-	TYPE* arr;	&#x2F;&#x2F;内存首地址
-	int  len;	&#x2F;&#x2F;栈的容量
-...
+	int* arr;	//内存首地址
+	int  len;	//栈的容量
+	int top; 	//栈的下标
+&#125;;
+struct Squeue &#123;//这里我才用的是循环队列，也可以不...
       
     
   </div>
@@ -2566,7 +2647,7 @@ Squeue *c...
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%A9%E7%94%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E5%B0%86%E9%98%9F%E5%88%97%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E9%80%86%E7%BD%AE%E2%98%86/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2617,8 +2698,8 @@ Squeue *c...
 
 代码如下：
 #define _CRT_SECURE_NO_WARNINGS
-#include &lt;stdio.h&gt;
-#include ...
+#include &lt;stdio.h>
+#include &lt...
       
     
   </div>
@@ -2640,79 +2721,6 @@ Squeue *c...
       
         <div>
           <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%A9%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E7%9A%84%E9%9D%9E%E9%80%92%E5%BD%92%E8%AE%A1%E7%AE%97/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/利用栈和队列将队列中的元素逆置☆/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%A9%E7%94%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E5%B0%86%E9%98%9F%E5%88%97%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E9%80%86%E7%BD%AE%E2%98%86/"  itemprop="url">
-        将队列中元素逆置
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：有一个队列和一个栈，设计一个算法是队列中的元素逆置。
-分析：
-        我们可以一次取出队列中的元素放到栈中，然后在依次取出入队。
-代码：
-struct Stack
-&#123;
-	int* arr;	&#x2F;&#x2F;内存首地址
-	int  len;	&#x2F;&#x2F;栈的容量
-	int top; 	&#x2F;&#x2F;栈的下标
-&#125;;
-struct S...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">栈和队列</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" itemprop="url"><span itemprop="name">栈和队列</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%A9%E7%94%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E5%B0%86%E9%98%9F%E5%88%97%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E9%80%86%E7%BD%AE%E2%98%86/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2796,6 +2804,72 @@ struct LinkQueue ...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/车辆轮渡管理/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E8%BE%86%E8%BD%AE%E6%B8%A1%E7%AE%A1%E7%90%86/"  itemprop="url">
+        车辆轮渡管理
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：汽车轮渡，要求：每次 10 辆，客车优先于货车，每上 4 辆客车才能上 1 辆货车，客车不足 4 辆时，货车代替货车不足时，允许客车都上。
+
+分析：这仍然是一类排序的问题，王道书上的解答可以，核心意思就是客车和货车分为两个队列，客车队列出 4 辆，紧接着货车 队列出一辆；当出现客车不足时，出货车队列代替，当货车不足时，继续出客车队列。代码也不难实现。
+        这里我想分享一下自...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">栈和队列</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" itemprop="url"><span itemprop="name">栈和队列</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E8%BE%86%E8%BD%AE%E6%B8%A1%E7%AE%A1%E7%90%86/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/车厢调度/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
@@ -2848,72 +2922,6 @@ struct LinkQueue ...
       
         <div>
           <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E5%8E%A2%E8%B0%83%E5%BA%A6/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/车辆轮渡管理/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E8%BE%86%E8%BD%AE%E6%B8%A1%E7%AE%A1%E7%90%86/"  itemprop="url">
-        车辆轮渡管理
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：汽车轮渡，要求：每次 10 辆，客车优先于货车，每上 4 辆客车才能上 1 辆货车，客车不足 4 辆时，货车代替货车不足时，允许客车都上。
-
-分析：这仍然是一类排序的问题，王道书上的解答可以，核心意思就是客车和货车分为两个队列，客车队列出 4 辆，紧接着货车 队列出一辆；当出现客车不足时，出货车队列代替，当货车不足时，继续出客车队列。代码也不难实现。
-        这里我想分享一下自...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">栈和队列</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" itemprop="url"><span itemprop="name">栈和队列</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E8%BE%86%E8%BD%AE%E6%B8%A1%E7%AE%A1%E7%90%86/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3226,6 +3234,22 @@ struct LinkQueue &#123;
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -3281,7 +3305,10 @@ struct LinkQueue &#123;
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -3416,6 +3443,79 @@ struct LinkQueue &#123;
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3470,6 +3570,8 @@ struct LinkQueue &#123;
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->

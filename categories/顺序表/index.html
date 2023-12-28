@@ -1642,7 +1642,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1660,6 +1660,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2505,6 +2510,75 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/顺序表/C_语言数组去重/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/C_%E8%AF%AD%E8%A8%80%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/"  itemprop="url">
+        顺序表去重
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：删除有序顺序表中重复的值，使表中所有的元素不同。
+分析：因为是有序顺序表，我们可以直接进行遍历，将不同的元素存回数组
+代码如下：
+#include &lt;stdio.h>
+int deleteRepitition(int *arr,int len) &#123;//由于C语言无法直接修改数组长度，我们返回去重后的数组长度
+	int k = 0;
+	for (int i = 0; i ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" itemprop="url"><span itemprop="name">顺序表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/C_%E8%AF%AD%E8%A8%80%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/顺序表/删除顺序表元素/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
@@ -2536,9 +2610,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 分析：
 用 k 记录删除元素个个数，一边遍历顺序表一边统计 k，并将不等于 x 的元素向前挪 k 个位置。
 代码如下:
-#include &lt;stdio.h&gt;
+#include &lt;stdio.h>
 void deleteX(int *arr,int n,int len) &#123;
-	int k &#x3D; ...
+	int k = 0,i=0;//...
       
     
   </div>
@@ -2560,75 +2634,6 @@ void deleteX(int *arr,int n,int len) &#123;
       
         <div>
           <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%88%A0%E9%99%A4%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%85%83%E7%B4%A0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/顺序表/C_语言数组去重/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/C_%E8%AF%AD%E8%A8%80%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/"  itemprop="url">
-        顺序表去重
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：删除有序顺序表中重复的值，使表中所有的元素不同。
-分析：因为是有序顺序表，我们可以直接进行遍历，将不同的元素存回数组
-代码如下：
-#include &lt;stdio.h&gt;
-int deleteRepitition(int *arr,int len) &#123;&#x2F;&#x2F;由于C语言无法直接修改数组长度，我们返回去重后的数组长度
-	int k &#x3D; 0;
-	...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" itemprop="url"><span itemprop="name">顺序表</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/C_%E8%AF%AD%E8%A8%80%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2673,10 +2678,10 @@ int deleteRepitition(int *arr,int len) &#123;&#x2F;&#x2F;由于C语言无法直�
         题目：将两个有序顺序表合并成一个新的顺序表，并由函数返回新的结果顺序表
 分析：手动开辟一个数组空间，其大小要大于等于原始两个数组的长度，之后进行遍历，依次取较小值赋给新数组，若有数组未取完，剩余部分全部赋给新数组
 代码如下：
-#include &lt;stdio.h&gt;
+#include &lt;stdio.h>
 int *merge(int* l1,int* l2,int len1,int len2) &#123;
 
-	int*...
+	int* ne...
       
     
   </div>
@@ -2810,8 +2815,9 @@ int *merge(int* l1,int* l2,int len1,int len2) &#123;
 分析：
         要想达到这样的效果，我们可以进行三次逆置。第一次对整个数组 A 进行逆置，然后对前面的 b 进行逆置，最后对后面的 a 进行逆置，这样便达到了效果。
 代码：
-#include &lt;stdio.h&gt;
-...
+#include &lt;stdio.h>
+ 
+v...
       
     
   </div>
@@ -2946,8 +2952,8 @@ int *merge(int* l1,int* l2,int len1,int len2) &#123;
         题目告知这是一个递增有序表，要使时间最少，我们可以采取折半查找的方式，这样比顺序查找省时。
 代码如下：
 #define _CRT_SECURE_NO_WARNINGS
-#include &lt;stdio.h&gt;
-int findAnd...
+#include &lt;stdio.h>
+int findAndExc...
       
     
   </div>
@@ -3082,10 +3088,10 @@ int findAnd...
         实现一个空间复杂度为 O(1) 的顺序表逆置算法。
     分析：从第一个元素开始遍历到中间元素，使用中间变量对 a[i] 与 a[n-i+1] 进行调换，即可完成。
 代码如下：
-#include &lt;stdio.h&gt;
+#include &lt;stdio.h>
 void revert(int *arr,int len) &#123;
 	int tmp;
-	for (int i &#x3D; 0; i &lt; len&#x...
+	for (int i = 0; i &lt; len/2;i++) &#1...
       
     
   </div>
@@ -3345,6 +3351,22 @@ void revert(int *arr,int len) &#123;
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -3400,7 +3422,10 @@ void revert(int *arr,int len) &#123;
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -3535,6 +3560,79 @@ void revert(int *arr,int len) &#123;
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3589,6 +3687,8 @@ void revert(int *arr,int len) &#123;
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->

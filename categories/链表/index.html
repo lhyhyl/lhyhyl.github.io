@@ -1642,7 +1642,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1660,6 +1660,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2438,6 +2443,72 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/交叉链表☆/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E4%BA%A4%E5%8F%89%E9%93%BE%E8%A1%A8%E2%98%86/"  itemprop="url">
+        交叉链表实现
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目： 设线性表 L=（a1,a2,a3,…,an-2,an-1,an）, 采用带头结点的单链表保存，设计一个空间复杂度为 O(1) 的
+               算法，得到 L’=（a1,an,a2,an-1,a3,an-2…）
+  分析：
+        这道题还是有一点复杂的，不过我们慢慢分析它。我们可以这样来操作，我们设置两个指针 slow 和 fast，其中 fast 每次走两...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E4%BA%A4%E5%8F%89%E9%93%BE%E8%A1%A8%E2%98%86/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/两链表取相同元素/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
@@ -2505,7 +2576,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/交叉链表☆/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/判断循环双链表是否对称/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2523,18 +2594,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E4%BA%A4%E5%8F%89%E9%93%BE%E8%A1%A8%E2%98%86/"  itemprop="url">
-        交叉链表实现
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A4%E6%96%AD%E5%BE%AA%E7%8E%AF%E5%8F%8C%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E5%AF%B9%E7%A7%B0/"  itemprop="url">
+        判断循环双链表是否对称
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目： 设线性表 L=（a1,a2,a3,…,an-2,an-1,an）, 采用带头结点的单链表保存，设计一个空间复杂度为 O(1) 的
-               算法，得到 L’=（a1,an,a2,an-1,a3,an-2…）
-  分析：
-        这道题还是有一点复杂的，不过我们慢慢分析它。我们可以这样来操作，我们设置两个指针 slow 和 fast，其中 fast 每次走两...
+        题目：设计一个算法判断带头结点的循环双链表是否对称
+分析：
+        简单分析，我们可以设置两个指针，pre 和 next，从头结点出发，进行比较，若 pre 与 next 所指值不同，则不对称，若 pre 和 next 指向了同一个节点
+        则该循环双链表对称。
+代码：
+struct Link &#123;
+	int data;
+	struct Link *next;
+	...
       
     
   </div>
@@ -2555,7 +2631,80 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E4%BA%A4%E5%8F%89%E9%93%BE%E8%A1%A8%E2%98%86/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A4%E6%96%AD%E5%BE%AA%E7%8E%AF%E5%8F%8C%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E5%AF%B9%E7%A7%B0/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/删除链表最小值/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%9C%80%E5%B0%8F%E5%80%BC/"  itemprop="url">
+        删除链表中最小值结点
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：删除链表中唯一的最小值
+分析：
+        目前能想到的就是遍历整个链表，记录下最小节点的指针，然后进行删除，时间复杂度为 O(n).
+代码：
+struct Link &#123;
+	int data;
+	struct Link* next;
+&#125;;
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h>
+#include...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%9C%80%E5%B0%8F%E5%80%BC/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2643,150 +2792,6 @@ struct Link &#123;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/删除链表最小值/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%9C%80%E5%B0%8F%E5%80%BC/"  itemprop="url">
-        删除链表中最小值结点
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：删除链表中唯一的最小值
-分析：
-        目前能想到的就是遍历整个链表，记录下最小节点的指针，然后进行删除，时间复杂度为 O(n).
-代码：
-struct Link &#123;
-	int data;
-	struct Link* next;
-&#125;;
-#define _CRT_SECURE_NO_WARNINGS
-#include &lt;stdio.h&gt;
-#incl...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%9C%80%E5%B0%8F%E5%80%BC/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/判断循环双链表是否对称/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A4%E6%96%AD%E5%BE%AA%E7%8E%AF%E5%8F%8C%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E5%AF%B9%E7%A7%B0/"  itemprop="url">
-        判断循环双链表是否对称
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：设计一个算法判断带头结点的循环双链表是否对称
-分析：
-        简单分析，我们可以设置两个指针，pre 和 next，从头结点出发，进行比较，若 pre 与 next 所指值不同，则不对称，若 pre 和 next 指向了同一个节点
-        则该循环双链表对称。
-代码：
-struct Link &#123;
-	int data;
-	struct Link *next;
-	...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A4%E6%96%AD%E5%BE%AA%E7%8E%AF%E5%8F%8C%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E5%AF%B9%E7%A7%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/判断链表是否是中心对称/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
@@ -2852,72 +2857,6 @@ struct Link &#123;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/判断链表是否有环，并找出入环点☆/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E6%9C%89%E7%8E%AF%EF%BC%8C%E5%B9%B6%E6%89%BE%E5%87%BA%E5%85%A5%E7%8E%AF%E7%82%B9%E2%98%86/"  itemprop="url">
-        判断链表是否有环,找出入环点
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：设计一个算法判断一个链表是否有环，并找出入环点
-分析：我们可以想象一下，在一个有环的赛道上，有两个人跑步，一个人跑得快，一个人跑得慢，试想，时间充足的情况下，跑得快
-    的那个人是不是会再次遇到跑的慢的人呢？所以对于这道题，我们也可以通过快慢指针来处理，p 指针一次移动两个节点，q 指针一次移动
-    一个节点，如果他们再次相遇了，说明链表有环，如果 p 指针为 NULL 了，说...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E6%9C%89%E7%8E%AF%EF%BC%8C%E5%B9%B6%E6%89%BE%E5%87%BA%E5%85%A5%E7%8E%AF%E7%82%B9%E2%98%86/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/单链表删除/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
@@ -2949,11 +2888,12 @@ struct Link &#123;
         首先我们要创建单链表，并赋值，然后递归去判断值，进行删除
 代码：
 #define _CRT_SECURE_NO_WARNINGS
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
 struct Delete
 &#123;
-	int value;...
+	int value;
+	stru...
       
     
   </div>
@@ -3062,7 +3002,7 @@ struct Link &#123;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/单链表排序☆/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/单链表就地逆置☆/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -3080,24 +3020,26 @@ struct Link &#123;
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%8D%95%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F%E2%98%86/"  itemprop="url">
-        单链表排序
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%8D%95%E9%93%BE%E8%A1%A8%E5%B0%B1%E5%9C%B0%E9%80%86%E7%BD%AE%E2%98%86/"  itemprop="url">
+        单链表就地逆置
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        有一个带头结点的单链表 L，设计一个算法使其递增有序
+        就地逆置链表
     分析：
-        我们可以采用冒泡排序对其操作，使其递增有序, 时间复杂度为 O(n^2)。
+        我们采用头插法或者相邻节点直接修改指向的方法来进行逆置。
 代码如下：
 struct Link &#123;
 	int data;
-	struct Link *next;
+	struct Link* next;
 &#125;;
 #define _CRT_SECURE_NO_WARNINGS
-#include &lt;stdio.h...
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+void...
       
     
   </div>
@@ -3118,7 +3060,73 @@ struct Link &#123;
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%8D%95%E9%93%BE%E8%A1%A8%E6%8E%92%E5%BA%8F%E2%98%86/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%8D%95%E9%93%BE%E8%A1%A8%E5%B0%B1%E5%9C%B0%E9%80%86%E7%BD%AE%E2%98%86/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/判断链表是否有环，并找出入环点☆/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E6%9C%89%E7%8E%AF%EF%BC%8C%E5%B9%B6%E6%89%BE%E5%87%BA%E5%85%A5%E7%8E%AF%E7%82%B9%E2%98%86/"  itemprop="url">
+        判断链表是否有环,找出入环点
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：设计一个算法判断一个链表是否有环，并找出入环点
+分析：我们可以想象一下，在一个有环的赛道上，有两个人跑步，一个人跑得快，一个人跑得慢，试想，时间充足的情况下，跑得快
+    的那个人是不是会再次遇到跑的慢的人呢？所以对于这道题，我们也可以通过快慢指针来处理，p 指针一次移动两个节点，q 指针一次移动
+    一个节点，如果他们再次相遇了，说明链表有环，如果 p 指针为 NULL 了，说...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E6%9C%89%E7%8E%AF%EF%BC%8C%E5%B9%B6%E6%89%BE%E5%87%BA%E5%85%A5%E7%8E%AF%E7%82%B9%E2%98%86/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3372,6 +3380,22 @@ struct Link &#123;
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -3427,7 +3451,10 @@ struct Link &#123;
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -3562,6 +3589,79 @@ struct Link &#123;
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3616,6 +3716,8 @@ struct Link &#123;
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->

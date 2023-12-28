@@ -56,11 +56,11 @@
 <meta property="og:title" content="深优广优判断vi到vj是否存在路径">
 <meta property="og:url" content="http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E6%B7%B1%E4%BC%98%E5%B9%BF%E4%BC%98%E5%88%A4%E6%96%ADvi%E5%88%B0vj%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%B7%AF%E5%BE%84/index.html">
 <meta property="og:site_name" content="北街学长的博客">
-<meta property="og:description" content="分析：         采用深度优先：我们从 vi 顶点开始进行深度遍历，若存在路径则必然可以走到 vj 顶点处；         采用广度优先：同样从 vi 顶点开始进行广度遍历，若存在则必然可以走到 vj 顶点处。 代码如下： #define _CRT_SECURE_NO_WARNINGS #define MAXSIZE 100 #include &lt;stdio.h&gt; #includ">
+<meta property="og:description" content="分析：         采用深度优先：我们从 vi 顶点开始进行深度遍历，若存在路径则必然可以走到 vj 顶点处；         采用广度优先：同样从 vi 顶点开始进行广度遍历，若存在则必然可以走到 vj 顶点处。 代码如下： #define _CRT_SECURE_NO_WARNINGS #define MAXSIZE 100 #include &lt;stdio.h&gt; #include &amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-27T09:15:46.879Z">
+<meta property="article:modified_time" content="2023-12-28T02:52:57.330Z">
 <meta property="article:author" content="北街学长">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="图">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1663,6 +1663,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2437,7 +2442,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">请设置文章作者</p>
+    <p itemprop="name">北街学长</p>
   </a>
 </div>
 
@@ -2470,7 +2475,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：766 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3 分钟</p>
+    </a>
+  </div>
 
 
           
@@ -2489,133 +2505,133 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         采用深度优先：我们从 vi 顶点开始进行深度遍历，若存在路径则必然可以走到 vj 顶点处；<br />
         采用广度优先：同样从 vi 顶点开始进行广度遍历，若存在则必然可以走到 vj 顶点处。</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">#define _CRT_SECURE_NO_WARNINGS
-#define MAXSIZE 100
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-typedef struct EdgeNode &#123;&#x2F;&#x2F;边表结点
-	int index;&#x2F;&#x2F;该边所指向的顶点的位置
-	int weight;&#x2F;&#x2F;权值
-	EdgeNode *next;&#x2F;&#x2F;下一个邻接边
-&#125;EdgeNode;
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">_CRT_SECURE_NO_WARNINGS</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAXSIZE</span> <span class="token expression"><span class="token number">100</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">EdgeNode</span> <span class="token punctuation">&#123;</span><span class="token comment">//边表结点</span>
+	<span class="token keyword">int</span> index<span class="token punctuation">;</span><span class="token comment">//该边所指向的顶点的位置</span>
+	<span class="token keyword">int</span> weight<span class="token punctuation">;</span><span class="token comment">//权值</span>
+	EdgeNode <span class="token operator">*</span>next<span class="token punctuation">;</span><span class="token comment">//下一个邻接边</span>
+<span class="token punctuation">&#125;</span>EdgeNode<span class="token punctuation">;</span>
  
-typedef struct VertexNode &#123;&#x2F;&#x2F;顶点表节点
-	char info;&#x2F;&#x2F;顶点信息
-	EdgeNode *firstEdge;&#x2F;&#x2F;指向第一条依附该顶点的边的指针
-&#125;VertexNode, Adjlist[MAXSIZE];
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">VertexNode</span> <span class="token punctuation">&#123;</span><span class="token comment">//顶点表节点</span>
+	<span class="token keyword">char</span> info<span class="token punctuation">;</span><span class="token comment">//顶点信息</span>
+	EdgeNode <span class="token operator">*</span>firstEdge<span class="token punctuation">;</span><span class="token comment">//指向第一条依附该顶点的边的指针</span>
+<span class="token punctuation">&#125;</span>VertexNode<span class="token punctuation">,</span> Adjlist<span class="token punctuation">[</span>MAXSIZE<span class="token punctuation">]</span><span class="token punctuation">;</span>
  
-typedef struct &#123;
-	Adjlist adjlist;&#x2F;&#x2F;顶点数组
-	int numE, numV;&#x2F;&#x2F;边数、顶点数
-&#125;ALGraph;
-&#x2F;&#x2F;链队
-struct Link &#123;
-	int node;&#x2F;&#x2F;我们进行广度优先时会用到，将顶点序号入队
-	struct Link *next;
-&#125;;
-struct LinkQueue &#123;
-	struct Link *front, *rear;
-&#125;;
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>
+	Adjlist adjlist<span class="token punctuation">;</span><span class="token comment">//顶点数组</span>
+	<span class="token keyword">int</span> numE<span class="token punctuation">,</span> numV<span class="token punctuation">;</span><span class="token comment">//边数、顶点数</span>
+<span class="token punctuation">&#125;</span>ALGraph<span class="token punctuation">;</span>
+<span class="token comment">//链队</span>
+<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">int</span> node<span class="token punctuation">;</span><span class="token comment">//我们进行广度优先时会用到，将顶点序号入队</span>
+	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> <span class="token class-name">LinkQueue</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>front<span class="token punctuation">,</span> <span class="token operator">*</span>rear<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
  
-void DFS(ALGraph *G, int vi, int vj, int *visited, int &amp;flag) &#123;
-	for (EdgeNode *p &#x3D; G-&gt;adjlist[vi].firstEdge; p; p &#x3D; p-&gt;next) &#123;
-		if (!visited[p-&gt;index]) &#123;
-			visited[p-&gt;index] &#x3D; 1;
-			if (p-&gt;index &#x3D;&#x3D; vj) &#123;
-				flag &#x3D; 1;
-			&#125;
-			DFS(G, p-&gt;index, vj, visited, flag);
-		&#125;
-	&#125;
+<span class="token keyword">void</span> <span class="token function">DFS</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span>G<span class="token punctuation">,</span> <span class="token keyword">int</span> vi<span class="token punctuation">,</span> <span class="token keyword">int</span> vj<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>visited<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">&amp;</span>flag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>EdgeNode <span class="token operator">*</span>p <span class="token operator">=</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>vi<span class="token punctuation">]</span><span class="token punctuation">.</span>firstEdge<span class="token punctuation">;</span> p<span class="token punctuation">;</span> p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>p<span class="token operator">-></span>index<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			visited<span class="token punctuation">[</span>p<span class="token operator">-></span>index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>index <span class="token operator">==</span> vj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			<span class="token function">DFS</span><span class="token punctuation">(</span>G<span class="token punctuation">,</span> p<span class="token operator">-></span>index<span class="token punctuation">,</span> vj<span class="token punctuation">,</span> visited<span class="token punctuation">,</span> flag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
  
-&#125;
-bool judgeRouteInDFS(ALGraph *G, int vi, int vj) &#123;&#x2F;&#x2F;传入图G，路线端点vi vj
-	int *visited &#x3D; (int *)malloc(sizeof(int)*G-&gt;numV);
-	int flag &#x3D; 0;&#x2F;&#x2F;进入递归，路径存在标志
-	for (int i &#x3D; 0; i &lt; G-&gt;numV; i++) &#123;
-		visited[i] &#x3D; 0;&#x2F;&#x2F;初始化
-	&#125;
-	if (!visited[vi]) &#123;
-		visited[vi] &#x3D; 1;
-		DFS(G, vi, vj, visited, flag);
-	&#125;
-	if (flag) &#123;
-		return 1;
+<span class="token punctuation">&#125;</span>
+bool <span class="token function">judgeRouteInDFS</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span>G<span class="token punctuation">,</span> <span class="token keyword">int</span> vi<span class="token punctuation">,</span> <span class="token keyword">int</span> vj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//传入图G，路线端点vi vj</span>
+	<span class="token keyword">int</span> <span class="token operator">*</span>visited <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token operator">*</span>G<span class="token operator">-></span>numV<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//进入递归，路径存在标志</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> G<span class="token operator">-></span>numV<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		visited<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//初始化</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>vi<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		visited<span class="token punctuation">[</span>vi<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token function">DFS</span><span class="token punctuation">(</span>G<span class="token punctuation">,</span> vi<span class="token punctuation">,</span> vj<span class="token punctuation">,</span> visited<span class="token punctuation">,</span> flag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
  
-	&#125;
-	else &#123;
-		return 0;
-	&#125;
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
  
-&#125;
+<span class="token punctuation">&#125;</span>
  
-bool judgeRouteInBFS(ALGraph *G, int vi, int vj) &#123;
-	int *visited &#x3D; (int *)malloc(sizeof(int)*G-&gt;numV);
-	int flag &#x3D; 0;&#x2F;&#x2F;进入递归，路径存在标志
-	int index;&#x2F;&#x2F;进行判断用
-	for (int i &#x3D; 0; i &lt; G-&gt;numV; i++) &#123;
-		visited[i] &#x3D; 0;&#x2F;&#x2F;初始化
-	&#125;
-	bool isEmpty(LinkQueue *lq);
-	bool enQueue(LinkQueue *, int);
-	bool deQueue(LinkQueue *, int*);
-	LinkQueue *create();&#x2F;&#x2F;声明创建队列的方法。广度优先遍历需要用到队列
-	LinkQueue *lq;
-	lq &#x3D; create();
-	if (!visited[vi]) &#123;
-		visited[vi] &#x3D; 1;
-		enQueue(lq, vi);&#x2F;&#x2F;入队
-	&#125;
-	while (!isEmpty(lq)) &#123;&#x2F;&#x2F;当队列不空，取出队首元素进行判断
-		deQueue(lq, &amp;index);
-		if (!visited[index]) &#123;&#x2F;&#x2F;若未曾访问过，进行判断
-			visited[index] &#x3D; 1;
-			if (vj &#x3D;&#x3D; index) &#123;
-				flag &#x3D; 1;
-			&#125;
-		&#125;
-		for (EdgeNode *p &#x3D; G-&gt;adjlist[index].firstEdge; p; p &#x3D; p-&gt;next) &#123;
-			if (!visited[p-&gt;index]) &#123;
-				enQueue(lq, p-&gt;index);&#x2F;&#x2F;把所有的未访问过得邻接顶点入队
+bool <span class="token function">judgeRouteInBFS</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span>G<span class="token punctuation">,</span> <span class="token keyword">int</span> vi<span class="token punctuation">,</span> <span class="token keyword">int</span> vj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">int</span> <span class="token operator">*</span>visited <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token operator">*</span>G<span class="token operator">-></span>numV<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//进入递归，路径存在标志</span>
+	<span class="token keyword">int</span> index<span class="token punctuation">;</span><span class="token comment">//进行判断用</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> G<span class="token operator">-></span>numV<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		visited<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//初始化</span>
+	<span class="token punctuation">&#125;</span>
+	bool <span class="token function">isEmpty</span><span class="token punctuation">(</span>LinkQueue <span class="token operator">*</span>lq<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool <span class="token function">enQueue</span><span class="token punctuation">(</span>LinkQueue <span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool <span class="token function">deQueue</span><span class="token punctuation">(</span>LinkQueue <span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	LinkQueue <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//声明创建队列的方法。广度优先遍历需要用到队列</span>
+	LinkQueue <span class="token operator">*</span>lq<span class="token punctuation">;</span>
+	lq <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>vi<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		visited<span class="token punctuation">[</span>vi<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token function">enQueue</span><span class="token punctuation">(</span>lq<span class="token punctuation">,</span> vi<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//入队</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>lq<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//当队列不空，取出队首元素进行判断</span>
+		<span class="token function">deQueue</span><span class="token punctuation">(</span>lq<span class="token punctuation">,</span> <span class="token operator">&amp;</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//若未曾访问过，进行判断</span>
+			visited<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>vj <span class="token operator">==</span> index<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span>EdgeNode <span class="token operator">*</span>p <span class="token operator">=</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>firstEdge<span class="token punctuation">;</span> p<span class="token punctuation">;</span> p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>p<span class="token operator">-></span>index<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				<span class="token function">enQueue</span><span class="token punctuation">(</span>lq<span class="token punctuation">,</span> p<span class="token operator">-></span>index<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//把所有的未访问过得邻接顶点入队</span>
  
-			&#125;
-		&#125;
-	&#125;
-	if (flag) &#123;
-		return 1;
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
  
-	&#125;
-	else &#123;
-		return 0;
-	&#125;
-&#125;
-int main() &#123;
-	int haveRoute;
-	void createGraphInFile(ALGraph *G);
-	ALGraph *G &#x3D; (ALGraph *)malloc(sizeof(ALGraph *));
-	createGraphInFile(G);&#x2F;&#x2F;创建图
-	int vi, vj;
-	printf(&quot;请输入vi，vj\n&quot;);
-	printf(&quot;vi&#x3D; &quot;);
-	scanf(&quot;%d&quot;, &amp;vi);
-	printf(&quot;vj&#x3D; &quot;);
-	scanf(&quot;%d&quot;, &amp;vj);
-	while (vi &gt;&#x3D; G-&gt;numV || vj &gt;&#x3D; G-&gt;numV) &#123;
-		printf(&quot;输入有误，不存在该顶点，请重新输入！&quot;);
-		printf(&quot;vi&#x3D; &quot;);
-		scanf(&quot;%d&quot;, &amp;vi);
-		printf(&quot;vj&#x3D; &quot;);
-		scanf(&quot;%d&quot;, &amp;vj);
-	&#125;
-	haveRoute &#x3D; judgeRouteInBFS(G, vi - 1, vj - 1);
-	if (haveRoute) &#123;
-		printf(&quot;顶点%d到顶点%d存在路径&quot;, vi, vj);
-	&#125;
-	else &#123;
-		printf(&quot;%d到%d不存在路径&quot;, vi, vj);
-	&#125;
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">int</span> haveRoute<span class="token punctuation">;</span>
+	<span class="token keyword">void</span> <span class="token function">createGraphInFile</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span>G<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	ALGraph <span class="token operator">*</span>G <span class="token operator">=</span> <span class="token punctuation">(</span>ALGraph <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">createGraphInFile</span><span class="token punctuation">(</span>G<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建图</span>
+	<span class="token keyword">int</span> vi<span class="token punctuation">,</span> vj<span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入vi，vj\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"vi= "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>vi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"vj= "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>vj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>vi <span class="token operator">>=</span> G<span class="token operator">-></span>numV <span class="token operator">||</span> vj <span class="token operator">>=</span> G<span class="token operator">-></span>numV<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"输入有误，不存在该顶点，请重新输入！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"vi= "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>vi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"vj= "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>vj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	haveRoute <span class="token operator">=</span> <span class="token function">judgeRouteInBFS</span><span class="token punctuation">(</span>G<span class="token punctuation">,</span> vi <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> vj <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>haveRoute<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"顶点%d到顶点%d存在路径"</span><span class="token punctuation">,</span> vi<span class="token punctuation">,</span> vj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d到%d不存在路径"</span><span class="token punctuation">,</span> vi<span class="token punctuation">,</span> vj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>人的一生应当这样度过: 当一个人回首往事时, 不因虚度年华而悔恨, 也不因碌碌无为而羞愧; 这样, 在他临死的时候, 能够说, 我把整个生命和全部精力都献给了人生最宝贵的事业——为人类的解放而奋斗. ---- 保尔 柯察金</p>
 
   </div>
@@ -2641,10 +2657,10 @@ int main() &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-27T17:15:46+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T10:52:57+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月27日</p>
+    <p>更新于：2023年12月28日</p>
   </a>
 </div>
 
@@ -2707,6 +2723,24 @@ int main() &#123;
   </div>
 </div>
 
+
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：766 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3 分钟</p>
+    </a>
+  </div>
 
 
         
@@ -2875,6 +2909,22 @@ int main() &#123;
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -2930,7 +2980,10 @@ int main() &#123;
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -3065,6 +3118,79 @@ int main() &#123;
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3119,6 +3245,8 @@ int main() &#123;
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->
@@ -3380,7 +3508,7 @@ int main() &#123;
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/图/","name":"图"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/图/深优广优判断vi到vj是否存在路径/","name":"深优广优判断vi到vj是否存在路径"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"深优广优判断vi到vj是否存在路径","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E6%B7%B1%E4%BC%98%E5%B9%BF%E4%BC%98%E5%88%A4%E6%96%ADvi%E5%88%B0vj%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%B7%AF%E5%BE%84/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E6%B7%B1%E4%BC%98%E5%B9%BF%E4%BC%98%E5%88%A4%E6%96%ADvi%E5%88%B0vj%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%B7%AF%E5%BE%84/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-27T09:15:46.879Z","articleSection":"图","keywords":"数据结构,图","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/图/","name":"图"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/图/深优广优判断vi到vj是否存在路径/","name":"深优广优判断vi到vj是否存在路径"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"深优广优判断vi到vj是否存在路径","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E6%B7%B1%E4%BC%98%E5%B9%BF%E4%BC%98%E5%88%A4%E6%96%ADvi%E5%88%B0vj%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%B7%AF%E5%BE%84/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E6%B7%B1%E4%BC%98%E5%B9%BF%E4%BC%98%E5%88%A4%E6%96%ADvi%E5%88%B0vj%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%B7%AF%E5%BE%84/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-28T02:52:57.330Z","articleSection":"图","keywords":"数据结构,图","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

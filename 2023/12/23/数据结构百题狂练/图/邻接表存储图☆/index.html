@@ -60,7 +60,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-27T09:16:53.452Z">
+<meta property="article:modified_time" content="2023-12-28T02:52:51.369Z">
 <meta property="article:author" content="北街学长">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="图">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1663,6 +1663,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2437,7 +2442,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">请设置文章作者</p>
+    <p itemprop="name">北街学长</p>
   </a>
 </div>
 
@@ -2470,7 +2475,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：751 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3 分钟</p>
+    </a>
+  </div>
 
 
           
@@ -2500,79 +2516,79 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             重复反向依次设置，至此，图的邻接表结构建立完成。</p>
 </blockquote>
 <p>代码如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">#define _CRT_SECURE_NO_WARNINGS
-#define MAXSIZE 100
-typedef struct EdgeNode &#123;&#x2F;&#x2F;边表结点
-	int index;&#x2F;&#x2F;邻接点在数组中的下标
-	int weight;&#x2F;&#x2F;权值
-	EdgeNode *next;&#x2F;&#x2F;下一个邻接点
-&#125;EdgeNode;
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">_CRT_SECURE_NO_WARNINGS</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAXSIZE</span> <span class="token expression"><span class="token number">100</span></span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">EdgeNode</span> <span class="token punctuation">&#123;</span><span class="token comment">//边表结点</span>
+	<span class="token keyword">int</span> index<span class="token punctuation">;</span><span class="token comment">//邻接点在数组中的下标</span>
+	<span class="token keyword">int</span> weight<span class="token punctuation">;</span><span class="token comment">//权值</span>
+	EdgeNode <span class="token operator">*</span>next<span class="token punctuation">;</span><span class="token comment">//下一个邻接点</span>
+<span class="token punctuation">&#125;</span>EdgeNode<span class="token punctuation">;</span>
  
-typedef struct VertexNode &#123;&#x2F;&#x2F;顶点表节点
-	char info;&#x2F;&#x2F;顶点信息
-	EdgeNode *firstNode;&#x2F;&#x2F;顶点的第一个邻接点指针
-&#125;VertexNode, Adjlist[MAXSIZE];
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">VertexNode</span> <span class="token punctuation">&#123;</span><span class="token comment">//顶点表节点</span>
+	<span class="token keyword">char</span> info<span class="token punctuation">;</span><span class="token comment">//顶点信息</span>
+	EdgeNode <span class="token operator">*</span>firstNode<span class="token punctuation">;</span><span class="token comment">//顶点的第一个邻接点指针</span>
+<span class="token punctuation">&#125;</span>VertexNode<span class="token punctuation">,</span> Adjlist<span class="token punctuation">[</span>MAXSIZE<span class="token punctuation">]</span><span class="token punctuation">;</span>
  
-typedef struct &#123;
-	Adjlist adjlist;&#x2F;&#x2F;顶点数组
-	int numE, numV;&#x2F;&#x2F;边数、顶点数
-&#125;ALGraph;
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span>
+	Adjlist adjlist<span class="token punctuation">;</span><span class="token comment">//顶点数组</span>
+	<span class="token keyword">int</span> numE<span class="token punctuation">,</span> numV<span class="token punctuation">;</span><span class="token comment">//边数、顶点数</span>
+<span class="token punctuation">&#125;</span>ALGraph<span class="token punctuation">;</span>
  
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
  
-void createGraph(ALGraph *G) &#123;
-	int e, v, vi, vj, w;
-	printf(&quot;请输入图的边数与结点数（以空格分开）：&quot;);
-	scanf(&quot;%d %d&quot;, &amp;e, &amp;v);
-	G-&gt;numE &#x3D; e;
-	G-&gt;numV &#x3D; v;
-	printf(&quot;请依次输入顶点信息：\n&quot;);
-	for (int i &#x3D; 0; i &lt; G-&gt;numV; i++) &#123;
-		printf(&quot;请输入第%d个结点信息：&quot;, i + 1);
-		getchar();
-		scanf(&quot;%c&quot;, &amp;G-&gt;adjlist[i].info);
-		G-&gt;adjlist[i].firstNode &#x3D; NULL;
-	&#125;
+<span class="token keyword">void</span> <span class="token function">createGraph</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span>G<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">int</span> e<span class="token punctuation">,</span> v<span class="token punctuation">,</span> vi<span class="token punctuation">,</span> vj<span class="token punctuation">,</span> w<span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入图的边数与结点数（以空格分开）："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d %d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>e<span class="token punctuation">,</span> <span class="token operator">&amp;</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	G<span class="token operator">-></span>numE <span class="token operator">=</span> e<span class="token punctuation">;</span>
+	G<span class="token operator">-></span>numV <span class="token operator">=</span> v<span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请依次输入顶点信息：\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> G<span class="token operator">-></span>numV<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入第%d个结点信息："</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>info<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>firstNode <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
  
-	printf(&quot;请输入边表信息：\n&quot;);
-	for (int i &#x3D; 0; i &lt; G-&gt;numE; i++) &#123;
-		printf(&quot;请输入边（vi，vj）的顶点序号及其权值（以空格分开）：&quot;);
-		scanf(&quot;%d %d %d&quot;, &amp;vi, &amp;vj, &amp;w);
-		&#x2F;&#x2F;若是无向图则需要两个顶点进行操作,采用头插法
-		EdgeNode *e &#x3D; (EdgeNode *)malloc(sizeof(EdgeNode *));
-		e-&gt;index &#x3D; vj - 1;&#x2F;&#x2F;数组下标要减一
-		e-&gt;weight &#x3D; w;
-		e-&gt;next &#x3D; G-&gt;adjlist[vi - 1].firstNode;
-		G-&gt;adjlist[vi - 1].firstNode &#x3D; e;
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入边表信息：\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> G<span class="token operator">-></span>numE<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入边（vi，vj）的顶点序号及其权值（以空格分开）："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d %d %d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>vi<span class="token punctuation">,</span> <span class="token operator">&amp;</span>vj<span class="token punctuation">,</span> <span class="token operator">&amp;</span>w<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//若是无向图则需要两个顶点进行操作,采用头插法</span>
+		EdgeNode <span class="token operator">*</span>e <span class="token operator">=</span> <span class="token punctuation">(</span>EdgeNode <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>EdgeNode <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		e<span class="token operator">-></span>index <span class="token operator">=</span> vj <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//数组下标要减一</span>
+		e<span class="token operator">-></span>weight <span class="token operator">=</span> w<span class="token punctuation">;</span>
+		e<span class="token operator">-></span>next <span class="token operator">=</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>vi <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>firstNode<span class="token punctuation">;</span>
+		G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>vi <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>firstNode <span class="token operator">=</span> e<span class="token punctuation">;</span>
  
-		EdgeNode *ed &#x3D; (EdgeNode *)malloc(sizeof(EdgeNode *));
-		ed-&gt;index &#x3D; vi - 1;
-		ed-&gt;weight &#x3D; w;
-		ed-&gt;next &#x3D; G-&gt;adjlist[vj - 1].firstNode;
-		G-&gt;adjlist[vj - 1].firstNode &#x3D; ed;
-	&#125;
+		EdgeNode <span class="token operator">*</span>ed <span class="token operator">=</span> <span class="token punctuation">(</span>EdgeNode <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>EdgeNode <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		ed<span class="token operator">-></span>index <span class="token operator">=</span> vi <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		ed<span class="token operator">-></span>weight <span class="token operator">=</span> w<span class="token punctuation">;</span>
+		ed<span class="token operator">-></span>next <span class="token operator">=</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>vj <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>firstNode<span class="token punctuation">;</span>
+		G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>vj <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>firstNode <span class="token operator">=</span> ed<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
  
-&#125;
-void dispGraph(ALGraph *G) &#123;&#x2F;&#x2F;将图用邻接表的形式展示出来
-	for (int i &#x3D; 0; i &lt; G-&gt;numV; i++) &#123;
-		int j &#x3D; i;
-		printf(&quot;%c--&gt;&quot;, G-&gt;adjlist[j].info);
-		EdgeNode *p &#x3D; G-&gt;adjlist[j].firstNode;
-		while (p) &#123;
-			printf(&quot;(%d)%c--&gt;&quot;, p-&gt;weight, G-&gt;adjlist[p-&gt;index].info);
-			p &#x3D; p-&gt;next;
-		&#125;
-		printf(&quot;^\n&quot;);
-	&#125;
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">void</span> <span class="token function">dispGraph</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span>G<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//将图用邻接表的形式展示出来</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> G<span class="token operator">-></span>numV<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c-->"</span><span class="token punctuation">,</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>info<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		EdgeNode <span class="token operator">*</span>p <span class="token operator">=</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>firstNode<span class="token punctuation">;</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(%d)%c-->"</span><span class="token punctuation">,</span> p<span class="token operator">-></span>weight<span class="token punctuation">,</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>p<span class="token operator">-></span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>info<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"^\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
  
-&#125;
-int main() &#123;
-	ALGraph G;
-	createGraph(&amp;G);
-	dispGraph(&amp;G);
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	ALGraph G<span class="token punctuation">;</span>
+	<span class="token function">createGraph</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>G<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">dispGraph</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>G<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果如图：</p>
 <p><img src="https://img-blog.csdnimg.cn/20210411181000978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzkwMzgx,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20210411181000978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzkwMzgx,size_16,color_FFFFFF,t_70" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" /></p>
 <p>一世浮生一刹那，一程山水一年华。余生并没那么多来日方长，只有时光匆匆。惟愿，好好爱自己，好好爱值得的人，好好为自己交上一份满意的人生答卷。</p>
@@ -2600,10 +2616,10 @@ int main() &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-27T17:16:53+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T10:52:51+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月27日</p>
+    <p>更新于：2023年12月28日</p>
   </a>
 </div>
 
@@ -2670,6 +2686,24 @@ int main() &#123;
 
         
       
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：751 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3 分钟</p>
+    </a>
+  </div>
+
+
+        
+      
     </div>
     <!-- Custom Files bottomMeta begin -->
     
@@ -2691,16 +2725,14 @@ int main() &#123;
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%B2%E4%B9%89/'>
-          <p class='title'>数据结构深入理解<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'> 数据结构
- 第一章：数据结构的基本概念
- 定义
-
-数据结构：相互之间存在一种或多种特定关系的数据元素的集合。
-数据：描述客观事物的数和字符的集合
-数据项：具有独立含义的数据最小单元
-数据对象：...</p>
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/'>
+          <p class='title'>创建栈<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>该文件用于创建栈，及其相关操作
+代码如下：
+#include&lt;stdio.h>
+#include&lt;stdbool.h>
+#include&lt;stdlib.h>
+#define T...</p>
         </a>
       
     </div>
@@ -2836,6 +2868,22 @@ int main() &#123;
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -2891,7 +2939,10 @@ int main() &#123;
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -3026,6 +3077,79 @@ int main() &#123;
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3080,6 +3204,8 @@ int main() &#123;
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->
@@ -3341,7 +3467,7 @@ int main() &#123;
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/图/","name":"图"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/图/邻接表存储图☆/","name":"邻接表的构造"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"邻接表的构造","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AD%98%E5%82%A8%E5%9B%BE%E2%98%86/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AD%98%E5%82%A8%E5%9B%BE%E2%98%86/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-27T09:16:53.452Z","articleSection":"图","keywords":"数据结构,图","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/图/","name":"图"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/图/邻接表存储图☆/","name":"邻接表的构造"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"邻接表的构造","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AD%98%E5%82%A8%E5%9B%BE%E2%98%86/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AD%98%E5%82%A8%E5%9B%BE%E2%98%86/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-28T02:52:51.369Z","articleSection":"图","keywords":"数据结构,图","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

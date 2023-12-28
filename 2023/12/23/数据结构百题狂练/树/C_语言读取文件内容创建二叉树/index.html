@@ -60,7 +60,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-27T09:14:16.492Z">
+<meta property="article:modified_time" content="2023-12-28T02:51:50.345Z">
 <meta property="article:author" content="北街学长">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="二叉树">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703680673296),
+    lastupdate: new Date(1703737117015),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -1663,6 +1663,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 3175833810,
+        enable:true
+      },
       
       
       
@@ -2437,7 +2442,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">请设置文章作者</p>
+    <p itemprop="name">北街学长</p>
   </a>
 </div>
 
@@ -2470,7 +2475,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：904 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4 分钟</p>
+    </a>
+  </div>
 
 
           
@@ -2491,131 +2507,131 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>上面文件所创建的二叉树样式如下</p>
 <p><img src="https://img-blog.csdnimg.cn/d8e6f484b8a64b2cb9793f2309373035.jpeg" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/d8e6f484b8a64b2cb9793f2309373035.jpeg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" /></p>
 <p>创建代码如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">biTree* createInFile() &#123;&#x2F;&#x2F;从文件中读取二叉树数据，注：文件数据存储为 每一行 根 左孩子 右孩子
-	FILE* fp;
-	int root, lNode, rNode;&#x2F;&#x2F;三者分别对应文档中一行中的值，即根和左右孩子
-	biTree* T &#x3D; (biTree*)malloc(sizeof(biTree));
-	T-&gt;lchild &#x3D; NULL;
-	T-&gt;rchild &#x3D; NULL;
-	Squeue* createQueue(int);
-	bool isEmpty(Squeue * );
-	bool enQueue(Squeue*, biTree*, int);
-	bool isEmpty(Squeue*);
-	bool deQueue(Squeue*, biTree**, int);
-	biTree* p &#x3D; T;&#x2F;&#x2F;工作指针
-	Squeue* sq &#x3D; createQueue(MAXSIZE);
-	fp &#x3D; fopen(&quot;biTree.txt&quot;, &quot;r&quot;);&#x2F;&#x2F;打开文件
-	int flag &#x3D; 0;&#x2F;&#x2F;判断是否是第一次操作
-	while (3 &#x3D;&#x3D; fscanf(fp, &quot;%d %d %d&quot;, &amp;root, &amp;lNode, &amp;rNode))
-	&#123;
-		!flag++ ? p-&gt;data &#x3D; root : deQueue(sq, &amp;p, MAXSIZE);&#x2F;&#x2F;利用flag，进而判断是否是读取第一行，因为此时队列无数据
-		biTree* left &#x3D; (biTree*)malloc(sizeof(biTree));&#x2F;&#x2F;创建左孩子节点指针
-		biTree* right &#x3D; (biTree*)malloc(sizeof(biTree));&#x2F;&#x2F;创建右孩子节点指针
-		if (lNode) &#123;&#x2F;&#x2F;如果值不为零(0代表没有孩子)，创建左孩子并赋值
-			left-&gt;data &#x3D; lNode;
-			p-&gt;lchild &#x3D; left;&#x2F;&#x2F;连接孩子
-		&#125;
-		else &#123;&#x2F;&#x2F;否则直接将左孩子置为空
-			p-&gt;lchild &#x3D; NULL;
-		&#125;
-		if (rNode) &#123;&#x2F;&#x2F;如果值不为零，创建右孩子孩子并赋值
-			right-&gt;data &#x3D; rNode;
-			p-&gt;rchild &#x3D; right;
-		&#125;
-		else &#123;&#x2F;&#x2F;否则直接将右孩子置为空
-			p-&gt;rchild &#x3D; NULL;
-		&#125;
-		&#x2F;&#x2F;把左右孩子入队，方便下次操作
-		if (p-&gt;lchild)enQueue(sq, p-&gt;lchild, MAXSIZE);&#x2F;&#x2F;左孩子入队
-		if (p-&gt;rchild)enQueue(sq, p-&gt;rchild, MAXSIZE);&#x2F;&#x2F;左孩子入队
-	&#125;
-	while (!isEmpty(sq)) &#123;&#x2F;&#x2F;将剩余节点的左右孩子置为空
-		deQueue(sq, &amp;p, MAXSIZE);&#x2F;&#x2F;取出队首节点
-		p-&gt;lchild &#x3D; NULL;
-		p-&gt;rchild &#x3D; NULL;
-	&#125;
-	fclose(fp);
-	return T;
-&#125;
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">biTree<span class="token operator">*</span> <span class="token function">createInFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//从文件中读取二叉树数据，注：文件数据存储为 每一行 根 左孩子 右孩子</span>
+	FILE<span class="token operator">*</span> fp<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> root<span class="token punctuation">,</span> lNode<span class="token punctuation">,</span> rNode<span class="token punctuation">;</span><span class="token comment">//三者分别对应文档中一行中的值，即根和左右孩子</span>
+	biTree<span class="token operator">*</span> T <span class="token operator">=</span> <span class="token punctuation">(</span>biTree<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>biTree<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	T<span class="token operator">-></span>lchild <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+	T<span class="token operator">-></span>rchild <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+	Squeue<span class="token operator">*</span> <span class="token function">createQueue</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool <span class="token function">isEmpty</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool <span class="token function">enQueue</span><span class="token punctuation">(</span>Squeue<span class="token operator">*</span><span class="token punctuation">,</span> biTree<span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool <span class="token function">isEmpty</span><span class="token punctuation">(</span>Squeue<span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bool <span class="token function">deQueue</span><span class="token punctuation">(</span>Squeue<span class="token operator">*</span><span class="token punctuation">,</span> biTree<span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	biTree<span class="token operator">*</span> p <span class="token operator">=</span> T<span class="token punctuation">;</span><span class="token comment">//工作指针</span>
+	Squeue<span class="token operator">*</span> sq <span class="token operator">=</span> <span class="token function">createQueue</span><span class="token punctuation">(</span>MAXSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"biTree.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//打开文件</span>
+	<span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//判断是否是第一次操作</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">==</span> <span class="token function">fscanf</span><span class="token punctuation">(</span>fp<span class="token punctuation">,</span> <span class="token string">"%d %d %d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>root<span class="token punctuation">,</span> <span class="token operator">&amp;</span>lNode<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rNode<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#123;</span>
+		<span class="token operator">!</span>flag<span class="token operator">++</span> <span class="token operator">?</span> p<span class="token operator">-></span>data <span class="token operator">=</span> root <span class="token operator">:</span> <span class="token function">deQueue</span><span class="token punctuation">(</span>sq<span class="token punctuation">,</span> <span class="token operator">&amp;</span>p<span class="token punctuation">,</span> MAXSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//利用flag，进而判断是否是读取第一行，因为此时队列无数据</span>
+		biTree<span class="token operator">*</span> left <span class="token operator">=</span> <span class="token punctuation">(</span>biTree<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>biTree<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建左孩子节点指针</span>
+		biTree<span class="token operator">*</span> right <span class="token operator">=</span> <span class="token punctuation">(</span>biTree<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>biTree<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建右孩子节点指针</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>lNode<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//如果值不为零(0代表没有孩子)，创建左孩子并赋值</span>
+			left<span class="token operator">-></span>data <span class="token operator">=</span> lNode<span class="token punctuation">;</span>
+			p<span class="token operator">-></span>lchild <span class="token operator">=</span> left<span class="token punctuation">;</span><span class="token comment">//连接孩子</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span><span class="token comment">//否则直接将左孩子置为空</span>
+			p<span class="token operator">-></span>lchild <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>rNode<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//如果值不为零，创建右孩子孩子并赋值</span>
+			right<span class="token operator">-></span>data <span class="token operator">=</span> rNode<span class="token punctuation">;</span>
+			p<span class="token operator">-></span>rchild <span class="token operator">=</span> right<span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span><span class="token comment">//否则直接将右孩子置为空</span>
+			p<span class="token operator">-></span>rchild <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token comment">//把左右孩子入队，方便下次操作</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>lchild<span class="token punctuation">)</span><span class="token function">enQueue</span><span class="token punctuation">(</span>sq<span class="token punctuation">,</span> p<span class="token operator">-></span>lchild<span class="token punctuation">,</span> MAXSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//左孩子入队</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>rchild<span class="token punctuation">)</span><span class="token function">enQueue</span><span class="token punctuation">(</span>sq<span class="token punctuation">,</span> p<span class="token operator">-></span>rchild<span class="token punctuation">,</span> MAXSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//左孩子入队</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>sq<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//将剩余节点的左右孩子置为空</span>
+		<span class="token function">deQueue</span><span class="token punctuation">(</span>sq<span class="token punctuation">,</span> <span class="token operator">&amp;</span>p<span class="token punctuation">,</span> MAXSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//取出队首节点</span>
+		p<span class="token operator">-></span>lchild <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+		p<span class="token operator">-></span>rchild <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> T<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
  
-&#x2F;&#x2F;先序递归遍历
-void preOrder(biTree* T) &#123;
-	if (T !&#x3D; NULL) &#123;
-		printf(&quot;%d &quot;, T-&gt;data);
-		preOrder(T-&gt;lchild);
-		preOrder(T-&gt;rchild);
-	&#125;
-&#125;
-int main() &#123;
-	biTree* T;
-	T &#x3D; createInFile();
-	preOrder(T);
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">//先序递归遍历</span>
+<span class="token keyword">void</span> <span class="token function">preOrder</span><span class="token punctuation">(</span>biTree<span class="token operator">*</span> T<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>T <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> T<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">preOrder</span><span class="token punctuation">(</span>T<span class="token operator">-></span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">preOrder</span><span class="token punctuation">(</span>T<span class="token operator">-></span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	biTree<span class="token operator">*</span> T<span class="token punctuation">;</span>
+	T <span class="token operator">=</span> <span class="token function">createInFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">preOrder</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如上，易看出用到了队列这个数据结构，所以想要运行，还需队列相关代码，如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;*
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*
 	此文件用于创建一个顺序队列，出队，入队,判断队空，判断队满等操作
-*&#x2F;
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#define TYPE biTree* 
-&#x2F;&#x2F;#define TYPE char
-&#x2F;&#x2F;#define TYPE int
+*/</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TYPE</span> <span class="token expression">biTree<span class="token operator">*</span> </span></span>
+<span class="token comment">//#define TYPE char</span>
+<span class="token comment">//#define TYPE int</span>
  
-struct biTree &#123;
-	char data;
-	biTree *lchild;
-	biTree *rchild;
-&#125;;
-struct Squeue &#123;
-	TYPE *arr;
-	int front, rear;
-&#125;;
-&#x2F;&#x2F;创建队列
-Squeue *createQueue(int n) &#123;
-	Squeue *sq &#x3D; ( Squeue *)malloc(sizeof( Squeue));
-	sq-&gt;arr &#x3D; (TYPE *)malloc(sizeof(TYPE)*n);&#x2F;&#x2F;数组大小
-	sq-&gt;front &#x3D; 0;
-	sq-&gt;rear &#x3D; 0;
-	return sq;
-&#125;
-&#x2F;&#x2F;判断队满(这里采用牺牲一个存储单元来实现,约定队头指针在队尾指针的下一个位置作为队满的标志)
-bool isFull(Squeue *sq, int maxSize) &#123;
-	return (sq-&gt;rear + 1) % maxSize &#x3D;&#x3D; sq-&gt;front;
-&#125;
-&#x2F;&#x2F;判断队空
-bool isEmpty(Squeue *sq) &#123;
-	return sq-&gt;front &#x3D;&#x3D; sq-&gt;rear;
-&#125;
-&#x2F;&#x2F;判断队列中元素个数
-int count(Squeue *sq, int maxSize) &#123;
-	return (sq-&gt;rear - sq-&gt;front + maxSize) % maxSize;
-&#125;
-&#x2F;&#x2F;入队
-bool enQueue(Squeue *sq, TYPE data, int maxSize) &#123;
-	if (isFull(sq, maxSize)) return false;
-	sq-&gt;arr[sq-&gt;rear] &#x3D; data;
-	sq-&gt;rear &#x3D; (sq-&gt;rear + 1) % maxSize;
-	return true;
-&#125;
+<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">char</span> data<span class="token punctuation">;</span>
+	biTree <span class="token operator">*</span>lchild<span class="token punctuation">;</span>
+	biTree <span class="token operator">*</span>rchild<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> <span class="token class-name">Squeue</span> <span class="token punctuation">&#123;</span>
+	TYPE <span class="token operator">*</span>arr<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> front<span class="token punctuation">,</span> rear<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token comment">//创建队列</span>
+Squeue <span class="token operator">*</span><span class="token function">createQueue</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Squeue <span class="token operator">*</span>sq <span class="token operator">=</span> <span class="token punctuation">(</span> Squeue <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span> Squeue<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	sq<span class="token operator">-></span>arr <span class="token operator">=</span> <span class="token punctuation">(</span>TYPE <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>TYPE<span class="token punctuation">)</span><span class="token operator">*</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//数组大小</span>
+	sq<span class="token operator">-></span>front <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	sq<span class="token operator">-></span>rear <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> sq<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//判断队满(这里采用牺牲一个存储单元来实现,约定队头指针在队尾指针的下一个位置作为队满的标志)</span>
+bool <span class="token function">isFull</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span> <span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> maxSize <span class="token operator">==</span> sq<span class="token operator">-></span>front<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//判断队空</span>
+bool <span class="token function">isEmpty</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> sq<span class="token operator">-></span>front <span class="token operator">==</span> sq<span class="token operator">-></span>rear<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//判断队列中元素个数</span>
+<span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span> <span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>rear <span class="token operator">-</span> sq<span class="token operator">-></span>front <span class="token operator">+</span> maxSize<span class="token punctuation">)</span> <span class="token operator">%</span> maxSize<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//入队</span>
+bool <span class="token function">enQueue</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span> TYPE data<span class="token punctuation">,</span> <span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isFull</span><span class="token punctuation">(</span>sq<span class="token punctuation">,</span> maxSize<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+	sq<span class="token operator">-></span>arr<span class="token punctuation">[</span>sq<span class="token operator">-></span>rear<span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">;</span>
+	sq<span class="token operator">-></span>rear <span class="token operator">=</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> maxSize<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> true<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
  
-&#x2F;&#x2F;出队
-bool deQueue(Squeue *sq, TYPE *data,int maxSize) &#123;
-	if (isEmpty(sq)) return false;
-	*data &#x3D; sq-&gt;arr[sq-&gt;front];
-	sq-&gt;front &#x3D; (sq-&gt;front + 1) % maxSize;
-	return true;
-&#125;
+<span class="token comment">//出队</span>
+bool <span class="token function">deQueue</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span> TYPE <span class="token operator">*</span>data<span class="token punctuation">,</span><span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>sq<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+	<span class="token operator">*</span>data <span class="token operator">=</span> sq<span class="token operator">-></span>arr<span class="token punctuation">[</span>sq<span class="token operator">-></span>front<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	sq<span class="token operator">-></span>front <span class="token operator">=</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>front <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> maxSize<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> true<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
  
-&#x2F;&#x2F;打印队列中元素
-&#x2F;&#x2F;void printQ(Squeue *sq,int maxSize) &#123;
-&#x2F;&#x2F;	if (isEmpty(sq)) return ;
-&#x2F;&#x2F;	int np &#x3D; sq-&gt;front;
-&#x2F;&#x2F;	while (np!&#x3D;sq-&gt;rear) &#123;
-&#x2F;&#x2F;		printf(&quot;%d &quot;,sq-&gt;arr[np]);
-&#x2F;&#x2F;		np &#x3D; (np + 1) % maxSize;
-&#x2F;&#x2F;	&#125;
-&#x2F;&#x2F;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">//打印队列中元素</span>
+<span class="token comment">//void printQ(Squeue *sq,int maxSize) &#123;</span>
+<span class="token comment">//	if (isEmpty(sq)) return ;</span>
+<span class="token comment">//	int np = sq->front;</span>
+<span class="token comment">//	while (np!=sq->rear) &#123;</span>
+<span class="token comment">//		printf("%d ",sq->arr[np]);</span>
+<span class="token comment">//		np = (np + 1) % maxSize;</span>
+<span class="token comment">//	&#125;</span>
+<span class="token comment">//&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如你想要运行，这两个代码文件均需具备</p>
 <p>运行结果如下：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://so.csdn.net/so/search?q=%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86&amp;spm=1001.2101.3001.7020">先序遍历</a>结果<img src="https://img-blog.csdnimg.cn/7c9bf1ceada445518636afc8b2bb6fea.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/7c9bf1ceada445518636afc8b2bb6fea.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" /></p>
 
@@ -2642,10 +2658,10 @@ bool deQueue(Squeue *sq, TYPE *data,int maxSize) &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-27T17:14:16+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T10:51:50+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月27日</p>
+    <p>更新于：2023年12月28日</p>
   </a>
 </div>
 
@@ -2712,6 +2728,24 @@ bool deQueue(Squeue *sq, TYPE *data,int maxSize) &#123;
 
         
       
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：904 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4 分钟</p>
+    </a>
+  </div>
+
+
+        
+      
     </div>
     <!-- Custom Files bottomMeta begin -->
     
@@ -2725,20 +2759,23 @@ bool deQueue(Squeue *sq, TYPE *data,int maxSize) &#123;
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E9%80%92%E5%A2%9E%E8%BE%93%E5%87%BA%E5%B9%B6%E9%87%8A%E6%94%BE%E7%A9%BA%E9%97%B4/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>链表递增输出并释放空间</p>
-          <p class='content'>题目：按递增次序输出单链表各节点的数据元素，并释放节点所占的存储空间。
-分析：
-        我们可以先进行排序，然后依次输出，并释放节点空间，我们也可以直接进行遍历，找到目前最小值进行输出，...</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E9%93%BE%E5%BC%8F%E9%98%9F%E5%88%97/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>创建链队</p>
+          <p class='content'>此文件用于创建一个链式队列
+    分析：
+        我们需要创建一个链表，然后设置 front、rear 指针，用来模拟入队出队的过程
+代码如下：
+struct Link &#123;
+...</p>
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89/'>
-          <p class='title'>中序非递归遍历<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>试写出中序遍历的非递归算法
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/'>
+          <p class='title'>层序遍历<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>试写出层次遍历的算法
     分析：
-        如果采用非递归，我们就需要用到栈这个数据结构了，具体流程为：从根节点一路往下找左孩子并将其入栈直至左孩子为空
-        然后依次...</p>
+        正如名字所表现的那样，要一层一层的遍历，这里我们就需要用到队列这种数据结构了，具体做法是：
+        先将根节点入队，然后根节点出队，...</p>
         </a>
       
     </div>
@@ -2874,6 +2911,22 @@ bool deQueue(Squeue *sq, TYPE *data,int maxSize) &#123;
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -2929,7 +2982,10 @@ bool deQueue(Squeue *sq, TYPE *data,int maxSize) &#123;
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -3064,6 +3120,79 @@ bool deQueue(Squeue *sq, TYPE *data,int maxSize) &#123;
 
 
 
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '3175833810';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
 
 
       <script>
@@ -3118,6 +3247,8 @@ bool deQueue(Squeue *sq, TYPE *data,int maxSize) &#123;
 
 
 
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/busuanzi/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 <!-- optional -->
@@ -3379,7 +3510,7 @@ bool deQueue(Squeue *sq, TYPE *data,int maxSize) &#123;
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/二叉树/","name":"二叉树"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/C_语言读取文件内容创建二叉树/","name":"读取文件创建二叉树"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"读取文件创建二叉树","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/C_%E8%AF%AD%E8%A8%80%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/C_%E8%AF%AD%E8%A8%80%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-27T09:14:16.492Z","articleSection":"二叉树","keywords":"数据结构,二叉树","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/二叉树/","name":"二叉树"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/C_语言读取文件内容创建二叉树/","name":"读取文件创建二叉树"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"读取文件创建二叉树","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/C_%E8%AF%AD%E8%A8%80%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/C_%E8%AF%AD%E8%A8%80%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-28T02:51:50.345Z","articleSection":"二叉树","keywords":"数据结构,二叉树","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
