@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：463 字</p>
+      <p>字数：492 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2508,61 +2508,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         因为这两个链表是递增有序的，那么我们可以设置两个指针同步比较，相同则加入 c，不同小的那个往后移，直至到链表末尾<br />
         这样的时间复杂度为 O(n).</p>
 <p>代码：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> data<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token keyword">void</span> <span class="token function">linkCommon</span><span class="token punctuation">(</span>Link <span class="token operator">*</span>a<span class="token punctuation">,</span> Link <span class="token operator">*</span>b<span class="token punctuation">,</span> Link <span class="token operator">*</span>c <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>lc <span class="token operator">=</span> c<span class="token punctuation">,</span><span class="token operator">*</span>la<span class="token operator">=</span>a<span class="token operator">-></span>next<span class="token punctuation">,</span><span class="token operator">*</span>lb<span class="token operator">=</span>b<span class="token operator">-></span>next<span class="token punctuation">,</span><span class="token operator">*</span>rc<span class="token operator">=</span>lc<span class="token punctuation">;</span>
-	<span class="token keyword">while</span> <span class="token punctuation">(</span>la<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token keyword">while</span> <span class="token punctuation">(</span>lb<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			<span class="token keyword">if</span> <span class="token punctuation">(</span>la<span class="token operator">-></span>data<span class="token operator">==</span>lb<span class="token operator">-></span>data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//如果是公共元素</span>
-				<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Link</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Link</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-				p<span class="token operator">-></span>data <span class="token operator">=</span> la<span class="token operator">-></span>data<span class="token punctuation">;</span>
-				rc<span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token punctuation">;</span><span class="token comment">//采用尾插法</span>
-				rc <span class="token operator">=</span> p<span class="token punctuation">;</span>
-				<span class="token keyword">break</span><span class="token punctuation">;</span>
-			<span class="token punctuation">&#125;</span>
-			lb <span class="token operator">=</span> lb<span class="token operator">-></span>next<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-		la <span class="token operator">=</span> la<span class="token operator">-></span>next<span class="token punctuation">;</span>
-		lb <span class="token operator">=</span> b<span class="token operator">-></span>next<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	rc<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span><span class="token comment">//最后一个节点指针需要指向NULL。</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">void</span> <span class="token function">listCommon</span><span class="token punctuation">(</span>Link <span class="token operator">*</span>a<span class="token punctuation">,</span>Link <span class="token operator">*</span>b<span class="token punctuation">,</span>Link <span class="token operator">*</span>c<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>rc <span class="token operator">=</span> c<span class="token punctuation">,</span> <span class="token operator">*</span>la <span class="token operator">=</span> a<span class="token operator">-></span>next<span class="token punctuation">,</span> <span class="token operator">*</span>lb <span class="token operator">=</span> b<span class="token operator">-></span>next<span class="token punctuation">;</span>
-	<span class="token keyword">while</span> <span class="token punctuation">(</span>la<span class="token operator">&amp;&amp;</span>lb<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span>la<span class="token operator">-></span>data<span class="token operator">==</span>lb<span class="token operator">-></span>data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Link</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Link</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-			p<span class="token operator">-></span>data <span class="token operator">=</span> la<span class="token operator">-></span>data<span class="token punctuation">;</span>
-			p<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-			rc<span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token punctuation">;</span>
-			rc <span class="token operator">=</span> p<span class="token punctuation">;</span>
-			la <span class="token operator">=</span> la<span class="token operator">-></span>next<span class="token punctuation">;</span>
-			lb <span class="token operator">=</span> lb<span class="token operator">-></span>next<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-			la<span class="token operator">-></span>data <span class="token operator">&lt;</span> lb<span class="token operator">-></span>data <span class="token operator">?</span> la <span class="token operator">=</span> la<span class="token operator">-></span>next <span class="token operator">:</span> lb <span class="token operator">=</span> lb<span class="token operator">-></span>next<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
-	rc<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token operator">*</span>b<span class="token punctuation">;</span>
-	Link <span class="token operator">*</span><span class="token function">createLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">void</span> <span class="token function">printfNowLink</span><span class="token punctuation">(</span>Link <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	a <span class="token operator">=</span> <span class="token function">createLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	b <span class="token operator">=</span> <span class="token function">createLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Link</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Link</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	c<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-	<span class="token comment">//linkCommon(a,b,c);</span>
-	<span class="token function">listCommon</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">printfNowLink</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">linkCommon</span><span class="params">(Link *a, Link *b, Link *c )</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">lc</span> =</span> c,*la=a-&gt;next,*lb=b-&gt;next,*rc=lc;</span><br><span class="line">	<span class="keyword">while</span> (la) &#123;</span><br><span class="line">		<span class="keyword">while</span> (lb) &#123;</span><br><span class="line">			<span class="keyword">if</span> (la-&gt;data==lb-&gt;data) &#123;<span class="comment">//如果是公共元素</span></span><br><span class="line">				<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">p</span> =</span> (<span class="keyword">struct</span> Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Link));</span><br><span class="line">				p-&gt;data = la-&gt;data;</span><br><span class="line">				rc-&gt;next = p;<span class="comment">//采用尾插法</span></span><br><span class="line">				rc = p;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			lb = lb-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		la = la-&gt;next;</span><br><span class="line">		lb = b-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	rc-&gt;next = <span class="literal">NULL</span>;<span class="comment">//最后一个节点指针需要指向NULL。</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">listCommon</span><span class="params">(Link *a,Link *b,Link *c)</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">rc</span> =</span> c, *la = a-&gt;next, *lb = b-&gt;next;</span><br><span class="line">	<span class="keyword">while</span> (la&amp;&amp;lb) &#123;</span><br><span class="line">		<span class="keyword">if</span> (la-&gt;data==lb-&gt;data) &#123;</span><br><span class="line">			<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">p</span> =</span> (<span class="keyword">struct</span> Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Link));</span><br><span class="line">			p-&gt;data = la-&gt;data;</span><br><span class="line">			p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">			rc-&gt;next = p;</span><br><span class="line">			rc = p;</span><br><span class="line">			la = la-&gt;next;</span><br><span class="line">			lb = lb-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			la-&gt;data &lt; lb-&gt;data ? la = la-&gt;next : lb = lb-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	rc-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">a</span>, *<span class="title">b</span>;</span></span><br><span class="line">	Link *<span class="title function_">createLink</span><span class="params">()</span>;</span><br><span class="line">	<span class="type">void</span> <span class="title function_">printfNowLink</span><span class="params">(Link *)</span>;</span><br><span class="line">	a = createLink();</span><br><span class="line">	b = createLink();</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">c</span> =</span> (<span class="keyword">struct</span> Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Link));</span><br><span class="line">	c-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="comment">//linkCommon(a,b,c);</span></span><br><span class="line">	listCommon(a,b,c);</span><br><span class="line">	printfNowLink(c);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里采用了两个方法，方法二效率更加</p>
 <p>你所经历的苦难终将成为你一生的财富！</p>
 
@@ -2664,7 +2610,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：463 字</p>
+      <p>字数：492 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2690,18 +2636,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E4%BA%A4%E5%8F%89%E9%93%BE%E8%A1%A8%E2%98%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>交叉链表实现</p>
-          <p class='content'>题目： 设线性表 L=（a1,a2,a3,…,an-2,an-1,an）, 采用带头结点的单链表保存，设计一个空间复杂度为 O(1) 的
-               算法，得到 L’=（a1,...</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E8%BD%A6%E8%BE%86%E8%BD%AE%E6%B8%A1%E7%AE%A1%E7%90%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>车辆轮渡管理</p>
+          <p class='content'>题目：汽车轮渡，要求：每次 10 辆，客车优先于货车，每上 4 辆客车才能上 1 辆货车，客车不足 4 辆时，货车代替货车不足时，允许客车都上。
+
+分析：这仍然是一类排序的问题，王道书上的解答可...</p>
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%88%A4%E6%96%AD%E5%BE%AA%E7%8E%AF%E5%8F%8C%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E5%AF%B9%E7%A7%B0/'>
-          <p class='title'>判断循环双链表是否对称<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目：设计一个算法判断带头结点的循环双链表是否对称
-分析：
-        简单分析，我们可以设置两个指针，pre 和 next，从头结点出发，进行比较，若 pre 与 next 所指值不同，则...</p>
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E4%BA%A4%E5%8F%89%E9%93%BE%E8%A1%A8%E2%98%86/'>
+          <p class='title'>交叉链表实现<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目： 设线性表 L=（a1,a2,a3,…,an-2,an-1,an）, 采用带头结点的单链表保存，设计一个空间复杂度为 O(1) 的
+               算法，得到 L’=（a1,...</p>
         </a>
       
     </div>

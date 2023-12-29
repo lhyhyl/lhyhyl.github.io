@@ -1642,7 +1642,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2416,7 +2416,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/带头结点的单链表删除/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/求出给定节点在二叉排序树中的层次/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2434,97 +2434,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8%E5%88%A0%E9%99%A4/"  itemprop="url">
-        单链表删除(带头结点)
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%B1%82%E5%87%BA%E7%BB%99%E5%AE%9A%E8%8A%82%E7%82%B9%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E4%B8%AD%E7%9A%84%E5%B1%82%E6%AC%A1/"  itemprop="url">
+        求指定结点在给定二叉排序树中的层次
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：在带头结点的单链表 L 中, 删除所有值为 X 的节点，并释放其空间，假设值为 X 的节点不唯一
-分析：
-        和上题相似，只是多了一个头结点。另我们可以采取直接遍历的方式进行删除，设置前驱结点，当前节点来保证不锻炼
-代码：
-struct Link &#123;
- 
-	int data;
-	struct Link *next;
-&#125;;
-#define _CRT_SEC...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8%E5%88%A0%E9%99%A4/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/逆序打印单链表/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%86%E5%BA%8F%E6%89%93%E5%8D%B0%E5%8D%95%E9%93%BE%E8%A1%A8/"  itemprop="url">
-        单链表逆序输出
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：
-有一带头结点的链表，设计一算法从尾到头的输出每个节点的值。
+题目：设计一个算法，求出指定节点在给定二叉排序树中的层次
     分析：
-        这种类型就有点像是栈的性质，我们可以利用递归来处理，出口便是尾元素。
-代码如下：
-struct Link &#123;
-	int data;
-	struct Link* next;
-&#125;;
-#define _CRT_SECURE_NO_WARNINGS
-#include &lt;std...
+        我们可以根据二叉排序树的性质，从根节点一直向下查找，每查找一次，层次便加一
+
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546typedef struct node &#123;	in...
       
     
   </div>
@@ -2535,17 +2458,17 @@ struct Link &#123;
         <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%86%E5%BA%8F%E6%89%93%E5%8D%B0%E5%8D%95%E9%93%BE%E8%A1%A8/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%B1%82%E5%87%BA%E7%BB%99%E5%AE%9A%E8%8A%82%E7%82%B9%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E4%B8%AD%E7%9A%84%E5%B1%82%E6%AC%A1/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2561,7 +2484,7 @@ struct Link &#123;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/按照奇偶拆分链表/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/统计双分支节点个数/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2579,21 +2502,20 @@ struct Link &#123;
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E6%8C%89%E7%85%A7%E5%A5%87%E5%81%B6%E6%8B%86%E5%88%86%E9%93%BE%E8%A1%A8/"  itemprop="url">
-        按照奇偶拆分链表
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BB%9F%E8%AE%A1%E5%8F%8C%E5%88%86%E6%94%AF%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0/"  itemprop="url">
+        统计双分支结点个数
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：将一个带头结点单链表 A 分解成两个带头结点的单链表 A 和 B，使得 A 中含有原表中序号为奇数的元素，B 中为偶数，且保持其相对位置不变
+        题目：假设二叉树采取二叉链表存储结构存储，试设计一个算法，计算一颗给定的二叉树所有的双分支节点个数
 分析：
-        首先我们需要分配一个节点空间为 B 作为头节点，然后设置一个 flag，为 0 时认为是奇数，链给 A，为 1 时认为是
-        偶数，连给 B，采用尾插法
+        其实二叉树各类操作都十分适合递归，这里我们同样可以采取递归的做法来进行统计双分支节点的个数。具体做法，我们
+        最开始便定义一个静态变量，递归出口既是无左右孩子。
 代码如下：
-struct Link &#123;
-	in...
+12345678910111213141516171819202122232425...
       
     
   </div>
@@ -2604,17 +2526,17 @@ struct Link &#123;
         <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E6%8C%89%E7%85%A7%E5%A5%87%E5%81%B6%E6%8B%86%E5%88%86%E9%93%BE%E8%A1%A8/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BB%9F%E8%AE%A1%E5%8F%8C%E5%88%86%E6%94%AF%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2630,7 +2552,7 @@ struct Link &#123;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/递增有序链表去重/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/编程求以孩子兄弟表示法存储的森林的叶子结点数☆/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2648,22 +2570,88 @@ struct Link &#123;
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%92%E5%A2%9E%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D/"  itemprop="url">
-        递增有序链表去重
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BC%96%E7%A8%8B%E6%B1%82%E4%BB%A5%E5%AD%A9%E5%AD%90%E5%85%84%E5%BC%9F%E8%A1%A8%E7%A4%BA%E6%B3%95%E5%AD%98%E5%82%A8%E7%9A%84%E6%A3%AE%E6%9E%97%E7%9A%84%E5%8F%B6%E5%AD%90%E7%BB%93%E7%82%B9%E6%95%B0%E2%98%86/"  itemprop="url">
+        求以孩子兄弟表示法存储的森林的叶子结点数
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：在一个递增有序的线性表中，有数值相同的元素存在，若存储方式为单链表，设计算法去掉数值相同的元素，使表中不再有重复的元素。
+        题目：编程求以孩子兄弟表示法存储的森林的叶子结点数
+
+分析：我们可以试想一个节点它如果有左孩子，那么根据孩子兄弟表示法的规则，那它一定不是叶节点，相反如果没有左孩子，那么
+            它一定是叶子结点，其右孩子即它的兄弟，同样应该这样去判断。
+
+代码如下：
+12345678910111213141516171819202122232425262728293031323334353...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BC%96%E7%A8%8B%E6%B1%82%E4%BB%A5%E5%AD%A9%E5%AD%90%E5%85%84%E5%BC%9F%E8%A1%A8%E7%A4%BA%E6%B3%95%E5%AD%98%E5%82%A8%E7%9A%84%E6%A3%AE%E6%9E%97%E7%9A%84%E5%8F%B6%E5%AD%90%E7%BB%93%E7%82%B9%E6%95%B0%E2%98%86/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/通过中序线索二叉树找某节点的后续前驱☆/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%80%9A%E8%BF%87%E4%B8%AD%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%BE%E6%9F%90%E8%8A%82%E7%82%B9%E7%9A%84%E5%90%8E%E7%BB%AD%E5%89%8D%E9%A9%B1%E2%98%86/"  itemprop="url">
+        通过中序线索二叉树找某节点的后续前驱
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：写出在中序线索二叉树里查找指定节点在后序的前驱结点的算法
 分析：
-        对于这类去重，我们肯定需要进行遍历，而这道题给我们的是递增有序的序列，我们便可以进行一一比较，后一个元素与当前元素相同
-        时便删除当前元素。
-代码如下：
-struct Link &#123;
-	int data;
-	struct...
+        在后序序列中，若节点 p 有右子女，则右子女是其前驱，若无右子女而有左子女，则左子女是其前驱。若节点 p 左右子女均无，
+        设其中序左线索指向某祖先节点 f(p 是 f 右子树中按中序遍历的第一个节点)，若 f 有左子女，则其左子女是节点 p 在后序中的前驱；
+        若 f 无左子...
       
     
   </div>
@@ -2674,17 +2662,17 @@ struct Link &#123;
         <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%92%E5%A2%9E%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%80%9A%E8%BF%87%E4%B8%AD%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%BE%E6%9F%90%E8%8A%82%E7%82%B9%E7%9A%84%E5%90%8E%E7%BB%AD%E5%89%8D%E9%A9%B1%E2%98%86/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2700,7 +2688,7 @@ struct Link &#123;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/链表去重☆/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/自下而上、从右往左层次遍历/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2718,19 +2706,19 @@ struct Link &#123;
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D%E2%98%86/"  itemprop="url">
-        链表去重
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E3%80%81%E4%BB%8E%E5%8F%B3%E5%BE%80%E5%B7%A6%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/"  itemprop="url">
+        自下而上从右往左层次遍历
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：用单链表保存 m 个整数，节点的结构为 [data][next], 且 | data|&lt;=n。现要求设计一个时间复杂度尽可能高效算法，
-           对于链表中绝对值相等的节点，仅保留第一次出现的节点而删除其余绝对值相等的节点。
-分析：
-        题目中提到时间复杂度尽可能高效，其本上就是暗示我们采用空间换时间的方式。因为数据是小于等于 n 的，我们可以开辟一块
- ...
+        试给出二叉树的自下而上、从右到左的层次遍历算法
+    分析：
+        我们只需要在层次遍历的基础上加入栈的使用，我们每次出队后的数据将其入栈，队列空了时，再去依次访问栈中元素，即可达到要求
+代码如下：
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950...
       
     
   </div>
@@ -2741,17 +2729,17 @@ struct Link &#123;
         <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D%E2%98%86/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E3%80%81%E4%BB%8E%E5%8F%B3%E5%BE%80%E5%B7%A6%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2767,7 +2755,7 @@ struct Link &#123;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/链表递增输出并释放空间/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/非递归求二叉树高度/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2785,22 +2773,19 @@ struct Link &#123;
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E9%80%92%E5%A2%9E%E8%BE%93%E5%87%BA%E5%B9%B6%E9%87%8A%E6%94%BE%E7%A9%BA%E9%97%B4/"  itemprop="url">
-        链表递增输出并释放空间
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%9D%9E%E9%80%92%E5%BD%92%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E9%AB%98%E5%BA%A6/"  itemprop="url">
+        非递归求二叉树高度
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：按递增次序输出单链表各节点的数据元素，并释放节点所占的存储空间。
-分析：
-        我们可以先进行排序，然后依次输出，并释放节点空间，我们也可以直接进行遍历，找到目前最小值进行输出，然后释放，注意不要断链
-        我们这里采取第二种方式，时间复杂度为 O(n)。
-代码如下：
-struct Link &#123;
-	int data;
-	struct Link *next;...
+        题目：假设二叉树采用二叉链表存储结构，设计一个非递归算法求二叉树的高度
+    分析：
+        若要采用非递归的方式来求得二叉树的高度，我们采用层次遍历是最合适的，因为这一层一层的不就很好数吗哈哈。具体实现：
+        这里唯一的难点就在于我们如何得知高度该加一了；我们可以设置一个标志 num 用来记录每一层入栈的节点个数，当我们出栈数
+        达到该数值时也就意味着我...
       
     
   </div>
@@ -2811,17 +2796,17 @@ struct Link &#123;
         <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E9%80%92%E5%A2%9E%E8%BE%93%E5%87%BA%E5%B9%B6%E9%87%8A%E6%94%BE%E7%A9%BA%E9%97%B4/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%9D%9E%E9%80%92%E5%BD%92%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E9%AB%98%E5%BA%A6/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2837,7 +2822,7 @@ struct Link &#123;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/顺序表/删除顺序表中指定范围的元素/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/顺序存储二叉树之寻找公共祖先节点/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2855,19 +2840,19 @@ struct Link &#123;
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%88%A0%E9%99%A4%E9%A1%BA%E5%BA%8F%E8%A1%A8%E4%B8%AD%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E7%9A%84%E5%85%83%E7%B4%A0/"  itemprop="url">
-        删除顺序表中指定范围的元素
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B9%8B%E5%AF%BB%E6%89%BE%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%E8%8A%82%E7%82%B9/"  itemprop="url">
+        顺序存储二叉树寻找公共祖先结点
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：从顺序表中删除给定区间 s~t 之间的值，若给定区间不合理或顺序表为空，则显示错误信息并退出
-分析：此题与上一题大同小异，只不过，循环体内部的判定条件有了变化，我们仍然可以采用上一题的思路进行编写；即使用 k 对符合
-        条件的元素进行计数，一边遍历表 L 一边统计 k，当某一元素不满足条件时，就往前挪到 i-k 位置上。
+        题目：已知一课二叉树按顺序存储结构进行存储，设计一个算法，求编号分别为 i 和 j 的两个节点的最近的公共祖先节点的值
+    分析：
+        利用数组存储一颗二叉树，一般来说我们用这种方式存储一颗完全二叉树，不浪费空间。然后我们可以依据其下标的特性，下标的二分之一既是该节点的父节点
 代码如下：
-#define _CRT_SECURE...
+12345678910111213141516171819202122232425262...
       
     
   </div>
@@ -2878,17 +2863,17 @@ struct Link &#123;
         <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a>
+          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" itemprop="url"><span itemprop="name">顺序表</span></a>
+              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%88%A0%E9%99%A4%E9%A1%BA%E5%BA%8F%E8%A1%A8%E4%B8%AD%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E7%9A%84%E5%85%83%E7%B4%A0/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B9%8B%E5%AF%BB%E6%89%BE%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%E8%8A%82%E7%82%B9/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2933,10 +2918,7 @@ struct Link &#123;
         题目：删除有序顺序表中重复的值，使表中所有的元素不同。
 分析：因为是有序顺序表，我们可以直接进行遍历，将不同的元素存回数组
 代码如下：
-#include &lt;stdio.h>
-int deleteRepitition(int *arr,int len) &#123;//由于C语言无法直接修改数组长度，我们返回去重后的数组长度
-	int k = 0;
-	for (int i = 0; i ...
+1234567891011121314151617181920#include &lt;stdio.h&gt;int deleteRepitition(int *arr,int len) &#123;//由于C语言无法直接修改数组长度，我们返回去重后的数组长...
       
     
   </div>
@@ -3004,9 +2986,7 @@ int deleteRepitition(int *arr,int len) &#123;//由于C语言无法直接修改�
 分析：
 用 k 记录删除元素个个数，一边遍历顺序表一边统计 k，并将不等于 x 的元素向前挪 k 个位置。
 代码如下:
-#include &lt;stdio.h>
-void deleteX(int *arr,int n,int len) &#123;
-	int k = 0,i=0;//...
+12345678910111213141516171819202122#include &lt;stdio.h&gt;void deleteX(int *arr,in...
       
     
   </div>
@@ -3043,7 +3023,7 @@ void deleteX(int *arr,int n,int len) &#123;
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/顺序表/合并两个顺序表/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/顺序表/删除顺序表中指定范围的元素/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -3061,21 +3041,19 @@ void deleteX(int *arr,int n,int len) &#123;
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E9%A1%BA%E5%BA%8F%E8%A1%A8/"  itemprop="url">
-        合并两个顺序表
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%88%A0%E9%99%A4%E9%A1%BA%E5%BA%8F%E8%A1%A8%E4%B8%AD%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E7%9A%84%E5%85%83%E7%B4%A0/"  itemprop="url">
+        删除顺序表中指定范围的元素
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：将两个有序顺序表合并成一个新的顺序表，并由函数返回新的结果顺序表
-分析：手动开辟一个数组空间，其大小要大于等于原始两个数组的长度，之后进行遍历，依次取较小值赋给新数组，若有数组未取完，剩余部分全部赋给新数组
+        题目：从顺序表中删除给定区间 s~t 之间的值，若给定区间不合理或顺序表为空，则显示错误信息并退出
+分析：此题与上一题大同小异，只不过，循环体内部的判定条件有了变化，我们仍然可以采用上一题的思路进行编写；即使用 k 对符合
+        条件的元素进行计数，一边遍历表 L 一边统计 k，当某一元素不满足条件时，就往前挪到 i-k 位置上。
 代码如下：
-#include &lt;stdio.h>
-int *merge(int* l1,int* l2,int len1,int len2) &#123;
-
-	int* ne...
+1234567891011121314...
       
     
   </div>
@@ -3096,7 +3074,7 @@ int *merge(int* l1,int* l2,int len1,int len2) &#123;
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E9%A1%BA%E5%BA%8F%E8%A1%A8/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%88%A0%E9%99%A4%E9%A1%BA%E5%BA%8F%E8%A1%A8%E4%B8%AD%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E7%9A%84%E5%85%83%E7%B4%A0/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3235,6 +3213,11 @@ int *merge(int* l1,int* l2,int len1,int len2) &#123;
             ><div class='name'>栈和队列</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95%E7%BB%8F%E5%85%B8/" href="/categories/%E7%AE%97%E6%B3%95%E7%BB%8F%E5%85%B8/"
+            active-action="action-categoriesE7AE97E6B395E7BB8FE585B8"
+            ><div class='name'>算法经典</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E8%AE%B2%E4%B9%89/" href="/categories/%E8%AE%B2%E4%B9%89/"
             active-action="action-categoriesE8AEB2E4B989"
             ><div class='name'>讲义</div><div class='badge'>(1)</div></a></li>
@@ -3272,7 +3255,7 @@ int *merge(int* l1,int* l2,int len1,int len2) &#123;
 
 
     <div class='content'>
-      <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 22px; color: #636363">二叉树</a> <a href="/tags/%E5%9B%BE/" style="font-size: 14px; color: #999">图</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" style="font-size: 16px; color: #8b8b8b">栈和队列</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 20px; color: #707070">链表</a> <a href="/tags/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" style="font-size: 18px; color: #7e7e7e">顺序表</a>
+      <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 22.33px; color: #606060">二叉树</a> <a href="/tags/%E5%9B%BE/" style="font-size: 15.67px; color: #8e8e8e">图</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" style="font-size: 17.33px; color: #828282">栈和队列</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/%E7%BA%A2%E9%BB%91%E6%A0%91/" style="font-size: 14px; color: #999">红黑树</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 20.67px; color: #6c6c6c">链表</a> <a href="/tags/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" style="font-size: 19px; color: #777">顺序表</a>
     </div>
   </section>
 

@@ -56,7 +56,7 @@
 <meta property="og:title" content="单链表求交集">
 <meta property="og:url" content="http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%8D%95%E9%93%BE%E8%A1%A8%E6%B1%82%E4%BA%A4%E9%9B%86/index.html">
 <meta property="og:site_name" content="北街学长的博客">
-<meta property="og:description" content="题目：已知两个链表 A、B 分别表示两个集合，其元素递增排列，编制函数，求 A 与 B 的交集，并存放于 A 链表中。 分析：         与上题类似，因为链表本身递增排序，我们可以设置两个指针，同时遍历 A、B 链表，同则保留，异则删除 代码： struct Link &#123; 	int data; 	struct Link *next; &#125;;   #include &lt;s">
+<meta property="og:description" content="题目：已知两个链表 A、B 分别表示两个集合，其元素递增排列，编制函数，求 A 与 B 的交集，并存放于 A 链表中。 分析：         与上题类似，因为链表本身递增排序，我们可以设置两个指针，同时遍历 A、B 链表，同则保留，异则删除 代码： 1234567891011121314151617181920212223242526272829303132struct Link &#123;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：222 字</p>
+      <p>字数：236 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2505,38 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 分析：<br />
         与上题类似，因为链表本身递增排序，我们可以设置两个指针，同时遍历 A、B 链表，同则保留，异则删除</p>
 <p>代码：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> data<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
- 
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token keyword">void</span> <span class="token function">listCommon</span><span class="token punctuation">(</span>Link <span class="token operator">*</span>a<span class="token punctuation">,</span>Link <span class="token operator">*</span>b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span>  <span class="token operator">*</span>pA <span class="token operator">=</span> a<span class="token operator">-></span>next<span class="token punctuation">,</span> <span class="token operator">*</span>pB <span class="token operator">=</span> b<span class="token operator">-></span>next<span class="token punctuation">,</span><span class="token operator">*</span>r<span class="token punctuation">,</span><span class="token operator">*</span>la<span class="token operator">=</span>a<span class="token punctuation">;</span><span class="token comment">//用la指向a，便可直接链在a后面</span>
-	la<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-	<span class="token keyword">while</span> <span class="token punctuation">(</span>pA<span class="token operator">&amp;&amp;</span>pB<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span>pA<span class="token operator">-></span>data<span class="token operator">==</span>pB<span class="token operator">-></span>data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			la<span class="token operator">-></span>next <span class="token operator">=</span> pA<span class="token punctuation">;</span>
-			la <span class="token operator">=</span> pA<span class="token punctuation">;</span>
-			pA <span class="token operator">=</span> pA<span class="token operator">-></span>next<span class="token punctuation">;</span>
-			pB <span class="token operator">=</span> pB<span class="token operator">-></span>next<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-			pA<span class="token operator">-></span>data <span class="token operator">&lt;</span> pB<span class="token operator">-></span>data <span class="token operator">?</span> pA <span class="token operator">=</span> pA<span class="token operator">-></span>next <span class="token operator">:</span> pB <span class="token operator">=</span> pB<span class="token operator">-></span>next<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
-	la<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token operator">*</span>b<span class="token punctuation">;</span>
-	Link <span class="token operator">*</span><span class="token function">createLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">void</span> <span class="token function">printfNowLink</span><span class="token punctuation">(</span>Link <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	a <span class="token operator">=</span> <span class="token function">createLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	b <span class="token operator">=</span> <span class="token function">createLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">listCommon</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">printfNowLink</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">listCommon</span><span class="params">(Link *a,Link *b)</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span>  *<span class="title">pA</span> =</span> a-&gt;next, *pB = b-&gt;next,*r,*la=a;<span class="comment">//用la指向a，便可直接链在a后面</span></span><br><span class="line">	la-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">while</span> (pA&amp;&amp;pB) &#123;</span><br><span class="line">		<span class="keyword">if</span> (pA-&gt;data==pB-&gt;data) &#123;</span><br><span class="line">			la-&gt;next = pA;</span><br><span class="line">			la = pA;</span><br><span class="line">			pA = pA-&gt;next;</span><br><span class="line">			pB = pB-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			pA-&gt;data &lt; pB-&gt;data ? pA = pA-&gt;next : pB = pB-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	la-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">a</span>, *<span class="title">b</span>;</span></span><br><span class="line">	Link *<span class="title function_">createLink</span><span class="params">()</span>;</span><br><span class="line">	<span class="type">void</span> <span class="title function_">printfNowLink</span><span class="params">(Link *)</span>;</span><br><span class="line">	a = createLink();</span><br><span class="line">	b = createLink();</span><br><span class="line">	listCommon(a,b);</span><br><span class="line">	printfNowLink(a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>所谓成功，就是在平凡中作出的不平凡的坚持！</p>
 
   </div>
@@ -2637,7 +2606,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：222 字</p>
+      <p>字数：236 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2669,7 +2638,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     分析：
         我们可以采用冒泡排序对其操作，使其递增有序, 时间复杂度为 O(n^2)。
 代码如下：
-struct Lin...</p>
+1234567891...</p>
         </a>
       
       

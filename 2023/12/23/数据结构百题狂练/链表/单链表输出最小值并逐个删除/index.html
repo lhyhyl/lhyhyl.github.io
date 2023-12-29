@@ -56,7 +56,7 @@
 <meta property="og:title" content="单链表输出最小值并逐个删除">
 <meta property="og:url" content="http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%8D%95%E9%93%BE%E8%A1%A8%E8%BE%93%E5%87%BA%E6%9C%80%E5%B0%8F%E5%80%BC%E5%B9%B6%E9%80%90%E4%B8%AA%E5%88%A0%E9%99%A4/index.html">
 <meta property="og:site_name" content="北街学长的博客">
-<meta property="og:description" content="题目：设有一个带头结点的单链表，其节点均为正值，设计一个算法，反复找出单链表中最小值输出并删除，直到单链表为空，最后删除头结点 分析：         按照以往的经验，我们需要遍历它，为了保证不断链，我们需要设置 pre，p，minPre，min，r 等 5 个指针。 代码如下： struct Link &#123; 	int data; 	struct Link *next; &#125;; #">
+<meta property="og:description" content="题目：设有一个带头结点的单链表，其节点均为正值，设计一个算法，反复找出单链表中最小值输出并删除，直到单链表为空，最后删除头结点 分析：         按照以往的经验，我们需要遍历它，为了保证不断链，我们需要设置 pre，p，minPre，min，r 等 5 个指针。 代码如下： 12345678910111213141516171819202122232425262728293031323334">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：278 字</p>
+      <p>字数：295 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2505,41 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 分析：<br />
         按照以往的经验，我们需要遍历它，为了保证不断链，我们需要设置 pre，p，minPre，min，r 等 5 个指针。</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> data<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token keyword">void</span> <span class="token function">inputAndDeleteLink</span><span class="token punctuation">(</span>Link <span class="token operator">*</span>h<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>pre <span class="token operator">=</span> h<span class="token punctuation">,</span> <span class="token operator">*</span>minPre <span class="token operator">=</span> h<span class="token punctuation">,</span> <span class="token operator">*</span>p <span class="token operator">=</span> h<span class="token operator">-></span>next<span class="token punctuation">,</span> <span class="token operator">*</span>min <span class="token operator">=</span> h<span class="token operator">-></span>next<span class="token punctuation">,</span> <span class="token operator">*</span>r<span class="token punctuation">;</span>
-	<span class="token keyword">while</span> <span class="token punctuation">(</span>h<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//如果头结点后面还有值，说明未结束</span>
-		<span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//寻找最小值</span>
-			<span class="token keyword">if</span> <span class="token punctuation">(</span>min<span class="token operator">-></span>data<span class="token operator">></span>p<span class="token operator">-></span>data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-				minPre <span class="token operator">=</span> pre<span class="token punctuation">;</span>
-				min <span class="token operator">=</span> p<span class="token punctuation">;</span>
-			<span class="token punctuation">&#125;</span>
-			pre <span class="token operator">=</span> p<span class="token punctuation">;</span>
-			p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span>min<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		r <span class="token operator">=</span> min<span class="token operator">-></span>next<span class="token punctuation">;</span>
-		minPre<span class="token operator">-></span>next <span class="token operator">=</span> min<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment">//删除当前最小值</span>
-		<span class="token function">free</span><span class="token punctuation">(</span>min<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//释放节点空间</span>
-		p <span class="token operator">=</span> h<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment">//又重头开始遍历</span>
-		pre <span class="token operator">=</span> h<span class="token punctuation">;</span>
-		minPre <span class="token operator">=</span> h<span class="token punctuation">;</span>
-		min <span class="token operator">=</span> h<span class="token operator">-></span>next<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token function">free</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//最后释放头结点</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>head<span class="token punctuation">;</span>
-	Link <span class="token operator">*</span><span class="token function">createLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//封装好的创建单链表函数</span>
-	head <span class="token operator">=</span> <span class="token function">createLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">inputAndDeleteLink</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">inputAndDeleteLink</span><span class="params">(Link *h)</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">pre</span> =</span> h, *minPre = h, *p = h-&gt;next, *min = h-&gt;next, *r;</span><br><span class="line">	<span class="keyword">while</span> (h-&gt;next) &#123;<span class="comment">//如果头结点后面还有值，说明未结束</span></span><br><span class="line">		<span class="keyword">while</span> (p) &#123;<span class="comment">//寻找最小值</span></span><br><span class="line">			<span class="keyword">if</span> (min-&gt;data&gt;p-&gt;data) &#123;</span><br><span class="line">				minPre = pre;</span><br><span class="line">				min = p;</span><br><span class="line">			&#125;</span><br><span class="line">			pre = p;</span><br><span class="line">			p = p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,min-&gt;data);</span><br><span class="line">		r = min-&gt;next;</span><br><span class="line">		minPre-&gt;next = min-&gt;next;<span class="comment">//删除当前最小值</span></span><br><span class="line">		<span class="built_in">free</span>(min);<span class="comment">//释放节点空间</span></span><br><span class="line">		p = h-&gt;next;<span class="comment">//又重头开始遍历</span></span><br><span class="line">		pre = h;</span><br><span class="line">		minPre = h;</span><br><span class="line">		min = h-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">free</span>(h);<span class="comment">//最后释放头结点</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">head</span>;</span></span><br><span class="line">	Link *<span class="title function_">createLink</span><span class="params">()</span>;<span class="comment">//封装好的创建单链表函数</span></span><br><span class="line">	head = createLink();</span><br><span class="line">	inputAndDeleteLink(head);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>学到很多东西的’诀窍，就是一下子不要学很多。</p>
 
   </div>
@@ -2640,7 +2606,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：278 字</p>
+      <p>字数：295 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">

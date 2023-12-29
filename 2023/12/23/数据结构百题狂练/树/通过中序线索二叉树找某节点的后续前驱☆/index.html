@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：516 字</p>
+      <p>字数：536 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2509,52 +2509,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         一个节点，则节点 p 在中序和后序下均没有前驱。</p>
 <p>要考虑到所有的情况确实不容易，先记下吧</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">char</span> data<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>lchild<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>rchild<span class="token punctuation">;</span>
-	<span class="token keyword">int</span> ltag<span class="token punctuation">,</span> rtag<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-biTree <span class="token operator">*</span><span class="token function">findPre</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span>T<span class="token punctuation">,</span>biTree <span class="token operator">*</span>p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//返回前驱结点</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>f<span class="token punctuation">;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>rchild<span class="token operator">&amp;&amp;</span>p<span class="token operator">-></span>rtag<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//若该节点有右孩子，那么右子女是其前驱</span>
-		<span class="token keyword">return</span> p<span class="token operator">-></span>rchild<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">-></span>ltag<span class="token operator">==</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>p<span class="token operator">-></span>lchild<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//若该节点只有左子女则左子女是其前驱</span>
-		<span class="token keyword">return</span> p<span class="token operator">-></span>lchild<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-		f <span class="token operator">=</span> p<span class="token operator">-></span>lchild<span class="token punctuation">;</span><span class="token comment">//此时左线索指向某祖先节点</span>
-		<span class="token keyword">while</span> <span class="token punctuation">(</span>f<span class="token operator">&amp;&amp;</span>f<span class="token operator">-></span>ltag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//如果该祖先节点没有左子女，继续找前驱</span>
-			f <span class="token operator">=</span> f<span class="token operator">-></span>lchild<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span>f<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			<span class="token keyword">return</span> f<span class="token operator">-></span>lchild<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-			<span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>T <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	biTree <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	T <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">void</span> <span class="token function">inThread</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span><span class="token punctuation">,</span>biTree <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">inThread</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//中序遍历建立线索</span>
- 
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>p <span class="token operator">=</span> T<span class="token operator">-></span>lchild<span class="token operator">-></span>rchild<span class="token operator">-></span>rchild<span class="token punctuation">,</span><span class="token operator">*</span>pre<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span><span class="token comment">//手动指定一个节点</span>
-	pre<span class="token operator">=</span><span class="token function">findPre</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>pre<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"节点p的前驱结点值为：%c"</span><span class="token punctuation">,</span>pre<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"节点p没有前驱结点"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> &#123;</span></span><br><span class="line">	<span class="type">char</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">lchild</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">rchild</span>;</span></span><br><span class="line">	<span class="type">int</span> ltag, rtag;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line">biTree *<span class="title function_">findPre</span><span class="params">(biTree *T,biTree *p)</span> &#123;<span class="comment">//返回前驱结点</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">f</span>;</span></span><br><span class="line">	<span class="keyword">if</span> (p-&gt;rchild&amp;&amp;p-&gt;rtag==<span class="number">0</span>) &#123;<span class="comment">//若该节点有右孩子，那么右子女是其前驱</span></span><br><span class="line">		<span class="keyword">return</span> p-&gt;rchild;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(p-&gt;ltag==<span class="number">0</span>&amp;&amp;p-&gt;lchild) &#123;<span class="comment">//若该节点只有左子女则左子女是其前驱</span></span><br><span class="line">		<span class="keyword">return</span> p-&gt;lchild;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		f = p-&gt;lchild;<span class="comment">//此时左线索指向某祖先节点</span></span><br><span class="line">		<span class="keyword">while</span> (f&amp;&amp;f-&gt;ltag) &#123;<span class="comment">//如果该祖先节点没有左子女，继续找前驱</span></span><br><span class="line">			f = f-&gt;lchild;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (f) &#123;</span><br><span class="line">			<span class="keyword">return</span> f-&gt;lchild;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">T</span> =</span> (<span class="keyword">struct</span> biTree *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> biTree));</span><br><span class="line">	biTree *<span class="title function_">create</span><span class="params">(biTree *)</span>;</span><br><span class="line">	T = create(T);</span><br><span class="line">	<span class="type">void</span> <span class="title function_">inThread</span><span class="params">(biTree *,biTree *)</span>;</span><br><span class="line">	inThread(T,<span class="literal">NULL</span>);<span class="comment">//中序遍历建立线索</span></span><br><span class="line"> </span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">p</span> =</span> T-&gt;lchild-&gt;rchild-&gt;rchild,*pre=<span class="literal">NULL</span>;<span class="comment">//手动指定一个节点</span></span><br><span class="line">	pre=findPre(T,p);</span><br><span class="line">	<span class="keyword">if</span> (pre) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;节点p的前驱结点值为：%c&quot;</span>,pre-&gt;data);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;节点p没有前驱结点&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们是如何一步步落后于别人的，自己心里特别清楚，无非是从生活中一点点的差距开始的。</p>
 
   </div>
@@ -2655,7 +2610,7 @@ biTree <span class="token operator">*</span><span class="token function">findPre
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：516 字</p>
+      <p>字数：536 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2681,19 +2636,20 @@ biTree <span class="token operator">*</span><span class="token function">findPre
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E3%80%81%E4%BB%8E%E5%8F%B3%E5%BE%80%E5%B7%A6%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>自下而上从右往左层次遍历</p>
-          <p class='content'>试给出二叉树的自下而上、从右到左的层次遍历算法
-    分析：
-        我们只需要在层次遍历的基础上加入栈的使用，我们每次出队后的数据将其入栈，队列空了时，再去依次访问栈中元素，即可达到...</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BC%96%E7%A8%8B%E6%B1%82%E4%BB%A5%E5%AD%A9%E5%AD%90%E5%85%84%E5%BC%9F%E8%A1%A8%E7%A4%BA%E6%B3%95%E5%AD%98%E5%82%A8%E7%9A%84%E6%A3%AE%E6%9E%97%E7%9A%84%E5%8F%B6%E5%AD%90%E7%BB%93%E7%82%B9%E6%95%B0%E2%98%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>求以孩子兄弟表示法存储的森林的叶子结点数</p>
+          <p class='content'>题目：编程求以孩子兄弟表示法存储的森林的叶子结点数
+
+分析：我们可以试想一个节点它如果有左孩子，那么根据孩子兄弟表示法的规则，那它一定不是叶节点，相反如果没有左孩子，那么
+           ...</p>
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%9D%9E%E9%80%92%E5%BD%92%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E9%AB%98%E5%BA%A6/'>
-          <p class='title'>非递归求二叉树高度<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目：假设二叉树采用二叉链表存储结构，设计一个非递归算法求二叉树的高度
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E3%80%81%E4%BB%8E%E5%8F%B3%E5%BE%80%E5%B7%A6%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/'>
+          <p class='title'>自下而上从右往左层次遍历<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>试给出二叉树的自下而上、从右到左的层次遍历算法
     分析：
-        若要采用非递归的方式来求得二叉树的高度，我们采用层次遍历是最合适的，因为这一层一层的不就很...</p>
+        我们只需要在层次遍历的基础上加入栈的使用，我们每次出队后的数据将其入栈，队列空了时，再去依次访问栈中元素，即可达到...</p>
         </a>
       
     </div>

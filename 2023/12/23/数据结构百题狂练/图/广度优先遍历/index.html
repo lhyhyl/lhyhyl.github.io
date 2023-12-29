@@ -60,7 +60,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-28T02:52:45.638Z">
+<meta property="article:modified_time" content="2023-12-28T09:04:14.531Z">
 <meta property="article:author" content="北街学长">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="图">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,13 +2478,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：690 字</p>
+      <p>字数：712 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2 分钟</p>
+      <p>时长：3 分钟</p>
     </a>
   </div>
 
@@ -2509,86 +2509,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           所以我们需要用一个数组来记录节点的访问情况，已访问置 true</strong></p>
 </blockquote>
 <p>代码如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAXSIZE</span> <span class="token expression"><span class="token number">100</span></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TYPE</span> <span class="token expression"><span class="token keyword">int</span></span></span>
-<span class="token comment">//边表结构 </span>
-<span class="token keyword">struct</span> <span class="token class-name">EdgeNode</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> index<span class="token punctuation">;</span><span class="token comment">//在数组中的下标</span>
-	<span class="token keyword">int</span> weight<span class="token punctuation">;</span><span class="token comment">//权值</span>
-	EdgeNode <span class="token operator">*</span>next<span class="token punctuation">;</span><span class="token comment">//下一个邻接点</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token comment">//顶点表节点结构</span>
-<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">VertexNode</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> info<span class="token punctuation">;</span><span class="token comment">//节点信息</span>
-	EdgeNode <span class="token operator">*</span>firstNode<span class="token punctuation">;</span><span class="token comment">//第一个邻接节点</span>
-<span class="token punctuation">&#125;</span>Adjlist<span class="token punctuation">[</span>MAXSIZE<span class="token punctuation">]</span><span class="token punctuation">;</span>
- 
-<span class="token comment">//图结构</span>
-<span class="token keyword">struct</span> <span class="token class-name">ALGraph</span> <span class="token punctuation">&#123;</span>
-	Adjlist adjlist<span class="token punctuation">;</span><span class="token comment">//顶点数组</span>
-	<span class="token keyword">int</span> numE<span class="token punctuation">,</span> numV<span class="token punctuation">;</span><span class="token comment">//边数，顶点数</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
- 
-<span class="token comment">//队列结构(我们采用顺序队列)</span>
-<span class="token keyword">struct</span> <span class="token class-name">Squeue</span> <span class="token punctuation">&#123;</span>
-	TYPE <span class="token operator">*</span>arr<span class="token punctuation">;</span>
-	<span class="token keyword">int</span> front<span class="token punctuation">,</span> rear<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token keyword">void</span> <span class="token function">BFS</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span>G<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//开始广度遍历</span>
-	<span class="token comment">//声明有关队列的函数</span>
-	Squeue <span class="token operator">*</span><span class="token function">createQueue</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	bool <span class="token function">isEmpty</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	bool <span class="token function">enQueue</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span><span class="token punctuation">,</span> TYPE<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	bool <span class="token function">deQueue</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span> TYPE <span class="token operator">*</span>data<span class="token punctuation">,</span> <span class="token keyword">int</span> maxSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">//设置一个标志数组，用于标志节点是否被访问 初始化0,1代表已访问</span>
-	<span class="token keyword">int</span> <span class="token operator">*</span>visited <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token operator">*</span>G<span class="token operator">-></span>numV<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> G<span class="token operator">-></span>numV<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		visited<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
- 
-	Squeue <span class="token operator">*</span>sq<span class="token punctuation">;</span>
-	sq <span class="token operator">=</span> <span class="token function">createQueue</span><span class="token punctuation">(</span>G<span class="token operator">-></span>numV<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建队列</span>
-	<span class="token comment">//从第一个节点开始遍历</span>
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> G<span class="token operator">-></span>numV<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//如果没有被访问，便进行访问</span>
-			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c "</span><span class="token punctuation">,</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//我们这里进行简单的打印代表访问</span>
-			visited<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//置为已访问</span>
-			<span class="token function">enQueue</span><span class="token punctuation">(</span>sq<span class="token punctuation">,</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>G<span class="token operator">-></span>numV<span class="token punctuation">]</span><span class="token punctuation">.</span>info<span class="token punctuation">,</span> G<span class="token operator">-></span>numV<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//入队</span>
- 
-			<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>sq<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//队列不空，取出队首元素，进行访问</span>
-				TYPE top<span class="token punctuation">;</span>
-				<span class="token function">deQueue</span><span class="token punctuation">(</span>sq<span class="token punctuation">,</span> <span class="token operator">&amp;</span>top<span class="token punctuation">,</span> G<span class="token operator">-></span>numV<span class="token punctuation">)</span><span class="token punctuation">;</span>
-				<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>top<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-					visited<span class="token punctuation">[</span>top<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-					<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c "</span><span class="token punctuation">,</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>top<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- 
-					<span class="token keyword">for</span> <span class="token punctuation">(</span>EdgeNode <span class="token operator">*</span>w <span class="token operator">=</span> G<span class="token operator">-></span>adjlist<span class="token punctuation">[</span>top<span class="token punctuation">]</span><span class="token punctuation">.</span>firstNode<span class="token punctuation">;</span> w<span class="token punctuation">;</span> w <span class="token operator">=</span> w<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//依次将当前节点的边表入队，和层次遍历一致</span>
-						<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>w<span class="token operator">-></span>index<span class="token punctuation">]</span><span class="token punctuation">)</span>
-							<span class="token function">enQueue</span><span class="token punctuation">(</span>sq<span class="token punctuation">,</span> w<span class="token operator">-></span>index<span class="token punctuation">,</span> G<span class="token operator">-></span>numV<span class="token punctuation">)</span><span class="token punctuation">;</span>
- 
-					<span class="token punctuation">&#125;</span>
-				<span class="token punctuation">&#125;</span>
- 
-			<span class="token punctuation">&#125;</span>
- 
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
- 
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	ALGraph <span class="token operator">*</span>graph <span class="token operator">=</span> <span class="token punctuation">(</span>ALGraph <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">//声明函数</span>
-	<span class="token keyword">void</span> <span class="token function">createGraph</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">void</span> <span class="token function">dispGraph</span><span class="token punctuation">(</span>ALGraph <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">//创建图</span>
-	<span class="token function">createGraph</span><span class="token punctuation">(</span>graph<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">//打印图</span>
-	<span class="token function">dispGraph</span><span class="token punctuation">(</span>graph<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">//广度优先遍历</span>
-	<span class="token function">BFS</span><span class="token punctuation">(</span>graph<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXSIZE 100</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> TYPE int</span></span><br><span class="line"><span class="comment">//边表结构 </span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">EdgeNode</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> index;<span class="comment">//在数组中的下标</span></span><br><span class="line">	<span class="type">int</span> weight;<span class="comment">//权值</span></span><br><span class="line">	EdgeNode *next;<span class="comment">//下一个邻接点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//顶点表节点结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">VertexNode</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> info;<span class="comment">//节点信息</span></span><br><span class="line">	EdgeNode *firstNode;<span class="comment">//第一个邻接节点</span></span><br><span class="line">&#125;Adjlist[MAXSIZE];</span><br><span class="line"> </span><br><span class="line"><span class="comment">//图结构</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ALGraph</span> &#123;</span></span><br><span class="line">	Adjlist adjlist;<span class="comment">//顶点数组</span></span><br><span class="line">	<span class="type">int</span> numE, numV;<span class="comment">//边数，顶点数</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//队列结构(我们采用顺序队列)</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Squeue</span> &#123;</span></span><br><span class="line">	TYPE *arr;</span><br><span class="line">	<span class="type">int</span> front, rear;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">BFS</span><span class="params">(ALGraph *G)</span> &#123;<span class="comment">//开始广度遍历</span></span><br><span class="line">	<span class="comment">//声明有关队列的函数</span></span><br><span class="line">	Squeue *<span class="title function_">createQueue</span><span class="params">(<span class="type">int</span>)</span>;</span><br><span class="line">	<span class="type">bool</span> <span class="title function_">isEmpty</span><span class="params">(Squeue *)</span>;</span><br><span class="line">	<span class="type">bool</span> <span class="title function_">enQueue</span><span class="params">(Squeue *, TYPE, <span class="type">int</span>)</span>;</span><br><span class="line">	<span class="type">bool</span> <span class="title function_">deQueue</span><span class="params">(Squeue *sq, TYPE *data, <span class="type">int</span> maxSize)</span>;</span><br><span class="line">	<span class="comment">//设置一个标志数组，用于标志节点是否被访问 初始化0,1代表已访问</span></span><br><span class="line">	<span class="type">int</span> *visited = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>)*G-&gt;numV);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;numV; i++) &#123;</span><br><span class="line">		visited[i] = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	Squeue *sq;</span><br><span class="line">	sq = createQueue(G-&gt;numV);<span class="comment">//创建队列</span></span><br><span class="line">	<span class="comment">//从第一个节点开始遍历</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;numV; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!visited[i]) &#123;<span class="comment">//如果没有被访问，便进行访问</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%c &quot;</span>, G-&gt;adjlist[i]);<span class="comment">//我们这里进行简单的打印代表访问</span></span><br><span class="line">			visited[i] = <span class="number">1</span>;<span class="comment">//置为已访问</span></span><br><span class="line">			enQueue(sq, G-&gt;adjlist[G-&gt;numV].info, G-&gt;numV);<span class="comment">//入队</span></span><br><span class="line"> </span><br><span class="line">			<span class="keyword">while</span> (!isEmpty(sq)) &#123;<span class="comment">//队列不空，取出队首元素，进行访问</span></span><br><span class="line">				TYPE top;</span><br><span class="line">				deQueue(sq, &amp;top, G-&gt;numV);</span><br><span class="line">				<span class="keyword">if</span> (!visited[top]) &#123;</span><br><span class="line">					visited[top] = <span class="number">1</span>;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;%c &quot;</span>, G-&gt;adjlist[top]);</span><br><span class="line"> </span><br><span class="line">					<span class="keyword">for</span> (EdgeNode *w = G-&gt;adjlist[top].firstNode; w; w = w-&gt;next) &#123;<span class="comment">//依次将当前节点的边表入队，和层次遍历一致</span></span><br><span class="line">						<span class="keyword">if</span> (!visited[w-&gt;index])</span><br><span class="line">							enQueue(sq, w-&gt;index, G-&gt;numV);</span><br><span class="line"> </span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"> </span><br><span class="line">			&#125;</span><br><span class="line"> </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	ALGraph *graph = (ALGraph *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(ALGraph *));</span><br><span class="line">	<span class="comment">//声明函数</span></span><br><span class="line">	<span class="type">void</span> <span class="title function_">createGraph</span><span class="params">(ALGraph *)</span>;</span><br><span class="line">	<span class="type">void</span> <span class="title function_">dispGraph</span><span class="params">(ALGraph *)</span>;</span><br><span class="line">	<span class="comment">//创建图</span></span><br><span class="line">	createGraph(graph);</span><br><span class="line">	<span class="comment">//打印图</span></span><br><span class="line">	dispGraph(graph);</span><br><span class="line">	<span class="comment">//广度优先遍历</span></span><br><span class="line">	BFS(graph);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 <p>运行结果如下：</p>
 <p><img src="https://img-blog.csdnimg.cn/20210607103552467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzkwMzgx,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20210607103552467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzkwMzgx,size_16,color_FFFFFF,t_70" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" /></p>
 <p>你不对自己狠一点儿，真的只能沦落为炮灰。拼命的时候一定不要对自己手下留情，你只有努力，才配得上更好的生活！</p>
@@ -2616,7 +2537,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T10:52:45+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-12-28T17:04:14+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2023年12月28日</p>
@@ -2691,13 +2612,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：690 字</p>
+      <p>字数：712 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2 分钟</p>
+      <p>时长：3 分钟</p>
     </a>
   </div>
 
@@ -2717,19 +2638,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E4%BB%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE%E4%BB%A5%E5%88%9B%E5%BB%BA%E5%9B%BE/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>读取文件创建图</p>
-          <p class='content'>背景：之前一直在控制台输入有关图所需的数据，可控制台极易输错，且要想达到好的测试效果，那么就需要大量数据，显然控制台输入太慢且费时，所以思考利用文件读取的方式。
-
-文件格式如上图，第一行数据分别...</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E4%BD%BF%E7%94%A8%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AD%98%E5%82%A8%E5%9B%BE/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>邻接矩阵的构造</p>
+          <p class='content'>
+使用邻接矩阵构造图
+    分析：
+        其实图相比于其它数据结构较复杂，但也是十分易懂的，对于使用邻接矩阵存储的图来说，我们所需要知道的数据有
+        图的定点数、边数、用...</p>
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E6%B7%B1%E4%BC%98%E5%B9%BF%E4%BC%98%E5%88%A4%E6%96%ADvi%E5%88%B0vj%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%B7%AF%E5%BE%84/'>
-          <p class='title'>深优广优判断vi到vj是否存在路径<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>分析：
-        采用深度优先：我们从 vi 顶点开始进行深度遍历，若存在路径则必然可以走到 vj 顶点处；
-        采用广度优先：同样从 vi 顶点开始进行广度遍历，若存在则必然...</p>
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%B2%E4%B9%89/'>
+          <p class='title'>数据结构深入理解<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'> 数据结构
+ 第一章：数据结构的基本概念
+ 定义
+
+数据结构：相互之间存在一种或多种特定关系的数据元素的集合。
+数据：描述客观事物的数和字符的集合
+数据项：具有独立含义的数据最小单元
+数据对象：...</p>
         </a>
       
     </div>
@@ -3464,7 +3392,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/图/","name":"图"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/图/广度优先遍历/","name":"广度优先遍历"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"广度优先遍历","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-28T02:52:45.638Z","articleSection":"图","keywords":"数据结构,图","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","sameAs":["https://github.com/volantis-x"],"description":"电子科技大学22级研究生"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://lhyhyl.github.io/","name":"北街学长的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://lhyhyl.github.io/categories/图/","name":"图"}},{"@type":"ListItem","position":3,"item":{"@id":"http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/图/广度优先遍历/","name":"广度优先遍历"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"北街学长的博客","url":"http://lhyhyl.github.io/","keywords":"数据结构,算法,前端,c,c++,程序猿","description":"电子科技大学22级研究生","author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/","description":"电子科技大学22级研究生"},"publisher":{"@type":"Organization","name":"北街学长的博客","url":"http://lhyhyl.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://lhyhyl.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"广度优先遍历","description":"电子科技大学22级研究生","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/"},"author":{"@type":"Person","name":"北街学长","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://lhyhyl.github.io/"},"publisher":{"@type":"Organization","name":"北街学长的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/","wordCount":0,"datePublished":"2023-12-22T16:00:00.000Z","dateModified":"2023-12-28T09:04:14.531Z","articleSection":"图","keywords":"数据结构,图","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

@@ -56,7 +56,7 @@
 <meta property="og:title" content="循环左移">
 <meta property="og:url" content="http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%BE%AA%E7%8E%AF%E5%B7%A6%E7%A7%BB/index.html">
 <meta property="og:site_name" content="北街学长的博客">
-<meta property="og:description" content="题目：将 arr 中的存放的数据循环左移 p 个位置，即将 arr 中的 (X0,X1,…,Xn-1 变换为 (Xp，Xp-1,…,Xn-1,X0,X1,…,Xp-1))，尽可能高效 分析：         本题与逆置数组哪一题相似，我们仍然可以采取逆置数组的方式来完成题目要求，首先整体逆置，然后逆置 p 到 n-1 的数据，0 到 p-1 的数据即可完成循环左移 代码： #define _CRT">
+<meta property="og:description" content="题目：将 arr 中的存放的数据循环左移 p 个位置，即将 arr 中的 (X0,X1,…,Xn-1 变换为 (Xp，Xp-1,…,Xn-1,X0,X1,…,Xp-1))，尽可能高效 分析：         本题与逆置数组哪一题相似，我们仍然可以采取逆置数组的方式来完成题目要求，首先整体逆置，然后逆置 p 到 n-1 的数据，0 到 p-1 的数据即可完成循环左移 代码： 123456789101">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：288 字</p>
+      <p>字数：297 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2505,31 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>分析：<br />
         本题与逆置<a target="_blank" rel="noopener external nofollow noreferrer" href="https://so.csdn.net/so/search?q=%E6%95%B0%E7%BB%84&amp;spm=1001.2101.3001.7020">数组</a>哪一题相似，我们仍然可以采取逆置数组的方式来完成题目要求，首先整体逆置，然后逆置 p 到 n-1 的数据，0 到 p-1 的数据即可完成循环左移<br />
 代码：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">_CRT_SECURE_NO_WARNINGS</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token keyword">void</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>arr<span class="token punctuation">,</span><span class="token keyword">int</span> from<span class="token punctuation">,</span><span class="token keyword">int</span> to<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//逆置函数，参数：数组，起点，终点</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>from <span class="token operator">></span> to<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token keyword">return</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">int</span> tmp<span class="token punctuation">;</span>
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> from<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token punctuation">(</span>from<span class="token operator">+</span>to<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//i要小于等于该值的二分之一，不然中间的值没有交换</span>
-		tmp <span class="token operator">=</span> <span class="token operator">*</span><span class="token punctuation">(</span>arr <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token operator">*</span><span class="token punctuation">(</span>arr <span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token operator">*</span><span class="token punctuation">(</span>arr <span class="token operator">+</span> to <span class="token operator">-</span> i <span class="token operator">+</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token operator">*</span><span class="token punctuation">(</span>arr <span class="token operator">+</span> to <span class="token operator">-</span> i <span class="token operator">+</span>from<span class="token punctuation">)</span> <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
- 
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-	<span class="token keyword">int</span> p<span class="token punctuation">;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入左移位数p="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">reverse</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//整体逆置</span>
-	<span class="token function">reverse</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>p<span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//后半段逆置</span>
-	<span class="token function">reverse</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>p<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//前半段逆置</span>
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">9</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">reverse</span><span class="params">(<span class="type">int</span> *arr,<span class="type">int</span> from,<span class="type">int</span> to)</span> &#123;<span class="comment">//逆置函数，参数：数组，起点，终点</span></span><br><span class="line">	<span class="keyword">if</span> (from &gt; to) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> tmp;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = from; i &lt;= (from+to)/<span class="number">2</span>;i++) &#123;<span class="comment">//i要小于等于该值的二分之一，不然中间的值没有交换</span></span><br><span class="line">		tmp = *(arr + i);</span><br><span class="line">		*(arr + i) = *(arr + to - i +from);</span><br><span class="line">		*(arr + to - i +from) = tmp;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> arr[<span class="number">9</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line">	<span class="type">int</span> p;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入左移位数p=&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;p);</span><br><span class="line">	reverse(arr,<span class="number">0</span>,<span class="number">8</span>);<span class="comment">//整体逆置</span></span><br><span class="line">	reverse(arr,p,<span class="number">8</span>);<span class="comment">//后半段逆置</span></span><br><span class="line">	reverse(arr,<span class="number">0</span>,p<span class="number">-1</span>);<span class="comment">//前半段逆置</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>;i++)<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>那些打不倒你的，终将使你更强大！</p>
 
   </div>
@@ -2630,7 +2606,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：288 字</p>
+      <p>字数：297 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2656,18 +2632,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E9%A1%BA%E5%BA%8F%E8%A1%A8/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>合并两个顺序表</p>
-          <p class='content'>题目：将两个有序顺序表合并成一个新的顺序表，并由函数返回新的结果顺序表
-分析：手动开辟一个数组空间，其大小要大于等于原始两个数组的长度，之后进行遍历，依次取较小值赋给新数组，若有数组未取完，剩余...</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%88%A0%E9%99%A4%E9%A1%BA%E5%BA%8F%E8%A1%A8%E4%B8%AD%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E7%9A%84%E5%85%83%E7%B4%A0/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>删除顺序表中指定范围的元素</p>
+          <p class='content'>题目：从顺序表中删除给定区间 s~t 之间的值，若给定区间不合理或顺序表为空，则显示错误信息并退出
+分析：此题与上一题大同小异，只不过，循环体内部的判定条件有了变化，我们仍然可以采用上一题的思路...</p>
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E6%95%B0%E7%BB%84%E5%86%85%E9%83%A8%E4%BA%A4%E6%8D%A2/'>
-          <p class='title'>数组内部交换<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目：已知在以为数组 A[m+n] 中依次存放两个线性表 (a1,a2…,am) 和 (b1,b2,…,bn), 现需要将两个线性表互换位置，b 在前，a 在后
-分析：
-        要想达到...</p>
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E9%A1%BA%E5%BA%8F%E8%A1%A8/'>
+          <p class='title'>合并两个顺序表<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目：将两个有序顺序表合并成一个新的顺序表，并由函数返回新的结果顺序表
+分析：手动开辟一个数组空间，其大小要大于等于原始两个数组的长度，之后进行遍历，依次取较小值赋给新数组，若有数组未取完，剩余...</p>
         </a>
       
     </div>

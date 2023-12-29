@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：313 字</p>
+      <p>字数：331 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2508,27 +2508,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         2、将根节点之后的节点分成左右两堆，在分别执行上一步<br />
         3、直至全部处理完</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
- 
-<span class="token keyword">void</span> <span class="token function">preToPost</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>arrPre<span class="token punctuation">,</span><span class="token keyword">char</span> <span class="token operator">*</span>arrPost<span class="token punctuation">,</span><span class="token keyword">int</span> l1<span class="token punctuation">,</span><span class="token keyword">int</span> h1<span class="token punctuation">,</span><span class="token keyword">int</span> l2<span class="token punctuation">,</span><span class="token keyword">int</span> h2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token comment">//l1,h1,l2,h2代表arrPre和arrPost的起点和末尾</span>
-	<span class="token keyword">int</span> half<span class="token punctuation">;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>l1 <span class="token operator">&lt;=</span> h1<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		half <span class="token operator">=</span> <span class="token punctuation">(</span>h1 <span class="token operator">-</span> l1<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
-		<span class="token operator">*</span><span class="token punctuation">(</span>arrPost <span class="token operator">+</span> h2<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token operator">*</span><span class="token punctuation">(</span>arrPre <span class="token operator">+</span> l1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token function">preToPost</span><span class="token punctuation">(</span>arrPre<span class="token punctuation">,</span> arrPost<span class="token punctuation">,</span> l1 <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> l1 <span class="token operator">+</span> half<span class="token punctuation">,</span> l2<span class="token punctuation">,</span> l2 <span class="token operator">+</span> half <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//左边</span>
-		<span class="token function">preToPost</span><span class="token punctuation">(</span>arrPre<span class="token punctuation">,</span> arrPost<span class="token punctuation">,</span> l1 <span class="token operator">+</span> half <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> h1<span class="token punctuation">,</span> l2<span class="token operator">+</span> half<span class="token punctuation">,</span> h2<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//右边</span>
-	<span class="token punctuation">&#125;</span>
- 
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">char</span> arrPre<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token char">'A'</span><span class="token punctuation">,</span><span class="token char">'B'</span><span class="token punctuation">,</span><span class="token char">'D'</span><span class="token punctuation">,</span><span class="token char">'E'</span><span class="token punctuation">,</span><span class="token char">'C'</span><span class="token punctuation">,</span><span class="token char">'F'</span><span class="token punctuation">,</span><span class="token char">'G'</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>arrPost<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-	<span class="token function">preToPost</span><span class="token punctuation">(</span>arrPre<span class="token punctuation">,</span>arrPost<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">7</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c "</span><span class="token punctuation">,</span><span class="token operator">*</span><span class="token punctuation">(</span>arrPost<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">void</span> <span class="title function_">preToPost</span><span class="params">(<span class="type">char</span> *arrPre,<span class="type">char</span> *arrPost,<span class="type">int</span> l1,<span class="type">int</span> h1,<span class="type">int</span> l2,<span class="type">int</span> h2)</span> &#123;</span><br><span class="line">	<span class="comment">//l1,h1,l2,h2代表arrPre和arrPost的起点和末尾</span></span><br><span class="line">	<span class="type">int</span> half;</span><br><span class="line">	<span class="keyword">if</span> (l1 &lt;= h1) &#123;</span><br><span class="line">		half = (h1 - l1) / <span class="number">2</span>;</span><br><span class="line">		*(arrPost + h2) = *(arrPre + l1);</span><br><span class="line">		preToPost(arrPre, arrPost, l1 + <span class="number">1</span>, l1 + half, l2, l2 + half - <span class="number">1</span>);<span class="comment">//左边</span></span><br><span class="line">		preToPost(arrPre, arrPost, l1 + half + <span class="number">1</span>, h1, l2+ half, h2<span class="number">-1</span>);<span class="comment">//右边</span></span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">char</span> arrPre[] = &#123;<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;E&#x27;</span>,<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;F&#x27;</span>,<span class="string">&#x27;G&#x27;</span>&#125;,arrPost[<span class="number">7</span>];</span><br><span class="line">	preToPost(arrPre,arrPost,<span class="number">0</span>,<span class="number">6</span>,<span class="number">0</span>,<span class="number">6</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>;i++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%c &quot;</span>,*(arrPost+i));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>头等舱可以优先登机，银行 VIP 可以不用排队，演唱会最贵的门票位置是最好的，这世界从不平等，你有多努力，才有多特殊。</p>
 
   </div>
@@ -2629,7 +2609,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：313 字</p>
+      <p>字数：331 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2655,20 +2635,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%AF%BB%E6%89%BE%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E4%B8%AD%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>寻找先序遍历中第k个结点</p>
-          <p class='content'>题目：假设二叉树是用二叉链表存储，试设计一个算法, 求先序遍历中第 k（1&lt;=k&lt;= 二叉树的节点个数）个节点的值
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%B0%86%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E8%BD%AC%E6%8D%A2%E6%88%90%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E2%98%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>将表达式树转换为中缀表达式</p>
+          <p class='content'>题目：请设计一个算法，将给定的表达式树，转换成等价的中缀表达式并输出。
 分析：
-        很简单，每遍历一个节点，计数器便加一，直至...</p>
+        题目已然说明我们要采取中序遍历，进而输出该表达式，那么需要注意的点便是我们的括号在哪里加，其中根节...</p>
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%B0%86%E5%8F%B6%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E6%88%90%E4%B8%80%E4%B8%AA%E9%93%BE%E8%A1%A8%E2%98%86/'>
-          <p class='title'>将叶结点连接成一个链表<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目：设计一个算法将二叉树的叶节点按从左到右的顺序连成一个单链表，表头指针为 head。二叉树按二叉链表方式存储，连接时用叶节点的
-           右指针来存放单链表指针。
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%9F%A5%E6%89%BE%E6%9F%90%E8%8A%82%E7%82%B9%E7%9A%84%E6%89%80%E6%9C%89%E7%A5%96%E5%85%88%E2%98%86/'>
+          <p class='title'>查找节点的所有祖先结点<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目：在二叉树中查找值为 x 的节点，试编写算法打印值为 x 的节点的所有祖先，假设 x 的值不多于一个。
 分析：
-   ...</p>
+        这里我们采用后序遍历（非递归），因为在我们遇到 x 之前我们会...</p>
         </a>
       
     </div>

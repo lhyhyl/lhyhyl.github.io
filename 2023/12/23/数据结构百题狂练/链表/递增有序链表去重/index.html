@@ -56,7 +56,7 @@
 <meta property="og:title" content="递增有序链表去重">
 <meta property="og:url" content="http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%92%E5%A2%9E%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D/index.html">
 <meta property="og:site_name" content="北街学长的博客">
-<meta property="og:description" content="题目：在一个递增有序的线性表中，有数值相同的元素存在，若存储方式为单链表，设计算法去掉数值相同的元素，使表中不再有重复的元素。 分析：         对于这类去重，我们肯定需要进行遍历，而这道题给我们的是递增有序的序列，我们便可以进行一一比较，后一个元素与当前元素相同         时便删除当前元素。 代码如下： struct Link &#123; 	int data; 	struct Li">
+<meta property="og:description" content="题目：在一个递增有序的线性表中，有数值相同的元素存在，若存储方式为单链表，设计算法去掉数值相同的元素，使表中不再有重复的元素。 分析：         对于这类去重，我们肯定需要进行遍历，而这道题给我们的是递增有序的序列，我们便可以进行一一比较，后一个元素与当前元素相同         时便删除当前元素。 代码如下： 1234567891011121314151617181920212223242">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：280 字</p>
+      <p>字数：291 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2506,36 +2506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         对于这类去重，我们肯定需要进行遍历，而这道题给我们的是递增有序的序列，我们便可以进行一一比较，后一个元素与当前元素相同<br />
         时便删除当前元素。</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> data<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
- 
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token keyword">void</span> <span class="token function">deleteRep</span><span class="token punctuation">(</span>Link <span class="token operator">*</span>h<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>pre <span class="token operator">=</span> h<span class="token punctuation">,</span> <span class="token operator">*</span>p <span class="token operator">=</span> h<span class="token operator">-></span>next<span class="token punctuation">,</span> <span class="token operator">*</span>r<span class="token punctuation">;</span><span class="token comment">//删除节点必背三剑客</span>
-	<span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>data<span class="token operator">==</span>p<span class="token operator">-></span>next<span class="token operator">-></span>data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//当前节点与后续节点值相同，则删除并释放空间</span>
-			r <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment">//必须先保存后续节点，防止断链</span>
-			pre<span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
-			<span class="token function">free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			p <span class="token operator">=</span> r<span class="token punctuation">;</span>
-			<span class="token keyword">continue</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-		pre <span class="token operator">=</span> p<span class="token punctuation">;</span>
-		p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span> head<span class="token punctuation">;</span>
-	Link <span class="token operator">*</span><span class="token function">createLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">void</span> <span class="token function">printfNowLink</span><span class="token punctuation">(</span>Link <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	head <span class="token operator">=</span> <span class="token function">createLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">deleteRep</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">printfNowLink</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">deleteRep</span><span class="params">(Link *h)</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">pre</span> =</span> h, *p = h-&gt;next, *r;<span class="comment">//删除节点必背三剑客</span></span><br><span class="line">	<span class="keyword">while</span> (p-&gt;next) &#123;</span><br><span class="line">		<span class="keyword">if</span> (p-&gt;data==p-&gt;next-&gt;data) &#123;<span class="comment">//当前节点与后续节点值相同，则删除并释放空间</span></span><br><span class="line">			r = p-&gt;next;<span class="comment">//必须先保存后续节点，防止断链</span></span><br><span class="line">			pre-&gt;next = p-&gt;next;</span><br><span class="line">			<span class="built_in">free</span>(p);</span><br><span class="line">			p = r;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		pre = p;</span><br><span class="line">		p = p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> * <span class="title">head</span>;</span></span><br><span class="line">	Link *<span class="title function_">createLink</span><span class="params">()</span>;</span><br><span class="line">	<span class="type">void</span> <span class="title function_">printfNowLink</span><span class="params">(Link *)</span>;</span><br><span class="line">	head = createLink();</span><br><span class="line">	deleteRep(head);</span><br><span class="line">	printfNowLink(head);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>既然我已经踏上这条道路，那么，任何东西都不应妨碍我沿着这条路走下去！</p>
 
   </div>
@@ -2636,7 +2607,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：280 字</p>
+      <p>字数：291 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2662,18 +2633,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E6%8C%89%E7%85%A7%E5%A5%87%E5%81%B6%E6%8B%86%E5%88%86%E9%93%BE%E8%A1%A8/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>按照奇偶拆分链表</p>
-          <p class='content'>题目：将一个带头结点单链表 A 分解成两个带头结点的单链表 A 和 B，使得 A 中含有原表中序号为奇数的元素，B 中为偶数，且保持其相对位置不变
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%AF%BB%E6%89%BE%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>寻找链表倒数第k个结点</p>
+          <p class='content'>题目：有一个带头结点的单链表，设计一个函数找到指定的倒数第 k 个节点，输出节点值，并返回 1，否则返回 0，前提不能改变链表，尽可能高效
 分析：
-        首先我们需要分配一个节...</p>
+        我们可以先统计出总共的节点数 ...</p>
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D%E2%98%86/'>
-          <p class='title'>链表去重<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目：用单链表保存 m 个整数，节点的结构为 [data][next], 且 | data|&lt;=n。现要求设计一个时间复杂度尽可能高效算法，
-           对于链表中绝对值相等的节...</p>
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E6%8C%89%E7%85%A7%E5%A5%87%E5%81%B6%E6%8B%86%E5%88%86%E9%93%BE%E8%A1%A8/'>
+          <p class='title'>按照奇偶拆分链表<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目：将一个带头结点单链表 A 分解成两个带头结点的单链表 A 和 B，使得 A 中含有原表中序号为奇数的元素，B 中为偶数，且保持其相对位置不变
+分析：
+        首先我们需要分配一个节...</p>
         </a>
       
     </div>

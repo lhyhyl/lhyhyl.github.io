@@ -56,7 +56,7 @@
 <meta property="og:title" content="判断是否是平衡二叉树">
 <meta property="og:url" content="http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="北街学长的博客">
-<meta property="og:description" content="利用二叉树遍历的思想编写一个判断二叉树是否是二叉平衡树的算法     分析：         我们可以采取后序遍历来完成该算法，因为后序遍历不会含有重复计算。         我们对每一个节点进行判断，如果左右子树均平衡且左右子树高度差小于等于 1，则该节点平衡  代码如下： struct Tree &#123; 	int data; 	Tree *left, *right; &#125;; #">
+<meta property="og:description" content="利用二叉树遍历的思想编写一个判断二叉树是否是二叉平衡树的算法     分析：         我们可以采取后序遍历来完成该算法，因为后序遍历不会含有重复计算。         我们对每一个节点进行判断，如果左右子树均平衡且左右子树高度差小于等于 1，则该节点平衡  代码如下： 123456789101112131415161718192021222324252627282930313233343">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：394 字</p>
+      <p>字数：414 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2508,50 +2508,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         我们对每一个节点进行判断，如果左右子树均平衡且左右子树高度差小于等于 1，则该节点平衡</p>
 </blockquote>
 <p>代码如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Tree</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> data<span class="token punctuation">;</span>
-	Tree <span class="token operator">*</span>left<span class="token punctuation">,</span> <span class="token operator">*</span>right<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">_CRT_SECURE_NO_WARNINGS</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-Tree <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span>Tree <span class="token operator">*</span>T<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//先序创建一颗二叉树</span>
-	<span class="token keyword">int</span> data<span class="token punctuation">;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入当前节点值：data="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>data <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		T <span class="token operator">=</span> <span class="token punctuation">(</span>Tree <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Tree<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		T<span class="token operator">-></span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
-		T<span class="token operator">-></span>left <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-		T<span class="token operator">-></span>right <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-		T<span class="token operator">-></span>left <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		T<span class="token operator">-></span>right <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">return</span> T<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-bool <span class="token function">isAVL</span><span class="token punctuation">(</span>Tree <span class="token operator">*</span>T<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>depth<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>T<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//空节点，为平衡二叉树</span>
-		<span class="token operator">*</span>depth <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-		<span class="token keyword">return</span> true<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAVL</span><span class="token punctuation">(</span>T<span class="token operator">-></span>left<span class="token punctuation">,</span> <span class="token operator">&amp;</span>left<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isAVL</span><span class="token punctuation">(</span>T<span class="token operator">-></span>right<span class="token punctuation">,</span> <span class="token operator">&amp;</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//判断左右子树是否为平衡二叉树</span>
-		<span class="token keyword">int</span> diff <span class="token operator">=</span> left <span class="token operator">-</span> right<span class="token punctuation">;</span><span class="token comment">//左右子树的高度差</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>diff<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//满足小于等于1,那就是平衡二叉树</span>
-			<span class="token operator">*</span>depth	<span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token punctuation">(</span>left <span class="token operator">></span> right <span class="token operator">?</span> left <span class="token operator">:</span> right<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-			<span class="token keyword">return</span> true<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">return</span> false<span class="token punctuation">;</span><span class="token comment">//前面一直未返回true，那就不是平衡二叉树</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	Tree <span class="token operator">*</span>T <span class="token operator">=</span> <span class="token punctuation">(</span>Tree <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Tree <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	T <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一颗二叉树</span>
-	<span class="token keyword">int</span> depth <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token function">isAVL</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> <span class="token operator">&amp;</span>depth<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"是二叉平衡树"</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"不是二叉平衡树"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Tree</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">	Tree *left, *right;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line">Tree *<span class="title function_">create</span><span class="params">(Tree *T)</span> &#123;<span class="comment">//先序创建一颗二叉树</span></span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入当前节点值：data=&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;data);</span><br><span class="line">	getchar();</span><br><span class="line">	<span class="keyword">if</span> (data != <span class="number">-1</span>) &#123;</span><br><span class="line">		T = (Tree *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Tree));</span><br><span class="line">		T-&gt;data = data;</span><br><span class="line">		T-&gt;left = <span class="literal">NULL</span>;</span><br><span class="line">		T-&gt;right = <span class="literal">NULL</span>;</span><br><span class="line">		T-&gt;left = create(T-&gt;left);</span><br><span class="line">		T-&gt;right = create(T-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> T;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">bool</span> <span class="title function_">isAVL</span><span class="params">(Tree *T, <span class="type">int</span> *depth)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (!T) &#123;<span class="comment">//空节点，为平衡二叉树</span></span><br><span class="line">		*depth = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (isAVL(T-&gt;left, &amp;left) &amp;&amp; isAVL(T-&gt;right, &amp;right)) &#123;<span class="comment">//判断左右子树是否为平衡二叉树</span></span><br><span class="line">		<span class="type">int</span> diff = left - right;<span class="comment">//左右子树的高度差</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">abs</span>(diff) &lt;= <span class="number">1</span>) &#123;<span class="comment">//满足小于等于1,那就是平衡二叉树</span></span><br><span class="line">			*depth	= (<span class="number">1</span> + (left &gt; right ? left : right));</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//前面一直未返回true，那就不是平衡二叉树</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	Tree *T = (Tree *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Tree *));</span><br><span class="line">	T = create(T);<span class="comment">//创建一颗二叉树</span></span><br><span class="line">	<span class="type">int</span> depth = <span class="number">0</span>;</span><br><span class="line">	isAVL(T, &amp;depth) ? <span class="built_in">printf</span>(<span class="string">&quot;是二叉平衡树&quot;</span>):<span class="built_in">printf</span>(<span class="string">&quot;不是二叉平衡树&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>不要把时间、财力和劳动，浪费在空洞多余的话语上。永远以用心乐观的心态去拓展自我和身外的世界。</p>
 
   </div>
@@ -2652,7 +2609,7 @@ bool <span class="token function">isAVL</span><span class="token punctuation">(<
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：394 字</p>
+      <p>字数：414 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2678,21 +2635,20 @@ bool <span class="token function">isAVL</span><span class="token punctuation">(<
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E4%B8%A4%E6%A3%B5%E6%A0%91%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>判断两棵树是否相似</p>
-          <p class='content'>题目：试设计判断两课二叉树是否相似的算法。所谓二叉树 T1 和 T2 相似，指的是 T1 和 T2 都是空的二叉树或只有一个根节点；或二者左子树相似
-           且左子树相似
-分析：
-...</p>
-        </a>
-      
-      
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89%E2%98%86/'>
-          <p class='title'>后续非递归遍历<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89%E2%98%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>后续非递归遍历</p>
           <p class='content'>试写出非递归的后序遍历算法
     分析：
         非递归的后续遍历较中序和先序而言，稍微复杂一点，首先我们需要一直从根节点往下寻找左孩子并入栈，之后访问栈顶元素，
         并判...</p>
+        </a>
+      
+      
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%AF%BB%E6%89%BE%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E4%B8%AD%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/'>
+          <p class='title'>寻找先序遍历中第k个结点<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目：假设二叉树是用二叉链表存储，试设计一个算法, 求先序遍历中第 k（1&lt;=k&lt;= 二叉树的节点个数）个节点的值
+分析：
+        很简单，每遍历一个节点，计数器便加一，直至...</p>
         </a>
       
     </div>

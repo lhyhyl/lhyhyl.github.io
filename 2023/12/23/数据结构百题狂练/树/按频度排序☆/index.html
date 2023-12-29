@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,13 +2478,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：665 字</p>
+      <p>字数：714 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2 分钟</p>
+      <p>时长：3 分钟</p>
     </a>
   </div>
 
@@ -2508,84 +2508,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         这道题咋一看很唬人，还引入了一个新概念，其实并不难，拆分开来其实就是 查找 + 排序；我们需要先找到我们要访问的节点<br />
         ，更改它的 freq 值，然后按照 freq 值的大小从表头寻找插入位置，这样便完成了一次 locate 操作。</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> data<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>pre<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
-	<span class="token keyword">int</span> freq<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">_CRT_SECURE_NO_WARNINGS</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token keyword">void</span> <span class="token function">locate</span><span class="token punctuation">(</span>Link <span class="token operator">*</span>h<span class="token punctuation">,</span><span class="token keyword">int</span> num<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//找到标志</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>pre<span class="token operator">=</span>h<span class="token punctuation">,</span> <span class="token operator">*</span>p <span class="token operator">=</span> h<span class="token operator">-></span>next<span class="token punctuation">,</span> <span class="token operator">*</span>t<span class="token punctuation">,</span><span class="token operator">*</span>preQ<span class="token operator">=</span>h<span class="token punctuation">,</span><span class="token operator">*</span>q<span class="token punctuation">;</span>
-	<span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>data<span class="token operator">==</span>num<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//如果找到</span>
-			flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//表示找到</span>
-			p<span class="token operator">-></span>freq<span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//freq+1</span>
-			t <span class="token operator">=</span> p<span class="token punctuation">;</span><span class="token comment">//将该节点保存起来</span>
-			<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>next<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-				pre<span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment">//将该节点抠出来</span>
-				p<span class="token operator">-></span>next<span class="token operator">-></span>pre <span class="token operator">=</span> pre<span class="token punctuation">;</span>
-			<span class="token punctuation">&#125;</span>
-			<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-				pre<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span><span class="token comment">//这里也要注意，如果我们查找的节点是最后一个节点，我们要将next指向NULL，不然之后遍历时会出问题</span>
-			<span class="token punctuation">&#125;</span>
-			q <span class="token operator">=</span> h<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment">//这里需要注意，q应该始终指向改变了的首节点，之前我在定义时去指定，会出现bug</span>
-			<span class="token keyword">while</span> <span class="token punctuation">(</span>q<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//进行排序</span>
-				<span class="token keyword">if</span> <span class="token punctuation">(</span>t<span class="token operator">-></span>freq <span class="token operator">>=</span> q<span class="token operator">-></span>freq<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//当找到的节点的freq大于等于当前遍历节点时，插入</span>
-					t<span class="token operator">-></span>next <span class="token operator">=</span> q<span class="token punctuation">;</span>
-					q<span class="token operator">-></span>pre <span class="token operator">=</span> t<span class="token punctuation">;</span>
-					preQ<span class="token operator">-></span>next <span class="token operator">=</span> t<span class="token punctuation">;</span>
-					t<span class="token operator">-></span>pre <span class="token operator">=</span> preQ<span class="token punctuation">;</span>
-					<span class="token keyword">break</span><span class="token punctuation">;</span>
-				<span class="token punctuation">&#125;</span>
-				preQ <span class="token operator">=</span> q<span class="token punctuation">;</span>
-				q <span class="token operator">=</span> q<span class="token operator">-></span>next<span class="token punctuation">;</span>
-			<span class="token punctuation">&#125;</span>
-			<span class="token keyword">break</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-		pre <span class="token operator">=</span> p<span class="token punctuation">;</span>
-		p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>flag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"未找到该元素,序列不做改变"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> n<span class="token punctuation">,</span> data<span class="token punctuation">,</span>num<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Link</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	head<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-	head<span class="token operator">-></span>pre <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>p <span class="token operator">=</span> head<span class="token punctuation">;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入节点个数：n="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入第%d个节点值:"</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>newP <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Link</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Link</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		newP<span class="token operator">-></span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
-		newP<span class="token operator">-></span>pre <span class="token operator">=</span> p<span class="token punctuation">;</span>
-		newP<span class="token operator">-></span>freq <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-		p<span class="token operator">-></span>next <span class="token operator">=</span> newP<span class="token punctuation">;</span>
-		p <span class="token operator">=</span> newP<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	p<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-	<span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
-		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入要查找的值,输入9999代表结束：num="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">9999</span><span class="token punctuation">)</span><span class="token keyword">continue</span><span class="token punctuation">;</span><span class="token comment">//如果num=9999，跳入下一次循环</span>
-		<span class="token function">locate</span><span class="token punctuation">(</span>head<span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		p <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">;</span>
-		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"调整后链表为：\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span>p<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			p <span class="token operator">=</span> p<span class="token operator">-></span>next<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>num<span class="token operator">!=</span><span class="token number">9999</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">pre</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">next</span>;</span></span><br><span class="line">	<span class="type">int</span> freq;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">locate</span><span class="params">(Link *h,<span class="type">int</span> num)</span> &#123;</span><br><span class="line">	<span class="type">int</span> flag = <span class="number">0</span>;<span class="comment">//找到标志</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">pre</span>=</span>h, *p = h-&gt;next, *t,*preQ=h,*q;</span><br><span class="line">	<span class="keyword">while</span> (p) &#123;</span><br><span class="line">		<span class="keyword">if</span> (p-&gt;data==num) &#123;<span class="comment">//如果找到</span></span><br><span class="line">			flag = <span class="number">1</span>;<span class="comment">//表示找到</span></span><br><span class="line">			p-&gt;freq++;<span class="comment">//freq+1</span></span><br><span class="line">			t = p;<span class="comment">//将该节点保存起来</span></span><br><span class="line">			<span class="keyword">if</span> (p-&gt;next) &#123;</span><br><span class="line">				pre-&gt;next = p-&gt;next;<span class="comment">//将该节点抠出来</span></span><br><span class="line">				p-&gt;next-&gt;pre = pre;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				pre-&gt;next = <span class="literal">NULL</span>;<span class="comment">//这里也要注意，如果我们查找的节点是最后一个节点，我们要将next指向NULL，不然之后遍历时会出问题</span></span><br><span class="line">			&#125;</span><br><span class="line">			q = h-&gt;next;<span class="comment">//这里需要注意，q应该始终指向改变了的首节点，之前我在定义时去指定，会出现bug</span></span><br><span class="line">			<span class="keyword">while</span> (q) &#123;<span class="comment">//进行排序</span></span><br><span class="line">				<span class="keyword">if</span> (t-&gt;freq &gt;= q-&gt;freq) &#123;<span class="comment">//当找到的节点的freq大于等于当前遍历节点时，插入</span></span><br><span class="line">					t-&gt;next = q;</span><br><span class="line">					q-&gt;pre = t;</span><br><span class="line">					preQ-&gt;next = t;</span><br><span class="line">					t-&gt;pre = preQ;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				preQ = q;</span><br><span class="line">				q = q-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		pre = p;</span><br><span class="line">		p = p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (!flag) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;未找到该元素,序列不做改变&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> n, data,num;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">head</span> =</span> (<span class="keyword">struct</span> Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Link));</span><br><span class="line">	head-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	head-&gt;pre = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">p</span> =</span> head;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入节点个数：n=&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入第%d个节点值:&quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;data);</span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">newP</span> =</span> (<span class="keyword">struct</span> Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Link));</span><br><span class="line">		newP-&gt;data = data;</span><br><span class="line">		newP-&gt;pre = p;</span><br><span class="line">		newP-&gt;freq = <span class="number">0</span>;</span><br><span class="line">		p-&gt;next = newP;</span><br><span class="line">		p = newP;</span><br><span class="line">	&#125;</span><br><span class="line">	p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">do</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入要查找的值,输入9999代表结束：num=&quot;</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">		<span class="keyword">if</span> (num == <span class="number">9999</span>)<span class="keyword">continue</span>;<span class="comment">//如果num=9999，跳入下一次循环</span></span><br><span class="line">		locate(head,num);</span><br><span class="line">		p = head-&gt;next;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;调整后链表为：\n&quot;</span>);</span><br><span class="line">		<span class="keyword">while</span> (p) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,p-&gt;data);</span><br><span class="line">			p = p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">while</span> (num!=<span class="number">9999</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>成长道路谁都会受伤，我们才刚刚起航，必须学会坚强！</p>
 
   </div>
@@ -2686,13 +2609,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：665 字</p>
+      <p>字数：714 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2 分钟</p>
+      <p>时长：3 分钟</p>
     </a>
   </div>
 
@@ -2712,19 +2635,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%B0%86%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E8%BD%AC%E6%8D%A2%E6%88%90%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E2%98%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>将表达式树转换为中缀表达式</p>
-          <p class='content'>题目：请设计一个算法，将给定的表达式树，转换成等价的中缀表达式并输出。
-分析：
-        题目已然说明我们要采取中序遍历，进而输出该表达式，那么需要注意的点便是我们的括号在哪里加，其中根节...</p>
-        </a>
-      
-      
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%9F%A5%E6%89%BE%E6%9F%90%E8%8A%82%E7%82%B9%E7%9A%84%E6%89%80%E6%9C%89%E7%A5%96%E5%85%88%E2%98%86/'>
-          <p class='title'>查找节点的所有祖先结点<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%9F%A5%E6%89%BE%E6%9F%90%E8%8A%82%E7%82%B9%E7%9A%84%E6%89%80%E6%9C%89%E7%A5%96%E5%85%88%E2%98%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>查找节点的所有祖先结点</p>
           <p class='content'>题目：在二叉树中查找值为 x 的节点，试编写算法打印值为 x 的节点的所有祖先，假设 x 的值不多于一个。
 分析：
         这里我们采用后序遍历（非递归），因为在我们遇到 x 之前我们会...</p>
+        </a>
+      
+      
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%BD%E5%BA%A6/'>
+          <p class='title'>求二叉树的宽度<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>假设二叉树采用二叉链表存储结构，设计一个算法，求非空二叉树的宽度（即具有节点数最多的那一层的节点个数）
+    分析：
+        这道题和求高度那道题大同小异。我们仍然可以采取层次遍历，统...</p>
         </a>
       
     </div>

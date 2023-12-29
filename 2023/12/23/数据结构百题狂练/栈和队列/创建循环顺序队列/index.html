@@ -56,7 +56,7 @@
 <meta property="og:title" content="创建循环队列">
 <meta property="og:url" content="http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="北街学长的博客">
-<meta property="og:description" content="此文件用于创建一个顺序队列，出队，入队, 判断队空，判断队满等操作 代码如下： #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #define TYPE int  struct Squeue &#123; 	TYPE *arr; 	TYPE front, rear; &#125;;   &#x2F;&#x2F;创建队列 Squeue *create(int n) &#123;">
+<meta property="og:description" content="此文件用于创建一个顺序队列，出队，入队, 判断队空，判断队满等操作 代码如下： 123456789101112131415161718192021222324252627282930313233343536373839404142#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#define TYPE int struct Squeue &amp;#123">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：267 字</p>
+      <p>字数：287 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2503,48 +2503,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>此文件用于创建一个顺序<a target="_blank" rel="noopener external nofollow noreferrer" href="https://so.csdn.net/so/search?q=%E9%98%9F%E5%88%97&amp;spm=1001.2101.3001.7020">队列</a>，出队，入队, 判断队空，判断队满等操作</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TYPE</span> <span class="token expression"><span class="token keyword">int</span> </span></span>
-<span class="token keyword">struct</span> <span class="token class-name">Squeue</span> <span class="token punctuation">&#123;</span>
-	TYPE <span class="token operator">*</span>arr<span class="token punctuation">;</span>
-	TYPE front<span class="token punctuation">,</span> rear<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
- 
-<span class="token comment">//创建队列</span>
-Squeue <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Squeue</span> <span class="token operator">*</span>sq <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Squeue</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Squeue</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	sq<span class="token operator">-></span>arr <span class="token operator">=</span> <span class="token punctuation">(</span>TYPE <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>TYPE<span class="token punctuation">)</span><span class="token operator">*</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//数组大小</span>
-	sq<span class="token operator">-></span>front <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	sq<span class="token operator">-></span>rear <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> sq<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//判断队满(这里采用牺牲一个存储单元来实现,约定队头指针在队尾指针的下一个位置作为队满的标志)</span>
-bool <span class="token function">isFull</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span><span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">return</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> maxSize <span class="token operator">==</span> sq<span class="token operator">-></span>front<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//判断队空</span>
-bool <span class="token function">isEmpty</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">return</span> sq<span class="token operator">-></span>front <span class="token operator">==</span> sq<span class="token operator">-></span>rear<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//判断队列中元素个数</span>
-<span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span><span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">return</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>rear <span class="token operator">-</span> sq<span class="token operator">-></span>front <span class="token operator">+</span> maxSize<span class="token punctuation">)</span> <span class="token operator">%</span> maxSize<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//入队</span>
-bool <span class="token function">enQueue</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span><span class="token keyword">int</span> data<span class="token punctuation">,</span><span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isFull</span><span class="token punctuation">(</span>sq<span class="token punctuation">,</span>maxSize<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-	sq<span class="token operator">-></span>arr<span class="token punctuation">[</span>sq<span class="token operator">-></span>rear<span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">;</span>
-	sq<span class="token operator">-></span>rear <span class="token operator">=</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> maxSize<span class="token punctuation">;</span>
-	<span class="token keyword">return</span> true<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//出队</span>
-bool <span class="token function">deQueue</span><span class="token punctuation">(</span>Squeue <span class="token operator">*</span>sq<span class="token punctuation">,</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>data<span class="token punctuation">,</span><span class="token keyword">int</span> maxSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>sq<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-	data <span class="token operator">=</span> sq<span class="token operator">-></span>arr<span class="token punctuation">[</span>sq<span class="token operator">-></span>front<span class="token punctuation">]</span><span class="token punctuation">;</span>
-	sq<span class="token operator">-></span>front <span class="token operator">=</span> <span class="token punctuation">(</span>sq<span class="token operator">-></span>front <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> maxSize<span class="token punctuation">;</span>
-	<span class="token keyword">return</span> true<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> TYPE int </span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Squeue</span> &#123;</span></span><br><span class="line">	TYPE *arr;</span><br><span class="line">	TYPE front, rear;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//创建队列</span></span><br><span class="line">Squeue *<span class="title function_">create</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Squeue</span> *<span class="title">sq</span> =</span> (<span class="keyword">struct</span> Squeue *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Squeue));</span><br><span class="line">	sq-&gt;arr = (TYPE *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(TYPE)*n);<span class="comment">//数组大小</span></span><br><span class="line">	sq-&gt;front = <span class="number">0</span>;</span><br><span class="line">	sq-&gt;rear = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> sq;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断队满(这里采用牺牲一个存储单元来实现,约定队头指针在队尾指针的下一个位置作为队满的标志)</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">isFull</span><span class="params">(Squeue *sq,<span class="type">int</span> maxSize)</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> (sq-&gt;rear + <span class="number">1</span>) % maxSize == sq-&gt;front;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断队空</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">isEmpty</span><span class="params">(Squeue *sq)</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> sq-&gt;front == sq-&gt;rear;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断队列中元素个数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">count</span><span class="params">(Squeue *sq,<span class="type">int</span> maxSize)</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> (sq-&gt;rear - sq-&gt;front + maxSize) % maxSize;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//入队</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">enQueue</span><span class="params">(Squeue *sq,<span class="type">int</span> data,<span class="type">int</span> maxSize)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (isFull(sq,maxSize)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	sq-&gt;arr[sq-&gt;rear] = data;</span><br><span class="line">	sq-&gt;rear = (sq-&gt;rear + <span class="number">1</span>) % maxSize;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//出队</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">deQueue</span><span class="params">(Squeue *sq,<span class="type">int</span> &amp;data,<span class="type">int</span> maxSize)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (isEmpty(sq)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	data = sq-&gt;arr[sq-&gt;front];</span><br><span class="line">	sq-&gt;front = (sq-&gt;front + <span class="number">1</span>) % maxSize;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>人生最重要的不是努力，不是奋斗，而是抉择。</p>
 
   </div>
@@ -2645,7 +2604,7 @@ bool <span class="token function">deQueue</span><span class="token punctuation">
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：267 字</p>
+      <p>字数：287 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2671,14 +2630,11 @@ bool <span class="token function">deQueue</span><span class="token punctuation">
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>创建栈</p>
-          <p class='content'>该文件用于创建栈，及其相关操作
-代码如下：
-#include&lt;stdio.h>
-#include&lt;stdbool.h>
-#include&lt;stdlib.h>
-#define T...</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E5%9B%BE/%E6%B7%B1%E4%BC%98%E5%B9%BF%E4%BC%98%E5%88%A4%E6%96%ADvi%E5%88%B0vj%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%B7%AF%E5%BE%84/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>深优广优判断vi到vj是否存在路径</p>
+          <p class='content'>分析：
+        采用深度优先：我们从 vi 顶点开始进行深度遍历，若存在路径则必然可以走到 vj 顶点处；
+        采用广度优先：同样从 vi 顶点开始进行广度遍历，若存在则必然...</p>
         </a>
       
       
@@ -2688,9 +2644,7 @@ bool <span class="token function">deQueue</span><span class="token punctuation">
 分析：
         我们可以一次取出队列中的元素放到栈中，然后在依次取出入队。
 代码：
-struct Stack
-&#123;
-	...</p>
+123456789101112131415...</p>
         </a>
       
     </div>

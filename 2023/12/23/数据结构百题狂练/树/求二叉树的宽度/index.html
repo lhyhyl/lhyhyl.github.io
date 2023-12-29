@@ -56,7 +56,7 @@
 <meta property="og:title" content="求二叉树的宽度">
 <meta property="og:url" content="http://lhyhyl.github.io/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%BD%E5%BA%A6/index.html">
 <meta property="og:site_name" content="北街学长的博客">
-<meta property="og:description" content="假设二叉树采用二叉链表存储结构，设计一个算法，求非空二叉树的宽度（即具有节点数最多的那一层的节点个数）     分析：         这道题和求高度那道题大同小异。我们仍然可以采取层次遍历，统计每一层的节点个数，找到宽度最大的那一层。 代码如下： struct biTree &#123; 	char data; 	struct biTree *lchild; 	struct biTree *rc">
+<meta property="og:description" content="假设二叉树采用二叉链表存储结构，设计一个算法，求非空二叉树的宽度（即具有节点数最多的那一层的节点个数）     分析：         这道题和求高度那道题大同小异。我们仍然可以采取层次遍历，统计每一层的节点个数，找到宽度最大的那一层。 代码如下： 123456789101112131415161718192021222324252627282930313233343536373839404142">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-22T16:00:00.000Z">
@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：629 字</p>
+      <p>字数：616 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2505,87 +2505,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     分析：<br />
         这道题和求高度那道题大同小异。我们仍然可以采取层次遍历，统计每一层的节点个数，找到宽度最大的那一层。</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">char</span> data<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>lchild<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>rchild<span class="token punctuation">;</span>
- 
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token keyword">struct</span> <span class="token class-name">LinkQueue</span> <span class="token punctuation">&#123;</span><span class="token comment">//上次求高度采用的是顺序队列，这次采用链式队列，雨露均沾哈哈</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Link</span> <span class="token operator">*</span>front<span class="token punctuation">,</span> <span class="token operator">*</span>rear<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
- 
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
- 
-<span class="token keyword">int</span> <span class="token function">getWidth</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span>b<span class="token punctuation">,</span> LinkQueue <span class="token operator">*</span>lq<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> oldNum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> curNum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> width <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-	bool <span class="token function">enQueueN</span><span class="token punctuation">(</span>LinkQueue <span class="token operator">*</span>lq<span class="token punctuation">,</span> biTree <span class="token operator">*</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	bool <span class="token function">deQueueN</span><span class="token punctuation">(</span>LinkQueue <span class="token operator">*</span>lq<span class="token punctuation">,</span> biTree <span class="token operator">*</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	bool <span class="token function">isEmpty</span><span class="token punctuation">(</span>LinkQueue <span class="token operator">*</span>lq<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>p <span class="token operator">=</span> b<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>r<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token function">enQueueN</span><span class="token punctuation">(</span>lq<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//入队</span>
-		oldNum<span class="token operator">++</span><span class="token punctuation">;</span>
-		width <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-		<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>lq<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			<span class="token keyword">while</span> <span class="token punctuation">(</span>oldNum<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-				<span class="token function">deQueueN</span><span class="token punctuation">(</span>lq<span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//队首元素出队</span>
-				<span class="token keyword">if</span> <span class="token punctuation">(</span>r<span class="token operator">-></span>lchild<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//若有左孩子，将左孩子入队</span>
-					<span class="token function">enQueueN</span><span class="token punctuation">(</span>lq<span class="token punctuation">,</span> r<span class="token operator">-></span>lchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
-					curNum<span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//当前队列元素加1</span>
-				<span class="token punctuation">&#125;</span>
-				<span class="token keyword">if</span> <span class="token punctuation">(</span>r<span class="token operator">-></span>rchild<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//若有右孩子，将右孩子入队</span>
-					<span class="token function">enQueueN</span><span class="token punctuation">(</span>lq<span class="token punctuation">,</span> r<span class="token operator">-></span>rchild<span class="token punctuation">)</span><span class="token punctuation">;</span>
-					curNum<span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//当前队列元素加1</span>
-				<span class="token punctuation">&#125;</span>
-			<span class="token punctuation">&#125;</span>
-			curNum <span class="token operator">></span> width <span class="token operator">?</span> width <span class="token operator">=</span> curNum <span class="token operator">:</span> <span class="token constant">NULL</span><span class="token punctuation">;</span><span class="token comment">//如果当前队列元素多于之前的，宽度变更</span>
-			oldNum <span class="token operator">=</span> curNum<span class="token punctuation">;</span><span class="token comment">//继续进行操作</span>
-			curNum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
- 
-		<span class="token punctuation">&#125;</span>
- 
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">return</span> width<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">LinkQueue</span> <span class="token operator">*</span>lq<span class="token punctuation">;</span>
- 
-	biTree <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	b <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一颗二叉树</span>
- 
-	LinkQueue <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	lq <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建链式队列</span>
- 
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"该二叉树的宽度为：%d"</span><span class="token punctuation">,</span><span class="token function">getWidth</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> lq<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> &#123;</span></span><br><span class="line">	<span class="type">char</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">lchild</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">rchild</span>;</span></span><br><span class="line"> </span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LinkQueue</span> &#123;</span><span class="comment">//上次求高度采用的是顺序队列，这次采用链式队列，雨露均沾哈哈</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">front</span>, *<span class="title">rear</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> <span class="title function_">getWidth</span><span class="params">(biTree *b, LinkQueue *lq)</span> &#123;</span><br><span class="line">	<span class="type">int</span> oldNum = <span class="number">0</span>, curNum = <span class="number">0</span>, width = <span class="number">0</span>;;</span><br><span class="line">	<span class="type">bool</span> <span class="title function_">enQueueN</span><span class="params">(LinkQueue *lq, biTree *node)</span>;</span><br><span class="line">	<span class="type">bool</span> <span class="title function_">deQueueN</span><span class="params">(LinkQueue *lq, biTree *node)</span>;</span><br><span class="line">	<span class="type">bool</span> <span class="title function_">isEmpty</span><span class="params">(LinkQueue *lq)</span>;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">p</span> =</span> b;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">r</span>=</span>(<span class="keyword">struct</span> biTree*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> biTree));</span><br><span class="line">	<span class="keyword">if</span> (p) &#123;</span><br><span class="line">		enQueueN(lq, p);<span class="comment">//入队</span></span><br><span class="line">		oldNum++;</span><br><span class="line">		width = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (!isEmpty(lq)) &#123;</span><br><span class="line">			<span class="keyword">while</span> (oldNum--) &#123;</span><br><span class="line">				deQueueN(lq, r);<span class="comment">//队首元素出队</span></span><br><span class="line">				<span class="keyword">if</span> (r-&gt;lchild) &#123;<span class="comment">//若有左孩子，将左孩子入队</span></span><br><span class="line">					enQueueN(lq, r-&gt;lchild);</span><br><span class="line">					curNum++;<span class="comment">//当前队列元素加1</span></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (r-&gt;rchild) &#123;<span class="comment">//若有右孩子，将右孩子入队</span></span><br><span class="line">					enQueueN(lq, r-&gt;rchild);</span><br><span class="line">					curNum++;<span class="comment">//当前队列元素加1</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			curNum &gt; width ? width = curNum : <span class="literal">NULL</span>;<span class="comment">//如果当前队列元素多于之前的，宽度变更</span></span><br><span class="line">			oldNum = curNum;<span class="comment">//继续进行操作</span></span><br><span class="line">			curNum = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">		&#125;</span><br><span class="line"> </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> width;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">b</span> =</span> (<span class="keyword">struct</span> biTree*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> biTree));</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">LinkQueue</span> *<span class="title">lq</span>;</span></span><br><span class="line"> </span><br><span class="line">	biTree *<span class="title function_">create</span><span class="params">(biTree *)</span>;</span><br><span class="line">	b = create(b);<span class="comment">//创建一颗二叉树</span></span><br><span class="line"> </span><br><span class="line">	LinkQueue *<span class="title function_">create</span><span class="params">()</span>;</span><br><span class="line">	lq = create();<span class="comment">//创建链式队列</span></span><br><span class="line"> </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;该二叉树的宽度为：%d&quot;</span>,getWidth(b, lq));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其中出队入队，是节点数据</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;出队
-bool deQueue(LinkQueue *lq,TYPE *data) &#123;
-	if (isEmpty(lq))return false;
-	struct Link *p &#x3D; lq-&gt;front-&gt;next;&#x2F;&#x2F;保存下一个节点
-	*data &#x3D; lq-&gt;front-&gt;next-&gt;node;&#x2F;&#x2F;取出队首节点值
-	lq-&gt;front-&gt;next &#x3D; p-&gt;next;&#x2F;&#x2F;删除队首节点
-	if (lq-&gt;rear&#x3D;&#x3D;p) &#123;
-		lq-&gt;rear &#x3D; lq-&gt;front;
-	&#125;
-	free(p);
-	return true;
-&#125;
-&#x2F;&#x2F;入队(一个树节点)
-bool enQueueN(LinkQueue *lq, TYPE *node) &#123;&#x2F;&#x2F;队尾插入
-	struct Link *newd &#x3D; (struct Link *)malloc(sizeof(struct Link));
-	newd-&gt;node.data &#x3D; node-&gt;data;
-	newd-&gt;node.lchild &#x3D; node-&gt;lchild;
-	newd-&gt;node.rchild &#x3D; node-&gt;rchild;
-	lq-&gt;rear-&gt;next &#x3D; newd;
-	lq-&gt;rear &#x3D; newd;
-	return true;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/出队</span><br><span class="line">bool deQueue(LinkQueue *lq,TYPE *data) &#123;</span><br><span class="line">	if (isEmpty(lq))return false;</span><br><span class="line">	struct Link *p = lq-&gt;front-&gt;next;//保存下一个节点</span><br><span class="line">	*data = lq-&gt;front-&gt;next-&gt;node;//取出队首节点值</span><br><span class="line">	lq-&gt;front-&gt;next = p-&gt;next;//删除队首节点</span><br><span class="line">	if (lq-&gt;rear==p) &#123;</span><br><span class="line">		lq-&gt;rear = lq-&gt;front;</span><br><span class="line">	&#125;</span><br><span class="line">	free(p);</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line">//入队(一个树节点)</span><br><span class="line">bool enQueueN(LinkQueue *lq, TYPE *node) &#123;//队尾插入</span><br><span class="line">	struct Link *newd = (struct Link *)malloc(sizeof(struct Link));</span><br><span class="line">	newd-&gt;node.data = node-&gt;data;</span><br><span class="line">	newd-&gt;node.lchild = node-&gt;lchild;</span><br><span class="line">	newd-&gt;node.rchild = node-&gt;rchild;</span><br><span class="line">	lq-&gt;rear-&gt;next = newd;</span><br><span class="line">	lq-&gt;rear = newd;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在我们的生活中，不论多难做的事情，只要你开始行动，困难总会一个一个慢慢化解。然后你会发现，不管什么目标，总会有到达的那天。当你决定出发并且为之付诸实践的时候，最困难的那部分就已经完成了。</p>
 
   </div>
@@ -2686,7 +2608,7 @@ bool enQueueN(LinkQueue *lq, TYPE *node) &#123;&#x2F;&#x2F;队尾插入
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：629 字</p>
+      <p>字数：616 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2712,22 +2634,18 @@ bool enQueueN(LinkQueue *lq, TYPE *node) &#123;&#x2F;&#x2F;队尾插入
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%A0%B9%E6%8D%AE%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E5%88%9B%E5%BB%BA%E4%B8%80%E9%A2%97%E4%BA%8C%E5%8F%89%E6%A0%91%E2%98%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>根据中序和先序遍历创建一颗二叉树</p>
-          <p class='content'>题目：设一个二叉树各节点的值互不相同，其先序遍历序列和中序遍历序列分别存于两个一维数组 A、B 中，试编写算法建立该二叉树的二叉链表
-分析：
-        这是一个典型的已知中序和先序求二叉树...</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%8C%89%E9%A2%91%E5%BA%A6%E6%8E%92%E5%BA%8F%E2%98%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>按频度排序</p>
+          <p class='content'>题目：给一个非循环双向链表增加一个 freq 值，用以表示它的访问频率，每访问一次 freq 就 + 1，然后需要将该链表按照非增的顺序
+    排列，同时最近访问的节点排在相同频度节点的前面，...</p>
         </a>
       
       
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%B1%82%E5%87%BA%E7%BB%99%E5%AE%9A%E8%8A%82%E7%82%B9%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E4%B8%AD%E7%9A%84%E5%B1%82%E6%AC%A1/'>
-          <p class='title'>求指定结点在给定二叉排序树中的层次<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-题目：设计一个算法，求出指定节点在给定二叉排序树中的层次
-    分析：
-        我们可以根据二叉排序树的性质，从根节点一直向下查找，每查找一次，层次便加一
-
-typedef stru...</p>
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%A0%B9%E6%8D%AE%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E5%88%9B%E5%BB%BA%E4%B8%80%E9%A2%97%E4%BA%8C%E5%8F%89%E6%A0%91%E2%98%86/'>
+          <p class='title'>根据中序和先序遍历创建一颗二叉树<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目：设一个二叉树各节点的值互不相同，其先序遍历序列和中序遍历序列分别存于两个一维数组 A、B 中，试编写算法建立该二叉树的二叉链表
+分析：
+        这是一个典型的已知中序和先序求二叉树...</p>
         </a>
       
     </div>

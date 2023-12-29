@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,13 +2478,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：451 字</p>
+      <p>字数：459 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1 分钟</p>
+      <p>时长：2 分钟</p>
     </a>
   </div>
 
@@ -2506,61 +2506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         非递归的后续遍历较中序和先序而言，稍微复杂一点，首先我们需要一直从根节点往下寻找左孩子并入栈，之后访问栈顶元素，<br />
         并判断是否有右孩子，如果有右孩子入栈，并继续往左孩子找，直到某节点为单节点，出栈并访问。需要注意的是因为有可能一个节点我们<br />
         会访问两次，所以我们设置一个指针 r 用来表示上一次被访问过得节点，防止又把它的右孩子再次入栈。</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token punctuation">&#123;</span><span class="token comment">//树的结构体</span>
-	<span class="token keyword">char</span> data<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>lchild<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>rchild<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token keyword">struct</span> <span class="token class-name">Stack</span> <span class="token punctuation">&#123;</span><span class="token comment">//栈的结构体</span>
-	<span class="token keyword">char</span><span class="token operator">*</span> arr<span class="token punctuation">;</span>	<span class="token comment">//内存首地址</span>
-	<span class="token keyword">int</span>  len<span class="token punctuation">;</span>	<span class="token comment">//栈的容量</span>
-	<span class="token keyword">int</span> top<span class="token punctuation">;</span> 	<span class="token comment">//栈的下标</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token keyword">void</span> <span class="token function">inOrder</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span>T<span class="token punctuation">,</span> Stack <span class="token operator">*</span>s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//中序遍历</span>
-	biTree <span class="token operator">*</span>p <span class="token operator">=</span> T<span class="token punctuation">;</span>
-	biTree <span class="token operator">*</span>r <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	bool <span class="token function">empty</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	bool <span class="token function">pushS</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">,</span> biTree <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	biTree <span class="token operator">*</span><span class="token function">top</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	bool <span class="token function">pop</span><span class="token punctuation">(</span>Stack <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">while</span> <span class="token punctuation">(</span>p <span class="token operator">||</span> <span class="token operator">!</span><span class="token function">empty</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//一路向左</span>
-			<span class="token function">pushS</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			p <span class="token operator">=</span> p<span class="token operator">-></span>lchild<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-			p <span class="token operator">=</span> <span class="token function">top</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>rchild<span class="token operator">&amp;&amp;</span>r<span class="token operator">!=</span>p<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-				r <span class="token operator">=</span> p<span class="token punctuation">;</span><span class="token comment">//记录父节点，之后再次遇到它时，就不在将他的右孩子压入栈</span>
-				p <span class="token operator">=</span> p<span class="token operator">-></span>rchild<span class="token punctuation">;</span>
-			<span class="token punctuation">&#125;</span>
-			<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-				<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c "</span><span class="token punctuation">,</span> p<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//打印栈顶元素</span>
-				<span class="token function">pop</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//栈顶元素出栈</span>
-				p <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span><span class="token comment">//这里一定要将p设为NULL，因为p的孩子已经遍历过了，不设置为NUll的话，又会将左孩子压入栈</span>
-			<span class="token punctuation">&#125;</span>
-	
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span>T <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">biTree</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">Stack</span> <span class="token operator">*</span>s <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Stack</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Stack</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	biTree <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span>biTree<span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">void</span> <span class="token function">nodeNum</span><span class="token punctuation">(</span>biTree <span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	Stack <span class="token operator">*</span><span class="token function">createStack</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- 
-	T <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">nodeNum</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> <span class="token operator">&amp;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
- 
-	s <span class="token operator">=</span> <span class="token function">createStack</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建二叉树节点个数大小的栈</span>
- 
-	<span class="token function">inOrder</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> &#123;</span><span class="comment">//树的结构体</span></span><br><span class="line">	<span class="type">char</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">lchild</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">rchild</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stack</span> &#123;</span><span class="comment">//栈的结构体</span></span><br><span class="line">	<span class="type">char</span>* arr;	<span class="comment">//内存首地址</span></span><br><span class="line">	<span class="type">int</span>  len;	<span class="comment">//栈的容量</span></span><br><span class="line">	<span class="type">int</span> top; 	<span class="comment">//栈的下标</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">inOrder</span><span class="params">(biTree *T, Stack *s)</span> &#123;<span class="comment">//中序遍历</span></span><br><span class="line">	biTree *p = T;</span><br><span class="line">	biTree *r = (<span class="keyword">struct</span> biTree*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> biTree));</span><br><span class="line">	<span class="type">bool</span> <span class="title function_">empty</span><span class="params">(Stack *)</span>;</span><br><span class="line">	<span class="type">bool</span> <span class="title function_">pushS</span><span class="params">(Stack *, biTree *)</span>;</span><br><span class="line">	biTree *<span class="title function_">top</span><span class="params">(Stack *)</span>;</span><br><span class="line">	<span class="type">bool</span> <span class="title function_">pop</span><span class="params">(Stack *)</span>;</span><br><span class="line">	<span class="keyword">while</span> (p || !empty(s)) &#123;</span><br><span class="line">		<span class="keyword">if</span> (p) &#123;<span class="comment">//一路向左</span></span><br><span class="line">			pushS(s, p);</span><br><span class="line">			p = p-&gt;lchild;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			p = top(s);</span><br><span class="line">			<span class="keyword">if</span> (p-&gt;rchild&amp;&amp;r!=p) &#123;</span><br><span class="line">				r = p;<span class="comment">//记录父节点，之后再次遇到它时，就不在将他的右孩子压入栈</span></span><br><span class="line">				p = p-&gt;rchild;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%c &quot;</span>, p-&gt;data);<span class="comment">//打印栈顶元素</span></span><br><span class="line">				pop(s);<span class="comment">//栈顶元素出栈</span></span><br><span class="line">				p = <span class="literal">NULL</span>;<span class="comment">//这里一定要将p设为NULL，因为p的孩子已经遍历过了，不设置为NUll的话，又会将左孩子压入栈</span></span><br><span class="line">			&#125;</span><br><span class="line">	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">biTree</span> *<span class="title">T</span> =</span> (<span class="keyword">struct</span> biTree *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> biTree));</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Stack</span> *<span class="title">s</span> =</span> (<span class="keyword">struct</span> Stack*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Stack));</span><br><span class="line">	biTree *<span class="title function_">create</span><span class="params">(biTree*)</span>;</span><br><span class="line">	<span class="type">void</span> <span class="title function_">nodeNum</span><span class="params">(biTree *, <span class="type">int</span> *)</span>;</span><br><span class="line">	Stack *<span class="title function_">createStack</span><span class="params">(<span class="type">int</span>)</span>;</span><br><span class="line"> </span><br><span class="line">	T = create(T);</span><br><span class="line">	nodeNum(T, &amp;count);</span><br><span class="line"> </span><br><span class="line">	s = createStack(count);<span class="comment">//创建二叉树节点个数大小的栈</span></span><br><span class="line"> </span><br><span class="line">	inOrder(T, s);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>有种脾气叫，不放弃。</p>
 
   </div>
@@ -2661,13 +2607,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：451 字</p>
+      <p>字数：459 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1 分钟</p>
+      <p>时长：2 分钟</p>
     </a>
   </div>
 
@@ -2687,21 +2633,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>判断是否是平衡二叉树</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E4%B8%A4%E6%A3%B5%E6%A0%91%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>判断两棵树是否相似</p>
+          <p class='content'>题目：试设计判断两课二叉树是否相似的算法。所谓二叉树 T1 和 T2 相似，指的是 T1 和 T2 都是空的二叉树或只有一个根节点；或二者左子树相似
+           且左子树相似
+分析：
+...</p>
+        </a>
+      
+      
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/'>
+          <p class='title'>判断是否是平衡二叉树<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>
 利用二叉树遍历的思想编写一个判断二叉树是否是二叉平衡树的算法
     分析：
         我们可以采取后序遍历来完成该算法，因为后序遍历不会含有重复计算。
         我们对每一个节点...</p>
-        </a>
-      
-      
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E5%AF%BB%E6%89%BE%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E4%B8%AD%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/'>
-          <p class='title'>寻找先序遍历中第k个结点<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目：假设二叉树是用二叉链表存储，试设计一个算法, 求先序遍历中第 k（1&lt;=k&lt;= 二叉树的节点个数）个节点的值
-分析：
-        很简单，每遍历一个节点，计数器便加一，直至...</p>
         </a>
       
     </div>

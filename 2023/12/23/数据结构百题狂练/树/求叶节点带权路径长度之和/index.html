@@ -1645,7 +1645,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703737117015),
+    lastupdate: new Date(1703817822109),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：369 字</p>
+      <p>字数：389 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2508,50 +2508,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         我们求带权路径长度，既需要知道叶节点的权值，也需要知道其经过的路径，我们可以设置一个变量 depth 代表深度，也就是<br />
         路径长度，设置一个静态变量 weight 累加带权路径，会使用到递归。</p>
 <p>代码如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">tree</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> weight<span class="token punctuation">;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">tree</span> <span class="token operator">*</span>left<span class="token punctuation">,</span> <span class="token operator">*</span>right<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">_CRT_SECURE_NO_WARNINGS</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-tree <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span>tree <span class="token operator">*</span>T<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//建立一颗二叉树</span>
-	<span class="token keyword">int</span> weight<span class="token punctuation">;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入当前节点权值：weight="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>weight<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>weight <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		T <span class="token operator">=</span> <span class="token punctuation">(</span>tree <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		T<span class="token operator">-></span>weight <span class="token operator">=</span> weight<span class="token punctuation">;</span>
-		T<span class="token operator">-></span>left <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-		T<span class="token operator">-></span>right <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-		T<span class="token operator">-></span>left <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		T<span class="token operator">-></span>right <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">return</span> T<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">countWPL</span><span class="token punctuation">(</span>tree <span class="token operator">*</span>T<span class="token punctuation">,</span> <span class="token keyword">int</span> depth<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">static</span> <span class="token keyword">int</span> totalWeight <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>T<span class="token operator">-></span>left <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>T<span class="token operator">-></span>right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//已经是叶节点</span>
-			totalWeight <span class="token operator">+=</span> T<span class="token operator">-></span>weight<span class="token operator">*</span>depth<span class="token punctuation">;</span><span class="token comment">//计算带权路径</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-			<span class="token function">countWPL</span><span class="token punctuation">(</span>T<span class="token operator">-></span>left<span class="token punctuation">,</span>depth<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//左子树</span>
-			<span class="token function">countWPL</span><span class="token punctuation">(</span>T<span class="token operator">-></span>right<span class="token punctuation">,</span> depth <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//右子树</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">return</span> totalWeight<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">struct</span> <span class="token class-name">tree</span> <span class="token operator">*</span>T <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">tree</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">tree</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	T <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">int</span> depth <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword">int</span> totalW<span class="token punctuation">;</span>
-	totalW<span class="token operator">=</span><span class="token function">countWPL</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> depth<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"该二叉树的带权路径长度为：%d"</span><span class="token punctuation">,</span>totalW<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tree</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> weight;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">tree</span> *<span class="title">left</span>, *<span class="title">right</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line">tree *<span class="title function_">create</span><span class="params">(tree *T)</span> &#123;<span class="comment">//建立一颗二叉树</span></span><br><span class="line">	<span class="type">int</span> weight;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入当前节点权值：weight=&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;weight);</span><br><span class="line">	getchar();</span><br><span class="line">	<span class="keyword">if</span> (weight != <span class="number">-1</span>) &#123;</span><br><span class="line">		T = (tree *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(tree));</span><br><span class="line">		T-&gt;weight = weight;</span><br><span class="line">		T-&gt;left = <span class="literal">NULL</span>;</span><br><span class="line">		T-&gt;right = <span class="literal">NULL</span>;</span><br><span class="line">		T-&gt;left = create(T-&gt;left);</span><br><span class="line">		T-&gt;right = create(T-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> T;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">countWPL</span><span class="params">(tree *T, <span class="type">int</span> depth)</span> &#123;</span><br><span class="line">	<span class="type">static</span> <span class="type">int</span> totalWeight = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (T) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!T-&gt;left &amp;&amp; !T-&gt;right) &#123;<span class="comment">//已经是叶节点</span></span><br><span class="line">			totalWeight += T-&gt;weight*depth;<span class="comment">//计算带权路径</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			countWPL(T-&gt;left,depth+<span class="number">1</span>);<span class="comment">//左子树</span></span><br><span class="line">			countWPL(T-&gt;right, depth + <span class="number">1</span>);<span class="comment">//右子树</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> totalWeight;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">tree</span> *<span class="title">T</span> =</span> (<span class="keyword">struct</span> tree *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> tree));</span><br><span class="line">	T = create(T);</span><br><span class="line">	<span class="type">int</span> depth = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> totalW;</span><br><span class="line">	totalW=countWPL(T, depth);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;该二叉树的带权路径长度为：%d&quot;</span>,totalW);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>前面的路还很远，你可能会哭，但是，一定要走下去，一定不能停。输不起的人，往往就是赢不了。</p>
 
   </div>
@@ -2652,7 +2609,7 @@ tree <span class="token operator">*</span><span class="token function">create</s
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：369 字</p>
+      <p>字数：389 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2678,22 +2635,22 @@ tree <span class="token operator">*</span><span class="token function">create</s
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%B1%82%E5%87%BA%E7%BB%99%E5%AE%9A%E8%8A%82%E7%82%B9%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E4%B8%AD%E7%9A%84%E5%B1%82%E6%AC%A1/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>求指定结点在给定二叉排序树中的层次</p>
+        <a class='prev' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%A0%B9%E6%8D%AE%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E5%88%9B%E5%BB%BA%E4%B8%80%E9%A2%97%E4%BA%8C%E5%8F%89%E6%A0%91%E2%98%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>根据中序和先序遍历创建一颗二叉树</p>
+          <p class='content'>题目：设一个二叉树各节点的值互不相同，其先序遍历序列和中序遍历序列分别存于两个一维数组 A、B 中，试编写算法建立该二叉树的二叉链表
+分析：
+        这是一个典型的已知中序和先序求二叉树...</p>
+        </a>
+      
+      
+        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%B1%82%E5%87%BA%E7%BB%99%E5%AE%9A%E8%8A%82%E7%82%B9%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E4%B8%AD%E7%9A%84%E5%B1%82%E6%AC%A1/'>
+          <p class='title'>求指定结点在给定二叉排序树中的层次<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>
 题目：设计一个算法，求出指定节点在给定二叉排序树中的层次
     分析：
         我们可以根据二叉排序树的性质，从根节点一直向下查找，每查找一次，层次便加一
 
-typedef stru...</p>
-        </a>
-      
-      
-        <a class='next' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BB%9F%E8%AE%A1%E5%8F%8C%E5%88%86%E6%94%AF%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0/'>
-          <p class='title'>统计双分支结点个数<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目：假设二叉树采取二叉链表存储结构存储，试设计一个算法，计算一颗给定的二叉树所有的双分支节点个数
-分析：
-        其实二叉树各类操作都十分适合递归，这里我们同样可以采取递归的做法来进行...</p>
+123456789101...</p>
         </a>
       
     </div>
