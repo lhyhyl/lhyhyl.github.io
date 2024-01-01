@@ -1642,10 +1642,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703949489315),
+    lastupdate: new Date(1704094031944),
     sidebar: {
-      for_page: ["blogger","category","tagcloud","donate"],
-      for_post: ["toc"],
+      for_page: ["blogger","category","tagcloud","donate","webinfo"],
+      for_post: ["toc","webinfo"],
       webinfo: {
         lastupd: {
           enable: true,
@@ -1667,6 +1667,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       },
       
       
+      
+      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":false,"musicAlwaysShow":false,"corsAnywhere":null},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"home","name":"回到首页","icon":"fa-solid fa-home","link":"/","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"CSDNSearch","name":"CSDN搜索","icon":"fa-solid fa-search","event":"window.open(`https://so.csdn.net/so/search?q=${__text__}`)","group":"seletctText"},{"id":"baiduSearch","name":"百度搜索","icon":"fa-solid fa-search","event":"window.open(`https://www.baidu.com/s?wd=${__text__}`)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://gitee.com/clever-ming/clever-ming/","group":"link"},{"id":"source_theme","name":"volantis社区","icon":"fa-solid fa-code-branch","link":"https://volantis.js.org/","group":"link"}],"darkMode":[{"id":"darkMode","name":"夜间模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
       
     }
   }
@@ -2416,7 +2418,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/统计双分支节点个数/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/寻找链表倒数第k个结点/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2428,16 +2430,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BB%9F%E8%AE%A1%E5%8F%8C%E5%88%86%E6%94%AF%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0/">
-        <img itemprop="image" class='headimg' alt="统计双分支结点个数" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1338855.png'/>
+      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%AF%BB%E6%89%BE%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/">
+        <img itemprop="image" class='headimg' alt="寻找链表倒数第k个结点" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1313270.jpg'/>
       </a>
     </div>
   
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BB%9F%E8%AE%A1%E5%8F%8C%E5%88%86%E6%94%AF%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0/"  itemprop="url">
-        统计双分支结点个数
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%AF%BB%E6%89%BE%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/"  itemprop="url">
+        寻找链表倒数第k个结点
       </a>
     </h2>
   
@@ -2449,6 +2451,511 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='meta-v3' line_style='solid'>
       <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg">
+            <meta itemprop="name" content="北街学长">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%AF%BB%E6%89%BE%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/带头结点的单链表删除/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8%E5%88%A0%E9%99%A4/">
+        <img itemprop="image" class='headimg' alt="单链表删除(带头结点)" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1331865.png'/>
+      </a>
+    </div>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8%E5%88%A0%E9%99%A4/"  itemprop="url">
+        单链表删除(带头结点)
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <p> </p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg">
+            <meta itemprop="name" content="北街学长">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8%E5%88%A0%E9%99%A4/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/逆序打印单链表/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%86%E5%BA%8F%E6%89%93%E5%8D%B0%E5%8D%95%E9%93%BE%E8%A1%A8/">
+        <img itemprop="image" class='headimg' alt="单链表逆序输出" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/521718.jpg'/>
+      </a>
+    </div>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%86%E5%BA%8F%E6%89%93%E5%8D%B0%E5%8D%95%E9%93%BE%E8%A1%A8/"  itemprop="url">
+        单链表逆序输出
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <p> </p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg">
+            <meta itemprop="name" content="北街学长">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%86%E5%BA%8F%E6%89%93%E5%8D%B0%E5%8D%95%E9%93%BE%E8%A1%A8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/按照奇偶拆分链表/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E6%8C%89%E7%85%A7%E5%A5%87%E5%81%B6%E6%8B%86%E5%88%86%E9%93%BE%E8%A1%A8/">
+        <img itemprop="image" class='headimg' alt="按照奇偶拆分链表" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1275720.jpg'/>
+      </a>
+    </div>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E6%8C%89%E7%85%A7%E5%A5%87%E5%81%B6%E6%8B%86%E5%88%86%E9%93%BE%E8%A1%A8/"  itemprop="url">
+        按照奇偶拆分链表
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <p> </p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg">
+            <meta itemprop="name" content="北街学长">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E6%8C%89%E7%85%A7%E5%A5%87%E5%81%B6%E6%8B%86%E5%88%86%E9%93%BE%E8%A1%A8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/递增有序链表去重/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%92%E5%A2%9E%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D/">
+        <img itemprop="image" class='headimg' alt="递增有序链表去重" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1313270.jpg'/>
+      </a>
+    </div>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%92%E5%A2%9E%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D/"  itemprop="url">
+        递增有序链表去重
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <p> </p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg">
+            <meta itemprop="name" content="北街学长">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%80%92%E5%A2%9E%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/链表去重☆/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D%E2%98%86/">
+        <img itemprop="image" class='headimg' alt="链表去重" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/117378.jpg'/>
+      </a>
+    </div>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D%E2%98%86/"  itemprop="url">
+        链表去重
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <p> </p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg">
+            <meta itemprop="name" content="北街学长">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E5%8E%BB%E9%87%8D%E2%98%86/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/链表/链表递增输出并释放空间/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E9%80%92%E5%A2%9E%E8%BE%93%E5%87%BA%E5%B9%B6%E9%87%8A%E6%94%BE%E7%A9%BA%E9%97%B4/">
+        <img itemprop="image" class='headimg' alt="链表递增输出并释放空间" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1337390.png'/>
+      </a>
+    </div>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E9%80%92%E5%A2%9E%E8%BE%93%E5%87%BA%E5%B9%B6%E9%87%8A%E6%94%BE%E7%A9%BA%E9%97%B4/"  itemprop="url">
+        链表递增输出并释放空间
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <p> </p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg">
+            <meta itemprop="name" content="北街学长">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%93%BE%E8%A1%A8/">链表</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%93%BE%E8%A1%A8/" itemprop="url"><span itemprop="name">链表</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E9%80%92%E5%A2%9E%E8%BE%93%E5%87%BA%E5%B9%B6%E9%87%8A%E6%94%BE%E7%A9%BA%E9%97%B4/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/C_语言读取文件内容创建二叉树/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="北街学长的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="北街学长的博客">
+    <meta itemprop="description" content="电子科技大学22级研究生">
+  </span>
+  
+  
+  
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/C_%E8%AF%AD%E8%A8%80%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/">
+        <img itemprop="image" class='headimg' alt="读取文件创建二叉树" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/598673.jpg'/>
+      </a>
+    </div>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/C_%E8%AF%AD%E8%A8%80%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"  itemprop="url">
+        读取文件创建二叉树
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <p> </p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg">
+            <meta itemprop="name" content="北街学长">
+            <meta itemprop="url" content="/">
+          </span>
         
         <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
         
@@ -2463,7 +2970,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BB%9F%E8%AE%A1%E5%8F%8C%E5%88%86%E6%94%AF%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/C_%E8%AF%AD%E8%A8%80%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2479,7 +2986,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/求叶节点带权路径长度之和/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/中序遍历（非递归）/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2491,16 +2998,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%B1%82%E5%8F%B6%E8%8A%82%E7%82%B9%E5%B8%A6%E6%9D%83%E8%B7%AF%E5%BE%84%E9%95%BF%E5%BA%A6%E4%B9%8B%E5%92%8C/">
-        <img itemprop="image" class='headimg' alt="求叶结点带权路径长度之和" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/973967.jpg'/>
+      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89/">
+        <img itemprop="image" class='headimg' alt="中序非递归遍历" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1188019.jpg'/>
       </a>
     </div>
   
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%B1%82%E5%8F%B6%E8%8A%82%E7%82%B9%E5%B8%A6%E6%9D%83%E8%B7%AF%E5%BE%84%E9%95%BF%E5%BA%A6%E4%B9%8B%E5%92%8C/"  itemprop="url">
-        求叶结点带权路径长度之和
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89/"  itemprop="url">
+        中序非递归遍历
       </a>
     </h2>
   
@@ -2512,6 +3019,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='meta-v3' line_style='solid'>
       <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg">
+            <meta itemprop="name" content="北街学长">
+            <meta itemprop="url" content="/">
+          </span>
         
         <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
         
@@ -2526,7 +3041,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E6%B1%82%E5%8F%B6%E8%8A%82%E7%82%B9%E5%B8%A6%E6%9D%83%E8%B7%AF%E5%BE%84%E9%95%BF%E5%BA%A6%E4%B9%8B%E5%92%8C/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2542,7 +3057,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/编程求以孩子兄弟表示法存储的森林的叶子结点数☆/">
+  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/二叉树层序遍历/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="北街学长的博客">
   </span>
@@ -2554,16 +3069,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BC%96%E7%A8%8B%E6%B1%82%E4%BB%A5%E5%AD%A9%E5%AD%90%E5%85%84%E5%BC%9F%E8%A1%A8%E7%A4%BA%E6%B3%95%E5%AD%98%E5%82%A8%E7%9A%84%E6%A3%AE%E6%9E%97%E7%9A%84%E5%8F%B6%E5%AD%90%E7%BB%93%E7%82%B9%E6%95%B0%E2%98%86/">
-        <img itemprop="image" class='headimg' alt="求以孩子兄弟表示法存储的森林的叶子结点数" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1337390.png'/>
+      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/">
+        <img itemprop="image" class='headimg' alt="层序遍历" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1301884.png'/>
       </a>
     </div>
   
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BC%96%E7%A8%8B%E6%B1%82%E4%BB%A5%E5%AD%A9%E5%AD%90%E5%85%84%E5%BC%9F%E8%A1%A8%E7%A4%BA%E6%B3%95%E5%AD%98%E5%82%A8%E7%9A%84%E6%A3%AE%E6%9E%97%E7%9A%84%E5%8F%B6%E5%AD%90%E7%BB%93%E7%82%B9%E6%95%B0%E2%98%86/"  itemprop="url">
-        求以孩子兄弟表示法存储的森林的叶子结点数
+      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"  itemprop="url">
+        层序遍历
       </a>
     </h2>
   
@@ -2575,6 +3090,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='meta-v3' line_style='solid'>
       <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/avatar.jpg">
+            <meta itemprop="name" content="北街学长">
+            <meta itemprop="url" content="/">
+          </span>
         
         <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
         
@@ -2589,448 +3112,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E7%BC%96%E7%A8%8B%E6%B1%82%E4%BB%A5%E5%AD%A9%E5%AD%90%E5%85%84%E5%BC%9F%E8%A1%A8%E7%A4%BA%E6%B3%95%E5%AD%98%E5%82%A8%E7%9A%84%E6%A3%AE%E6%9E%97%E7%9A%84%E5%8F%B6%E5%AD%90%E7%BB%93%E7%82%B9%E6%95%B0%E2%98%86/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/自下而上、从右往左层次遍历/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E3%80%81%E4%BB%8E%E5%8F%B3%E5%BE%80%E5%B7%A6%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/">
-        <img itemprop="image" class='headimg' alt="自下而上从右往左层次遍历" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1345266.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E3%80%81%E4%BB%8E%E5%8F%B3%E5%BE%80%E5%B7%A6%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/"  itemprop="url">
-        自下而上从右往左层次遍历
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p> </p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E3%80%81%E4%BB%8E%E5%8F%B3%E5%BE%80%E5%B7%A6%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/通过中序线索二叉树找某节点的后续前驱☆/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%80%9A%E8%BF%87%E4%B8%AD%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%BE%E6%9F%90%E8%8A%82%E7%82%B9%E7%9A%84%E5%90%8E%E7%BB%AD%E5%89%8D%E9%A9%B1%E2%98%86/">
-        <img itemprop="image" class='headimg' alt="通过中序线索二叉树找某节点的后续前驱" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1309399.jpg'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%80%9A%E8%BF%87%E4%B8%AD%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%BE%E6%9F%90%E8%8A%82%E7%82%B9%E7%9A%84%E5%90%8E%E7%BB%AD%E5%89%8D%E9%A9%B1%E2%98%86/"  itemprop="url">
-        通过中序线索二叉树找某节点的后续前驱
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p> </p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%80%9A%E8%BF%87%E4%B8%AD%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%BE%E6%9F%90%E8%8A%82%E7%82%B9%E7%9A%84%E5%90%8E%E7%BB%AD%E5%89%8D%E9%A9%B1%E2%98%86/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/非递归求二叉树高度/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%9D%9E%E9%80%92%E5%BD%92%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E9%AB%98%E5%BA%A6/">
-        <img itemprop="image" class='headimg' alt="非递归求二叉树高度" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/641449.jpg'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%9D%9E%E9%80%92%E5%BD%92%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E9%AB%98%E5%BA%A6/"  itemprop="url">
-        非递归求二叉树高度
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p> </p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%9D%9E%E9%80%92%E5%BD%92%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E9%AB%98%E5%BA%A6/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/树/顺序存储二叉树之寻找公共祖先节点/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B9%8B%E5%AF%BB%E6%89%BE%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%E8%8A%82%E7%82%B9/">
-        <img itemprop="image" class='headimg' alt="顺序存储二叉树寻找公共祖先结点" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1338855.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B9%8B%E5%AF%BB%E6%89%BE%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%E8%8A%82%E7%82%B9/"  itemprop="url">
-        顺序存储二叉树寻找公共祖先结点
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p> </p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url"><span itemprop="name">二叉树</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B9%8B%E5%AF%BB%E6%89%BE%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%E8%8A%82%E7%82%B9/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/创建循环顺序队列/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97/">
-        <img itemprop="image" class='headimg' alt="创建循环队列" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1337841.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97/"  itemprop="url">
-        创建循环队列
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p> </p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">栈和队列</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" itemprop="url"><span itemprop="name">栈和队列</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/创建栈/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/">
-        <img itemprop="image" class='headimg' alt="创建栈" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1345266.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/"  itemprop="url">
-        创建栈
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p> </p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">栈和队列</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" itemprop="url"><span itemprop="name">栈和队列</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%9B%E5%BB%BA%E6%A0%88/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://lhyhyl.github.io/2023/12/23/数据结构百题狂练/栈和队列/利用栈和队列将队列中的元素逆置☆/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="北街学长的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="北街学长的博客">
-    <meta itemprop="description" content="电子科技大学22级研究生">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%A9%E7%94%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E5%B0%86%E9%98%9F%E5%88%97%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E9%80%86%E7%BD%AE%E2%98%86/">
-        <img itemprop="image" class='headimg' alt="将队列中元素逆置" src='https://gcore.jsdelivr.net/gh/lhyhyl/blog-imgs@main/headimg/1328482.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%A9%E7%94%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E5%B0%86%E9%98%9F%E5%88%97%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E9%80%86%E7%BD%AE%E2%98%86/"  itemprop="url">
-        将队列中元素逆置
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p> </p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T00:00:00+08:00">2023-12-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">栈和队列</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" itemprop="url"><span itemprop="name">栈和队列</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%88%A9%E7%94%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E5%B0%86%E9%98%9F%E5%88%97%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E9%80%86%E7%BD%AE%E2%98%86/' itemprop="url">
+          <a class='readmore' href='/2023/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%99%BE%E9%A2%98%E7%8B%82%E7%BB%83/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3221,6 +3303,69 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
 
+  
+    
+    
+      
+<section class="widget desktop pjax">
+  
+  <header>
+    
+      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>77 篇</div>
+        </div>
+      
+
+      
+
+
+      
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>76.4k 字</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站访客数：</div>
+          
+          <div><span id="lc-uv"><span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span></span> 人</div>
+          
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站总访问量：</div>
+          
+          <div><span id="lc-sv"><span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span></span> 次</div>
+          
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>最后活动时间：</div>
+          <div id="last-update-show">2024-01-01 日</div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+    
+  
+
 
 <div class="widget-sticky pjax">
 
@@ -3228,10 +3373,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3363,12 +3504,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" rel="external nofollow noreferrer" target="_blank" class="codename">Volantis</a>
-        作为主题，总访问量为
-          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-          次
-        
+        作为主题
       
     
       
@@ -3418,6 +3563,319 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+    
+  <li class='navigation menuNavigation-Content'>
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-arrow-left fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-arrow-right fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-redo fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" href="/"><i class="fa-solid fa-home fa-fw"></i></a>
+
+
+  </li>
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyPaste" data-event="copyPaste" data-group="inputBox">
+      <i class="fa-solid fa-paste fa-fw"></i>
+      粘贴文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyAll" data-event="copyAll" data-group="inputBox">
+      <i class="fa-solid fa-object-ungroup fa-fw"></i>
+      全选文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyCut" data-event="copyCut" data-group="inputBox">
+      <i class="fa-solid fa-cut fa-fw"></i>
+      剪切文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyText" data-event="copyText" data-group="seletctText">
+      <i class="fa-solid fa-copy fa-fw"></i>
+      复制文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="searchWord" data-event="OpenSearch(__text__)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      站内搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="CSDNSearch" data-event="window.open(`https://so.csdn.net/so/search?q=${__text__}`)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      CSDN搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="baiduSearch" data-event="window.open(`https://www.baidu.com/s?wd=${__text__}`)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      百度搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="bingSearch" data-event="window.open(`https://cn.bing.com/search?q=${__text__}`)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      必应搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="openTab" data-event="window.open(__link__)" data-group="elementCheck">
+      <i class="fa-solid fa-external-link-square-alt fa-fw"></i>
+      新标签页打开
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyLink" data-event="copyLink" data-group="elementCheck">
+      <i class="fa-solid fa-link fa-fw"></i>
+      复制链接地址
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="source_docs" target="_blank" rel="noopener external nofollow noreferrer" href="https://gitee.com/clever-ming/clever-ming/" data-group="link">
+      <i class="fa-solid fa-code-branch fa-fw"></i>
+      本站源码
+    </a>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="source_theme" target="_blank" rel="noopener external nofollow noreferrer" href="https://volantis.js.org/" data-group="link">
+      <i class="fa-solid fa-code-branch fa-fw"></i>
+      volantis社区
+    </a>
+  </li>
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="darkMode" data-event="volantis.dark.toggle()" data-group="darkMode">
+      <i class="fa-solid fa-moon fa-fw"></i>
+      夜间模式
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="printMode" data-event="printMode" data-group="articlePage">
+      <i class="fa-solid fa-print fa-fw"></i>
+      打印页面
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="readMode" data-event="readMode" data-group="articlePage">
+      <i class="fa-solid fa-book-open fa-fw"></i>
+      阅读模式
+    </span>
+  </li>
+
+
+<div id="menuMusic">
+  <li class='music name menuOption-Content'>
+    <p class='nav music-title fix-cursor-default'></p>
+  </li>
+  <li class='music ctrl'>
+    <a class='nav icon-only backward fix-cursor-default' href="/" onclick="return false;" title="backward">
+      <i class='fa-solid fa-step-backward fa-fw'></i>
+    </a>
+    <a class='nav icon-only toggle fix-cursor-default' href="/" onclick="return false;" title="toggle">
+      <i class='fa-solid fa-play fa-fw'></i>
+    </a>
+    <a class='nav icon-only forward fix-cursor-default' href="/" onclick="return false;" title="forward">
+      <i class='fa-solid fa-step-forward fa-fw'></i>
+    </a>
+  </li>
+  <li class='music volume'>
+    <div class='nav volume'>
+      <div class="aplayer-volume-bar-wrap">
+        <div class="aplayer-volume-bar fix-cursor-pointer">
+          <div class="aplayer-volume"></div>
+          <i class='left fa-solid fa-volume-off fa-fw'></i>
+          <i class='right fa-solid fa-volume-up fa-fw'></i>
+        </div>
+      </div>
+    </div>
+  </li>
+</div>
+
+  </ul>
+</div>
+<script src="/js/plugins/rightMenus.js"></script>
+<script>
+  const RightMenusFunction = {};
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  //RightMenusFunction['copyPaste'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyAll'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyCut'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyText'] = (fun) => {fun()}
+
+
+
+
+
+  RightMenusFunction['searchWord'] = (__text__) => {OpenSearch(__text__)}
+
+
+
+
+
+  RightMenusFunction['CSDNSearch'] = (__text__) => {window.open(`https://so.csdn.net/so/search?q=${__text__}`)}
+
+
+
+
+
+  RightMenusFunction['baiduSearch'] = (__text__) => {window.open(`https://www.baidu.com/s?wd=${__text__}`)}
+
+
+
+
+
+  RightMenusFunction['bingSearch'] = (__text__) => {window.open(`https://cn.bing.com/search?q=${__text__}`)}
+
+
+
+
+
+  RightMenusFunction['openTab'] = (__link__) => {window.open(__link__)}
+
+
+
+
+
+  //RightMenusFunction['copyLink'] = (fun) => {fun()}
+
+
+
+
+
+
+
+
+
+
+
+  RightMenusFunction['darkMode'] = () => {volantis.dark.toggle()}
+
+
+
+
+
+  //RightMenusFunction['printMode'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['readMode'] = (fun) => {fun()}
+
+
+
+
+
+</script>
 
 
 
@@ -3509,6 +3967,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // APlayer 需要在  MetingJS 之前加载
     await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
     await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+    // 右键 music 需要在 APlayer  MetingJS 之后加载
+    await volantis.js('/js/plugins/aplayer.js')
   
   })();
 
@@ -3631,8 +4092,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script defer src="https://gcore.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
-
 
 <!-- optional -->
 
@@ -3710,6 +4169,215 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'C2OucxP9ZolUkJ6nvFLMUZDQ-MdYXbMMI',
+    app_key: '9hfdWLNzubqO78xbtNsnAD1g',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'http://lhyhyl.github.io' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'http://lhyhyl.github.io' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'http://lhyhyl.github.io' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.custom_api_server || `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
 
 
 
